@@ -1,0 +1,9 @@
+body{
+  font-family: Lato;
+}
+
+p > label {
+  width: 150px;
+  clear: both;
+  float: left;
+}
