@@ -9,9 +9,9 @@ export default function NotFoundScreen({
 }: StackScreenProps<RootStackParamList, 'NotFound'>) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Upss...</Text>
+      <Text style={styles.title}>Upss!</Text>
       <TouchableOpacity onPress={() => navigation.replace('Root')} style={styles.link}>
-        <Text style={styles.linkText}>Go to home screen!</Text>
+        <Text style={styles.linkText}>Volver al inicio.</Text>
       </TouchableOpacity>
     </View>
   );

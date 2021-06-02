@@ -68,3 +68,4 @@ node_modules/
 
 public/
 .vscode/
+functions/web-build/

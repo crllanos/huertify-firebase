@@ -64,7 +64,7 @@ function TabOneNavigator() {
         name="TabOneScreen"
         component={TabOneScreen}
         options={
-          { headerTitle: 'Huertify.org | Agro microescala aa'
+          { headerTitle: 'Huertify.org'
           , cardStyle: { backgroundColor: 'red' } }
         }
       />
@@ -81,7 +81,7 @@ function TabTwoNavigator() {
         name="TabTwoScreen"
         component={TabTwoScreen}
         options={
-          { headerTitle: 'Huertify.org - Agro microescala II'
+          { headerTitle: 'Huertify.org'
           , cardStyle: { backgroundColor: 'white' } }
         }
       />
