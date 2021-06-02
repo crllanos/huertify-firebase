@@ -52,12 +52,21 @@ function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']
 const TabOneStack = createStackNavigator<TabOneParamList>();
 
 function TabOneNavigator() {
+  const colorScheme = useColorScheme();
   return (
-    <TabOneStack.Navigator>
+    <TabOneStack.Navigator
+    screenOptions={{
+      headerTintColor: Colors[colorScheme].tint,
+      headerStyle: { backgroundColor: Colors[colorScheme].verde },
+    }}    
+    >
       <TabOneStack.Screen
         name="TabOneScreen"
         component={TabOneScreen}
-        options={{ headerTitle: 'Huertify.org - Agro microescala' }}
+        options={
+          { headerTitle: 'Huertify.org | Agro microescala aa'
+          , cardStyle: { backgroundColor: 'red' } }
+        }
       />
     </TabOneStack.Navigator>
   );
@@ -71,7 +80,10 @@ function TabTwoNavigator() {
       <TabTwoStack.Screen
         name="TabTwoScreen"
         component={TabTwoScreen}
-        options={{ headerTitle: 'Huertify.org - Agro microescala' }}
+        options={
+          { headerTitle: 'Huertify.org - Agro microescala II'
+          , cardStyle: { backgroundColor: 'white' } }
+        }
       />
     </TabTwoStack.Navigator>
   );
