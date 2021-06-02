@@ -8,7 +8,7 @@
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./src/assets/images/Cucumber_leaf.c",
+      "image": "./src/assets/images/Cucumber_leaf.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
