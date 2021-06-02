@@ -1,8 +1,13 @@
-const tintColorLight = '#fff'; /** 51b749 - albahaca */
-const tintColorLightBold = '#df6a0d'; /** df6a0d - naranja */
-const tintColorDark = '#fff';
-const txt_centro_oscuro = '#000';
-const txt_centro_claro = '#000';
+const color_verde = '#51b749';
+const color_naranja = '#df6a0d';
+const color_blanco = '#eee';
+const color_negro = '#333';
+
+const tintColorLight = color_blanco;// '#fff'; /** 51b749 - albahaca */
+const tintColorLightBold = color_naranja;// '#df6a0d'; /** df6a0d - naranja */
+const tintColorDark = '#fff'; // ???
+const txt_centro_oscuro = color_negro;
+const txt_centro_claro = color_negro;
 
 
 

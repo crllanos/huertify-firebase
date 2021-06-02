@@ -10,7 +10,7 @@ export default function TabOneScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Tab uno</Text>
       <View style={styles.separator} lightColor="#eee" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+      <EditScreenInfo texto="este es el texto" />
     </View>
   );
 }

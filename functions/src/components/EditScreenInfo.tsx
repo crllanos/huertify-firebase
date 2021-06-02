@@ -6,7 +6,7 @@ import Colors from '../constants/Colors';
 import { MonoText } from './StyledText';
 import { Text, View } from './Themed';
 
-export default function EditScreenInfo({ path }: { path: string }) {
+export default function EditScreenInfo({ texto }: { texto: string }) {
   return (
     <View>
       <View style={styles.getStartedContainer}>
@@ -21,7 +21,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
           style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
           darkColor="rgba(255,255,255,0.05)"
           lightColor="rgba(0,0,0,0.05)">
-          <MonoText>{path}</MonoText>
+          <MonoText>{texto}</MonoText>
         </View>
 
         <Text
@@ -32,6 +32,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
         </Text>
       </View>
 
+{/*
       <View style={styles.helpContainer}>
         <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
           <Text style={styles.helpLinkText} lightColor={Colors.light.tint}>
@@ -39,14 +40,17 @@ export default function EditScreenInfo({ path }: { path: string }) {
           </Text>
         </TouchableOpacity>
       </View>
+*/}
     </View>
   );
 }
 
 function handleHelpPress() {
+  /*
   WebBrowser.openBrowserAsync(
     'https://docs.expo.io/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet'
   );
+  */
 }
 
 const styles = StyleSheet.create({
