@@ -8,28 +8,33 @@
  import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
  import { createStackNavigator } from '@react-navigation/stack';
  import { slide as Menu } from 'react-burger-menu';
- import InicioScreen from '../screens/InicioScreen'
+ import InicioScreen from '../screens/01inicio/index'
+ import LoginScreen from '../screens/02login/index'
+ 
+ /////////////////////
+ // Navegación
+ const NavStack = createStackNavigator();
+ function NavegadorRaiz() {
+   return (
+     <NavStack.Navigator>
+       <NavStack.Screen name="Huertify.org" component={InicioScreen} />
+       <NavStack.Screen name="Huertify.org | login" component={LoginScreen} />
+     </NavStack.Navigator>
+   );
+ }
 
- export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
-  // linking={LinkingConfiguration}
+ // Contenedor de navegación
+export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
+  // <NavigationContainer linking={LinkingConfiguration}
+  // <NavigationContainer theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
   return (
-    <NavigationContainer
-      theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <NavigationContainer>
       <NavegadorRaiz />
     </NavigationContainer>
   );
 }
 
 
-const NavStack = createStackNavigator();
-
-function NavegadorRaiz() {
-  return (
-    <NavStack.Navigator>
-      <NavStack.Screen name="InicioScreen" component={InicioScreen} />
-    </NavStack.Navigator>
-  );
-}
 
 
 
@@ -40,6 +45,7 @@ function pronto(event){
 }
 
 
+// TODO
 // Menu burguer
 function MiMenu(colorScheme){
   return (
