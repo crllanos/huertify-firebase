@@ -1,10 +1,10 @@
 import React from 'react';
-import { Text, View, Image, Linking } from 'react-native';
+import { Text, View, Image, Linking, Button } from 'react-native';
 import Config from '../../constants/Config';
 import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
 
-export default function InicioScreen(){
+export default function InicioScreen({ navigation }){
     return (
         <View style={Estilo.contenedor}>
 
@@ -35,7 +35,14 @@ export default function InicioScreen(){
                 <Text style={Estilo.parrafo_mini}><Enlace texto="AgStack.org" donde="https://agstack.org/" /></Text>
                 <Text style={Estilo.parrafo_mini}><Enlace texto="Wikipedia" donde="https://es.wikipedia.org/wiki/Fundaci%C3%B3n_Linux" /></Text>
                 <Text style={Estilo.parrafo_mini}><Enlace texto="Imagen: Wikipedia" donde="https://es.wikipedia.org/wiki/Brote_(bot%C3%A1nica)#/media/Archivo:Cucumber_leaf.jpg" /></Text>
-                <Text style={Estilo.parrafo_mini}><Enlace texto="Acceso" donde="/" /></Text>
+                <Button
+                    title="Acceso"
+                    onPress={() =>
+                        navigation.navigate('LoginScreen')
+                    }
+                />
+
+                
             </View>
 
             <FooterHf></FooterHf>
@@ -49,3 +56,4 @@ function Enlace(props){
         <Text style={Estilo.enlace} onPress={() => Linking.openURL(props.donde)}>{props.texto}</Text>
     );
 }
+

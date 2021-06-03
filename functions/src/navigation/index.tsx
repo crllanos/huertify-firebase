@@ -24,10 +24,19 @@
       }}    
      >
        <NavStack.Screen 
-          options={{ headerBackImage: () => <Image source={require('../assets/images/Cucumber_leaf.png')} width={25} height={25} /> }}
-          name="Huertify.org" 
-          component={InicioScreen}  />
-       <NavStack.Screen name="Huertify.org | login" component={LoginScreen} />
+          name="InicioScreen" 
+          component={InicioScreen}
+          options={{ 
+            title: 'Huertify.org',
+            headerBackImage: () => <Image source={require('../assets/images/Cucumber_leaf.png')} width={25} height={25} /> 
+          }}
+          />
+       <NavStack.Screen 
+          name="LoginScreen" 
+          component={LoginScreen}
+          options={{
+            title: 'Huertify.org | Login',
+          }} />
      </NavStack.Navigator>
    );
  }
