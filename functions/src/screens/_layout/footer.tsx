@@ -1,13 +1,22 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Linking } from 'react-native';
 import Estilo from '../../constants/Estilo';
+import Config from '../../constants/Config';
 
 export default function FooterHf(){
     return (
         <View style={Estilo.contenedor_footer}>
-            <Text style={Estilo.parrafo}>-</Text>
-            <Text style={Estilo.parrafo}><a href='https://twitter.com/huertify'>twitter.com/Huertify</a></Text>
-            <Text style={Estilo.parrafo}><i>Huertify.org - 2021</i></Text>
+            <Text style={Estilo.parrafo_mini}>-</Text>
+            <Text style={Estilo.parrafo_mini}><Enlace texto="twitter.com/Huertify" donde={Config.url} /></Text>
+            <Text style={[Estilo.parrafo_mini, Estilo.italic]}>Huertify.org - 2021</Text>
        </View>
+    );
+}
+
+
+// TODO Pasar a libreria (copiado desde Inicio)
+function Enlace(props){
+    return (
+        <Text style={Estilo.enlace} onPress={() => Linking.openURL(props.donde)}>{props.texto}</Text>
     );
 }

@@ -4,7 +4,7 @@ import Colors from './Colors';
 
 const Estilo = StyleSheet.create({
   contenedor: {
-    marginHorizontal: 50,
+    marginHorizontal: 30,
     marginVertical: 10,
   },
   contenedor_footer: {
@@ -14,6 +14,22 @@ const Estilo = StyleSheet.create({
     marginTop: 16,
     fontSize: 16,
   },
+  enlace: {
+    color: 'blue',
+    textDecorationLine: 'underline'
+
+  },
+  italic:{
+    fontStyle: 'italic'
+  },
+  strong: {
+    fontWeight: 'bold'
+  },
+  lista: {
+    marginTop: 16,
+    marginLeft: 16,
+    fontSize: 16,
+  },
   parrafo_mini: {
     marginTop: 10,
     fontSize: 10,
@@ -21,6 +37,10 @@ const Estilo = StyleSheet.create({
   logo: {
     width: 50,
     height: 50
+  }, 
+  InicioEnlaces: {
+    textAlign: 'right',
+    alignItems: 'flex-end'
   }
 });
 
