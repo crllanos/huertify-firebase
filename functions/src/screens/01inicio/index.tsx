@@ -20,7 +20,7 @@ export default function InicioScreen(){
                 'Open-Source Digital Infrastructure for the Agriculture Ecosystem'.</Text>
 
             <ul>
-                <li><Text>Usted tiene su huerto.</Text></li>
+                <li><Text>Usted tiene su huerto...</Text></li>
                 <li><Text>Pero, a veces, olvida cuando regarlo, fertilizarlo, etc...</Text></li>
                 <li><Text><strong><a href={Config.url}>Huertify</a></strong> se lo recuerda.</Text></li>
                 <li><Text>Administra tus recordatorios de riego, fertilizacion, cochesa y siembra de tu huerto.</Text></li>
