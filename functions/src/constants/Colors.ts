@@ -14,6 +14,13 @@ const txt_centro_claro = color_blanco;
 const font_family = 'verdana';
 
 export default {
+  verde:color_verde_dark,
+  text: txt_centro_oscuro,
+  background: tintColorLight,
+  tint: tintColorLight,
+  tabIconDefault: tintColorLight,
+  tabIconSelected: tintColorLight,
+/*
   dark: {
     verde:color_verde_dark,
     text: txt_centro_oscuro,
@@ -30,6 +37,7 @@ export default {
     tabIconDefault: tintColorDark,
     tabIconSelected: tintColorDark,
   },
+  */
 };
 /*
 const tintColorLight = '#2f95dc';
