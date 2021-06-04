@@ -35,7 +35,7 @@
           name="LoginScreen" 
           component={LoginScreen}
           options={{
-            title: 'Huertify.org | Login',
+            title: 'Huertify.org | login',
           }} />
      </NavStack.Navigator>
    );

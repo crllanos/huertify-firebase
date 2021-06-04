@@ -4,8 +4,8 @@ import Colors from './Colors';
 
 const Estilo = StyleSheet.create({
   contenedor: {
-    marginHorizontal: 30,
-    marginVertical: 10,
+    flex: 1,
+    padding: 35
   },
   contenedor_footer: {
     
@@ -13,6 +13,11 @@ const Estilo = StyleSheet.create({
   parrafo: {
     marginTop: 16,
     fontSize: 16,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#ddd',
+    padding: 5
   },
   enlace: {
     color: 'blue',

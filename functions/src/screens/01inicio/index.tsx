@@ -8,7 +8,7 @@ export default function InicioScreen({ navigation }){
     return (
         <View style={Estilo.contenedor}>
 
-            <Image source={require('../../assets/images/Cucumber_leaf.png')} style={Estilo.logo}></Image>
+            <Image source={require('../../assets/images/Cucumber_leaf.png')} style={Estilo.logo} />
 
             <Text style={Estilo.parrafo}>Huertify es una aplicacion gratuita, de codigo abierto y sin fines de lucro.</Text>
 
@@ -35,12 +35,7 @@ export default function InicioScreen({ navigation }){
                 <Text style={Estilo.parrafo_mini}><Enlace texto="AgStack.org" donde="https://agstack.org/" /></Text>
                 <Text style={Estilo.parrafo_mini}><Enlace texto="Wikipedia" donde="https://es.wikipedia.org/wiki/Fundaci%C3%B3n_Linux" /></Text>
                 <Text style={Estilo.parrafo_mini}><Enlace texto="Imagen: Wikipedia" donde="https://es.wikipedia.org/wiki/Brote_(bot%C3%A1nica)#/media/Archivo:Cucumber_leaf.jpg" /></Text>
-                <Button
-                    title="Acceso"
-                    onPress={() =>
-                        navigation.navigate('LoginScreen')
-                    }
-                />
+                <Text style={[Estilo.parrafo_mini, Estilo.enlace]} onPress={() => navigation.navigate('LoginScreen') } >Acceso</Text>
 
                 
             </View>
