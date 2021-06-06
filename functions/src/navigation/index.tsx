@@ -10,6 +10,7 @@
  import { slide as Menu } from 'react-burger-menu';
  import InicioScreen from '../screens/01inicio/index'
  import LoginScreen from '../screens/02login/index'
+ import MiHuertoScreen from '../screens/03mihuerto/index'
  import Colors from '../constants/Colors';
 
  /////////////////////
@@ -23,6 +24,16 @@
         headerStyle: { backgroundColor: Colors.verde },
       }}    
      >
+
+       {/* componente 03MiHuertoScreen */}
+       <NavStack.Screen 
+          name="MiHuertoScreen" 
+          component={MiHuertoScreen}
+          options={{
+            title: 'Huertify.org | mi huerto',
+          }} />
+
+       {/* componente 01InicioScreen */}
        <NavStack.Screen 
           name="InicioScreen" 
           component={InicioScreen}
@@ -31,6 +42,8 @@
             headerBackImage: () => <Image source={require('../assets/images/Cucumber_leaf.png')} width={25} height={25} /> 
           }}
           />
+
+       {/* componente 02LoginScreen */}
        <NavStack.Screen 
           name="LoginScreen" 
           component={LoginScreen}
