@@ -26,6 +26,15 @@
      >
 
 
+       {/* componente 03MiHuertoScreen */}
+       <NavStack.Screen 
+          name="MiHuertoScreen" 
+          component={MiHuertoScreen}
+          options={{
+            title: 'Huertify.org | mi huerto',
+          }} />
+
+
        {/* componente 01InicioScreen */}
        <NavStack.Screen 
           name="InicioScreen" 
@@ -35,15 +44,6 @@
             headerBackImage: () => <Image source={require('../assets/images/Cucumber_leaf.png')} width={25} height={25} /> 
           }}
           />
-
-
-       {/* componente 03MiHuertoScreen */}
-       <NavStack.Screen 
-          name="MiHuertoScreen" 
-          component={MiHuertoScreen}
-          options={{
-            title: 'Huertify.org | mi huerto',
-          }} />
 
        {/* componente 02LoginScreen */}
        <NavStack.Screen 

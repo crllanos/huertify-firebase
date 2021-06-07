@@ -1,21 +1,15 @@
+export default class Plantacion {
+    id: number= 0;                  // id interno
+    fec_germina : Date = new Date();
 
-/*
+    login: any = {}                 // de quien es
+    tipo: string = ""               // Qué es?
+    cantidad: number = 0            // Cuántas son?
 
-export default Plantacion = {
-    id:0 // id interno
-    
-    , login: {} // de quien es
-    , tipo: "" // Qué es?
-    , cantidad: "" // Cuántas son?
+    codigo : string = ""            // pro
+    cruzamiento : string = ""       // pro
+    seleccionada : boolean = true   // pro
 
-    , codigo: "" // pro
-    , cruzamiento: "" // pro
-    , seleccionada: true // pro
-    
-    , geo : {} // Ubicación
+    geo : any = {}                  // Ubicación
+
 };
-
-
-
-
-*/

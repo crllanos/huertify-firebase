@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Text, Image, View, TextInput, ScrollView, Button, StyleSheet, Picker } from 'react-native';
+import { ListItem, Avatar } from "react-native-elements";
+
 import Estilo from '../../constants/Estilo';
-import FooterHf from '../_layout/footer';
+// import FooterHf from '../_layout/footer';
 //import Plantacion from '../../model/plantacion'
 
-//const [ plantacion, setPlantacion ] = useState(Plantacion);
 
 export default function MiHuertoScreen({ navigation }){
+    // const [ plantacion, setPlantacion ] = useState(Plantacion);
     /* no
     useEffect(() => {
         const planta:Plantacion = {};
@@ -20,50 +22,60 @@ export default function MiHuertoScreen({ navigation }){
     };
     */
 
+    const plantaciones = [{ // :Plantacion
+            id : 1
+            , login : {}
+            , tipo : "Tomate"
+            , cantidad : 0
+            , codigo : ""
+            , cruzamiento : ""
+            , seleccionada  : true
+            , geo : {}
+        },
+        {
+            id : 0
+          , login : {}
+          , tipo : "Cannabis"
+          , cantidad : 0
+          , codigo : ""
+          , cruzamiento : ""
+          , seleccionada : true
+          , geo : {}
+        }];
+
+
 
 /** */
     return (
         <ScrollView style={Estilo.contenedor}>
-        {/* plantacion.tipo Input
-        <View style={styles.inputGroup}>
-            <TextInput
-            placeholder="tipo"
-            onChangeText={(v) => setVal("tipo", v)}
-            value={plantacion.}ñññññññññññññññññññññññññññññññññññññññññññññññññññññññññññ
-            value={plantacion.}ñññññññññññññññññññññññññññññññññññññññññññññññññññññññññññ
-            value={plantacion.}ñññññññññññññññññññññññññññññññññññññññññññññññññññññññññññ
-            value={plantacion.}ñññññññññññññññññññññññññññññññññññññññññññññññññññññññññññ
-            value={plantacion.}ñññññññññññññññññññññññññññññññññññññññññññññññññññññññññññ
-            value={plantacion.}ñññññññññññññññññññññññññññññññññññññññññññññññññññññññññññ
-            value={plantacion.}ñññññññññññññññññññññññññññññññññññññññññññññññññññññññññññ
-            />
-        </View>
- */}
-        {/* Email Input */}
-        <View style={styles.inputGroup}>
-            <TextInput
-            placeholder="Email"
-            multiline={true}
-            numberOfLines={4}
-            onChangeText={(value) => handleChangeText(value, "email")}
-            value={state.email}
-            />
-        </View>
+            <Button title="Nueva germinacion" />
 
-        {/* Input */}
-        <View style={styles.inputGroup}>
-            <TextInput
-            placeholder="phone"
-            onChangeText={(value) => handleChangeText(value, "phone")}
-            value={state.phone}
-            />
-        </View>
-
-        <View style={styles.button}>
-            <Button title="Save User" onPress={() => saveNewUser()} />
-        </View>
+            {plantaciones.map((planta) => {
+                return (
+                <ListItem
+                    key={planta.id}
+                    bottomDivider
+                    onPress={() => {
+                        console.log(planta);
+                        //props.navigation.navigate("UserDetailScreen", {
+                        //  userId: user.id,
+                        //});
+                    }}
+                >
+                    <ListItem.Chevron />
+                    <Avatar
+                    source={require('../../assets/images/Cucumber_leaf.png')}
+                    rounded
+                    />
+                    <ListItem.Content>
+                    <ListItem.Title>{planta.tipo}</ListItem.Title>
+                    <ListItem.Subtitle>Germinacion: {planta.fec_germina}</ListItem.Subtitle>
+                    </ListItem.Content>
+                </ListItem>
+                );
+            })}
         </ScrollView>
-    );
+  );
 /** */
 
     
