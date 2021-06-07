@@ -2,27 +2,29 @@ import React, { useState, useEffect } from "react";
 import { Text, Image, View, TextInput, ScrollView, Button, StyleSheet, Picker } from 'react-native';
 import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
-import Plantacion from '../../model/plantacion'
+//import Plantacion from '../../model/plantacion'
 
-const [ plantacion, setPlantacion ] = useState(Plantacion);
+//const [ plantacion, setPlantacion ] = useState(Plantacion);
 
-export default const MiHuertoScreen = (props) => {
-    /*
+export default function MiHuertoScreen({ navigation }){
+    /* no
     useEffect(() => {
         const planta:Plantacion = {};
         setPlantacion(planta);
     }, []);
     */
     
+    /* si
     const setVal = (k, v) => {
         setPlantacion({ ...plantacion, [k]: v });
     };
+    */
 
 
 /** */
     return (
         <ScrollView style={Estilo.contenedor}>
-        {/* plantacion.tipo Input */}
+        {/* plantacion.tipo Input
         <View style={styles.inputGroup}>
             <TextInput
             placeholder="tipo"
@@ -36,7 +38,7 @@ export default const MiHuertoScreen = (props) => {
             value={plantacion.}ñññññññññññññññññññññññññññññññññññññññññññññññññññññññññññ
             />
         </View>
-
+ */}
         {/* Email Input */}
         <View style={styles.inputGroup}>
             <TextInput

@@ -1,5 +1,8 @@
-export default const Plantacion = {
-    id:0
+
+/*
+
+export default Plantacion = {
+    id:0 // id interno
     
     , login: {} // de quien es
     , tipo: "" // Qué es?
@@ -11,3 +14,8 @@ export default const Plantacion = {
     
     , geo : {} // Ubicación
 };
+
+
+
+
+*/
