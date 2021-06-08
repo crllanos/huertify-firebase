@@ -4,7 +4,7 @@ import { ListItem, Avatar } from "react-native-elements";
 
 import Estilo from '../../constants/Estilo';
 // import FooterHf from '../_layout/footer';
-//import Plantacion from '../../model/plantacion'
+import Plantacion, {getPlantaciones} from '../../model/plantacion'
 
 
 export default function MiHuertoScreen({ navigation }){
@@ -22,35 +22,11 @@ export default function MiHuertoScreen({ navigation }){
     };
     */
 
-    const plantaciones = [{ // :Plantacion
-            id : 1
-            , login : {}
-            , tipo : "Tomate"
-            , cantidad : 0
-            , codigo : ""
-            , cruzamiento : ""
-            , seleccionada  : true
-            , geo : {}
-        },
-        {
-            id : 0
-          , login : {}
-          , tipo : "Cannabis"
-          , cantidad : 0
-          , codigo : ""
-          , cruzamiento : ""
-          , seleccionada : true
-          , geo : {}
-        }];
-
-
-
-/** */
     return (
         <ScrollView style={Estilo.contenedor}>
             <Button title="Nueva germinacion" />
 
-            {plantaciones.map((planta) => {
+            {getPlantaciones("param").map((planta) => {
                 return (
                 <ListItem
                     key={planta.id}
@@ -61,42 +37,20 @@ export default function MiHuertoScreen({ navigation }){
                         //  userId: user.id,
                         //});
                     }}
-                >
+                    >
                     <ListItem.Chevron />
                     <Avatar
-                    source={require('../../assets/images/Cucumber_leaf.png')}
-                    rounded
-                    />
+                        source={require('../../assets/images/Cucumber_leaf.png')}
+                        rounded
+                        />
                     <ListItem.Content>
-                    <ListItem.Title>{planta.tipo}</ListItem.Title>
-                    <ListItem.Subtitle>Germinacion: {planta.fec_germina}</ListItem.Subtitle>
+                        <ListItem.Title>{planta.tipo}</ListItem.Title>
+                        <ListItem.Subtitle>Germinacion: jun/12</ListItem.Subtitle>
                     </ListItem.Content>
                 </ListItem>
                 );
             })}
         </ScrollView>
   );
-/** */
 
-    
 }
-
-// TODO Llevar a Estilo
-const styles = StyleSheet.create({
-inputGroup: {
-    flex: 1,
-    padding: 0,
-    marginBottom: 15,
-    borderBottomWidth: 1,
-    borderBottomColor: "#cccccc",
-  },
-  loader: {
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    position: "absolute",
-    alignItems: "center",
-    justifyContent: "center",
-  }
-});
