@@ -17,6 +17,7 @@ export default function LoginScreen({ navigation }){
     // TODO Implementar login Google
     function doLogin(){
         if(estado.usuario === 'demo' || estado.password === 'demo' ){
+            console.log('el navigation', navigation);
             navigation.navigate('MiHuertoScreen');
         }else{
             console.log('Login erroneo');
