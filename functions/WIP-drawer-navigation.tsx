@@ -4,6 +4,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
+import Colors from './src/constants/Colors';
+
 export const AuthContext = React.createContext("TODO");
 
 
@@ -48,7 +50,7 @@ export default () => {
     return (
       <AuthContext.Provider value={authContext}>
         <NavigationContainer>
-          <RootStackScreen userToken={userToken} />
+          <NavegadorRaiz userToken={userToken} />
         </NavigationContainer>
       </AuthContext.Provider>
     );
@@ -57,14 +59,20 @@ export default () => {
 
 
 
-
+ /////////////////////
+ // Navegación
 // 1.- RootStack
-const RootStack = createStackNavigator();
-const RootStackScreen = ({ userToken }) => (
-    <RootStack.Navigator headerMode="none">
+const RaizStack = createStackNavigator();
+const NavegadorRaiz = ({ userToken }) => (
+    <RaizStack.Navigator
+        screenOptions={{
+        headerTintColor: Colors.tint,
+        headerStyle: { backgroundColor: Colors.verde },
+        }}    
+    >
       {
       userToken ? ( /* Si hay token (VALIDARLO!!! JWT) */
-        <RootStack.Screen
+        <RaizStack.Screen
           name="App"
           component={DrawerScreen} // cajonera
           options={{
@@ -72,7 +80,7 @@ const RootStackScreen = ({ userToken }) => (
           }}
         />
       ) : ( /* si no lo hay */
-        <RootStack.Screen
+        <RaizStack.Screen
           name="Auth"
           component={AuthStackScreen} // pantalla de autenticacion
           options={{
@@ -80,7 +88,7 @@ const RootStackScreen = ({ userToken }) => (
           }}
         />
       )}
-    </RootStack.Navigator>
+    </RaizStack.Navigator>
   );
   
 
@@ -109,8 +117,6 @@ const BottomTabsScreen = () => (
     <BottomTabs.Screen name="Search" component={SearchStackScreen} />
   </BottomTabs.Navigator>
 );
-
-
 
 
 
