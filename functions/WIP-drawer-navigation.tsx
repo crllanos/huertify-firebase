@@ -100,21 +100,23 @@ const Drawer = createDrawerNavigator();
 const DrawerScreen = () => (
     <Drawer.Navigator initialRouteName="Profile">
       <Drawer.Screen name="Home" component={BottomTabsScreen} />
-      <Drawer.Screen name="Profile" component={ProfileStackScreen} />
+      <Drawer.Screen name="Profile" component={InicioStackScreen} />
     </Drawer.Navigator>
   );
   
 
 
 
-  // 4.- BottomTabs
+// 4.- BottomTabs
 // Botonera de abajo
 const BottomTabs    = createBottomTabNavigator();
 
 const BottomTabsScreen = () => (
   <BottomTabs.Navigator>
-    <BottomTabs.Screen name="Home" component={HomeStackScreen} />
-    <BottomTabs.Screen name="Search" component={SearchStackScreen} />
+    <BottomTabs.Screen name="InicioScreen" component={InicioStackScreen} />
+    <BottomTabs.Screen name="InicioScreen" component={InicioStackScreen} />
+    <BottomTabs.Screen name="MiHuertoScreen" component={MiHuertoStackScreen} />
+    {/*<BottomTabs.Screen name="Search" component={SearchStackScreen} />*/}
   </BottomTabs.Navigator>
 );
 
@@ -132,9 +134,9 @@ const AuthStack = createStackNavigator();
 const AuthStackScreen = () => (
     <AuthStack.Navigator>
     <AuthStack.Screen
-      name="SignIn"
-      component={ SignIn } // TODO
-      options={{ title: "Sign In" }}
+      name="LoginScreen"
+      component={ LoginScreen }
+      options={{ title: "Huertify.org | login" }}
       />
     {/* sign-in de Google debería solucionar esto 
     <AuthStack.Screen
@@ -146,20 +148,19 @@ const AuthStackScreen = () => (
   </AuthStack.Navigator>
 );
 
-const HomeStack = createStackNavigator();
-const HomeStackScreen = () => (
-    <HomeStack.Navigator>
-    <HomeStack.Screen name="Home" component={Home} />
-    <HomeStack.Screen
-      name="Details"
-      component={Details}
-      options={({ route }) => ({
-          title: route.params.name
-        })}
-        />
-  </HomeStack.Navigator>
+const InicioStack = createStackNavigator();
+const InicioStackScreen = () => (
+    <InicioStack.Navigator>
+        {/** <InicioStack.Screen name="Home" component={Home} /> me sobra */}
+        <InicioStack.Screen
+        name="InicioScreen"
+        component={ InicioScreen }
+        options={{ title: "Huertify.org | inicio" }}
+            />
+  </InicioStack.Navigator>
 );
 
+/*
 const SearchStack = createStackNavigator();
 const SearchStackScreen = () => (
     <SearchStack.Navigator>
@@ -167,10 +168,11 @@ const SearchStackScreen = () => (
     <SearchStack.Screen name="Search2" component={Search2} />
   </SearchStack.Navigator>
 );
+*/
 
-const ProfileStack = createStackNavigator();
-const ProfileStackScreen = () => (
-  <ProfileStack.Navigator>
-    <ProfileStack.Screen name="Profile" component={Profile} />
-  </ProfileStack.Navigator>
+const MiHuertoStack = createStackNavigator();
+const MiHuertoStackScreen = () => (
+  <MiHuertoStack.Navigator>
+    <MiHuertoStack.Screen name="MiHuertoScreen" component={MiHuertoScreen} />
+  </MiHuertoStack.Navigator>
 );

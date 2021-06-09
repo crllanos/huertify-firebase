@@ -7,6 +7,7 @@
     "shell": "npm run build && firebase functions:shell",
     "start": "expo start",
     "eject": "expo eject",
+    "MIO": "git fetch; git pull; expo start",
     "test": "jest --watchAll",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
@@ -19,6 +20,7 @@
   },
   "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
+    "@babel/runtime": "^7.14.0",
     "@expo/ngrok": "^2.4.3",
     "@expo/vector-icons": "^12.0.0",
     "@react-native-community/masked-view": "0.1.10",
