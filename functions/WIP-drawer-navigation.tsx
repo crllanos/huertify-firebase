@@ -2,7 +2,8 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createDrawerNavigator } from "@react-navigation/drawer";
+//import { createDrawerNavigator } from "@react-navigation/drawer";
+import { slide as Menu } from 'react-burger-menu'
 
 import Colors from './src/constants/Colors';
 
@@ -13,7 +14,7 @@ export const AuthContext = React.createContext("TODO");
 // 0.- export default
 export default () => {
     const [isLoading, setIsLoading] = React.useState(true);
-    const [userToken, setUserToken] = React.useState(null);
+    const [userToken, setUserToken] = React.useState("TODO");
   
     // TODO Implementar sing-in Google
     const authContext = React.useMemo(() => {
@@ -74,11 +75,13 @@ const NavegadorRaiz = ({ userToken }) => (
       userToken ? ( /* Si hay token (VALIDARLO!!! JWT) */
         <RaizStack.Screen
           name="App"
-          component={DrawerScreen} // cajonera
+          component={MenuBurguer} // DrawerScreen InicioStackScreen  cajonera
           options={{
             animationEnabled: true
           }}
-        />
+        >
+          <MenuBurguer></MenuBurguer>
+        </RaizStack.Screen>
       ) : ( /* si no lo hay */
         <RaizStack.Screen
           name="Auth"
@@ -94,16 +97,26 @@ const NavegadorRaiz = ({ userToken }) => (
 
 
 
-
+/*
 // 2.- Drawer
 const Drawer = createDrawerNavigator();
 const DrawerScreen = () => (
-    <Drawer.Navigator initialRouteName="Profile">
-      <Drawer.Screen name="Home" component={BottomTabsScreen} />
-      <Drawer.Screen name="Profile" component={InicioStackScreen} />
-    </Drawer.Navigator>
+  <Drawer.Navigator initialRouteName="Profile">
+  <Drawer.Screen name="Home" component={BottomTabsScreen} />
+  <Drawer.Screen name="Profile" component={InicioStackScreen} />
+  </Drawer.Navigator>
   );
   
+  */
+const MenuBurguer = () =>(
+  <Menu>
+        <a id="home" className="menu-item" href="/">Home</a>
+        <a id="about" className="menu-item" href="/about">About</a>
+        <a id="contact" className="menu-item" href="/contact">Contact</a>
+        <a className="menu-item--small" href="">Settings</a>
+      </Menu>
+);
+
 
 
 
