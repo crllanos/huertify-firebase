@@ -1,7 +1,7 @@
 import React from "react";
-import { StyleSheet } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import { slide as Menu } from "react-burger-menu";
-import "./burger.css";
+// import "./burger.css";
 
 const toggleMenu = ({ isOpen }) => {
   const menuWrap = document.querySelector(".bm-menu-wrap");
@@ -12,15 +12,9 @@ const toggleMenu = ({ isOpen }) => {
 const BurgerMenu = () => {
   return (
     <Menu noOverlay onStateChange={toggleMenu}>
-      <a className="menu-item" href="/">
-        Home
-      </a>
-      <a className="menu-item" href="/about">
-        About
-      </a>
-      <a className="menu-item" href="/contact">
-        Contact
-      </a>
+      <Text> Home </Text>
+      <Text> About </Text>
+      <Text> Contact </Text>
     </Menu>
   );
 };
@@ -34,14 +28,10 @@ export default function App() {
   }, []);
 
   return (
-    <div className="App">
+    <View /* className="App" */>
       <BurgerMenu />
-      <div>
-        <header>
-          <h2 style={{ margin: 0 }}>Welcome to a website</h2>
-        </header>
-      </div>
-    </div>
+      <Text>huertify.org</Text>
+    </View>
   );
 }
 
