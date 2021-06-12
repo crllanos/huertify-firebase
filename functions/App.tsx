@@ -1,8 +1,42 @@
 import React from "react";
-import { Text, View, StyleSheet } from 'react-native';
-import { slide as Menu } from "react-burger-menu";
-// import "./burger.css";
+import 'react-native-gesture-handler';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { StatusBar } from 'expo-status-bar';
 
+import { Text, View, StyleSheet } from 'react-native';
+//import { slide as Menu } from "react-burger-menu";
+
+
+//import useCachedResources   from './hooks/useCachedResources';
+//import useColorScheme       from './hooks/useColorScheme';
+import Navigation           from './src/navigation';
+
+// import "./burger.css";
+export default function App() {
+/*   
+  React.useEffect(() => {
+    const menuWrap = document.querySelector(".bm-menu-wrap");
+    if (menuWrap) {
+      menuWrap.setAttribute("aria-hidden", 'true');
+    }
+  }, []);
+
+ */
+
+  return (
+    <SafeAreaProvider>
+      <Navigation /* colorScheme={colorScheme}  // @todo-001 generar scheme dark */ />
+      <StatusBar />
+    </SafeAreaProvider>
+  );
+}
+
+
+
+
+
+
+/* 
 const toggleMenu = ({ isOpen }) => {
   const menuWrap = document.querySelector(".bm-menu-wrap");
   isOpen
@@ -18,22 +52,14 @@ const BurgerMenu = () => {
     </Menu>
   );
 };
+ */
 
-export default function App() {
-  React.useEffect(() => {
-    const menuWrap = document.querySelector(".bm-menu-wrap");
-    if (menuWrap) {
-      menuWrap.setAttribute("aria-hidden", 'true');
-    }
-  }, []);
 
-  return (
-    <View /* className="App" */>
-      <BurgerMenu />
-      <Text>huertify.org</Text>
-    </View>
-  );
-}
+
+
+
+
+
 
 
 const styles = StyleSheet.create({

@@ -15,6 +15,7 @@
 
  /////////////////////
  // Navegación
+ /*
  const NavStack = createStackNavigator();
  function NavegadorRaiz() {
    return (
@@ -26,7 +27,7 @@
      >
 
 
-       {/* componente 03MiHuertoScreen */}
+    { / * componente 03MiHuertoScreen * / }
        <NavStack.Screen 
           name="MiHuertoScreen" 
           component={MiHuertoScreen}
@@ -35,7 +36,7 @@
           }} />
 
 
-       {/* componente 01InicioScreen */}
+        { / * componente 01InicioScreen * / }
        <NavStack.Screen 
           name="InicioScreen" 
           component={InicioScreen}
@@ -45,7 +46,7 @@
           }}
           />
 
-       {/* componente 02LoginScreen */}
+        { / * componente 02LoginScreen * / }
        <NavStack.Screen 
           name="LoginScreen" 
           component={LoginScreen}
@@ -55,14 +56,14 @@
      </NavStack.Navigator>
    );
  }
-
+*/
  // Contenedor de navegación
-export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
+export default function Navigation(/** { colorScheme }: { colorScheme: ColorSchemeName } */) {
   // <NavigationContainer linking={LinkingConfiguration}
   // <NavigationContainer theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
   return (
     <NavigationContainer>
-      <NavegadorRaiz />
+      <Text>NavegadorRaiz</Text>
     </NavigationContainer>
   );
 }
@@ -77,7 +78,7 @@ function pronto(event){
   console.log('Pronto!')
 }
 
-
+/* no funco
 // TODO
 // Menu burguer
 function MiMenu(colorScheme){
@@ -91,3 +92,4 @@ function MiMenu(colorScheme){
   );
 }
 
+*/
