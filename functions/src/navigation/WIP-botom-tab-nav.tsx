@@ -7,7 +7,8 @@
  import { ColorSchemeName, Image, Text } from 'react-native';
  import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
  import { createStackNavigator } from '@react-navigation/stack';
- import { slide as Menu } from 'react-burger-menu';
+
+ // import { slide as Menu } from 'react-burger-menu';
  import InicioScreen from '../screens/01inicio/index'
  import LoginScreen from '../screens/02login/index'
  import MiHuertoScreen from '../screens/03mihuerto/index'
