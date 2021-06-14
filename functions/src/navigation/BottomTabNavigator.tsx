@@ -8,20 +8,15 @@ import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Colors from '../constants/Colors';
-// import useColorScheme from '../hooks/useColorScheme'; // @todo-001 generar scheme dark
-//import TabOneScreen from '../screens/TabOneScreen';
-//import TabTwoScreen from '../screens/TabTwoScreen';
 import InicioScreen    from '../screens/01inicio/index'
 import LoginScreen     from '../screens/02login/index'
 import MiHuertoScreen  from '../screens/03mihuerto/index'
 
+import Colors from '../constants/Colors';
+// import useColorScheme from '../hooks/useColorScheme'; // @todo-001 generar scheme dark
+
 
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
-
-
-
-
 
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Text, Image, View, TextInput, ScrollView, Button } from 'react-native';
 import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
+import { Avatar } from "react-native-elements";
 
 export default function LoginScreen({ navigation }){
     const LoginForm = {
@@ -26,7 +27,7 @@ export default function LoginScreen({ navigation }){
     
     return (
         <View style={Estilo.contenedor}>
-            <Image source={require('../../assets/images/Cucumber_leaf.png')} style={Estilo.logo} />
+            <Avatar rounded source={require('../../assets/images/Cucumber_leaf.png')} />
 
             <Text style={Estilo.parrafo}>Usuario</Text>
             <TextInput placeholder="demo" style={Estilo.input} onChangeText={(value) => handleChangeText(value, "usuario")} />

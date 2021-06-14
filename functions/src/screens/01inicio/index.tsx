@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, Image, Linking, Button } from 'react-native';
+import { Avatar } from "react-native-elements";
 import Config from '../../constants/Config';
 import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
@@ -8,7 +9,7 @@ export default function InicioScreen({ navigation }){
     return (
         <View style={Estilo.contenedor}>
 
-            <Image source={require('../../assets/images/Cucumber_leaf.png')} style={Estilo.logo} />
+            <Avatar rounded source={require('../../assets/images/Cucumber_leaf.png')} />
 
             <Text style={Estilo.parrafo}>Huertify es una aplicacion gratuita, de codigo abierto y sin fines de lucro.</Text>
 

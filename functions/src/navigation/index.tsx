@@ -7,6 +7,7 @@
  import { Image, Text/*, ColorSchemeName */ } from 'react-native'; // @todo-001 generar scheme dark
  import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
  import { createStackNavigator } from '@react-navigation/stack';
+ import { Avatar } from "react-native-elements";
 
  import Colors          from '../constants/Colors';
  
@@ -44,10 +45,12 @@ import LinkingConfiguration from './LinkingConfiguration';
           name="Root" 
           component={BottomTabNavigator}
           options={{ 
-            title: 'Huertify.org',
+            title: 'Huertify.org', /* @todo-003 icono huertify en round */
           }}
-        />
+          />
+
        <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
+       
      </Stack.Navigator>
    );
  }
