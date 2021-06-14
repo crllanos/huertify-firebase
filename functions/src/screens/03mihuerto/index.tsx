@@ -24,9 +24,16 @@ export default function MiHuertoScreen({ navigation }){
 
     return (
         <ScrollView style={Estilo.contenedor}>
-            <Button title="Nueva germinacion" />
+            <Button title="Nueva germinacion" 
+                onPress={() => {
+                    console.log('Tratando de navegar...')
+                    navigation.navigate('Root'/* , {
+                        screen: 'InicioScreen',
+                        params: { user: 'jane' },
+                    } */)
+                }} />
 
-            {getPlantaciones("param").map((planta) => {
+            {getPlantaciones("param de busqueda").map((planta) => {
                 return (
                 <ListItem
                     key={planta.id}

@@ -41,12 +41,12 @@ import LinkingConfiguration from './LinkingConfiguration';
         }}    
         >
        <Stack.Screen 
-        name="Root" 
-        component={BottomTabNavigator}
-        options={{ 
-          title: 'Huertify.org',
-        }}
-/>
+          name="Root" 
+          component={BottomTabNavigator}
+          options={{ 
+            title: 'Huertify.org',
+          }}
+        />
        <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
      </Stack.Navigator>
    );

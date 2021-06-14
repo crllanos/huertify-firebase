@@ -43,54 +43,14 @@ export function getPlantaciones(params:string) :[] {
         {
             id : 3
             , login : {}
-            , tipo : "Ciruelo"
-            , cantidad : 0
-            , codigo : ""
-            , cruzamiento : ""
-            , seleccionada : true
-            , geo : {}
-        },
-        {
-            id : 4
-            , login : {}
-            , tipo : "Lechuga"
-            , cantidad : 0
-            , codigo : ""
-            , cruzamiento : ""
-            , seleccionada : true
-            , geo : {}
-        },
-        {
-            id : 5
-            , login : {}
-            , tipo : "Apio"
-            , cantidad : 0
-            , codigo : ""
-            , cruzamiento : ""
-            , seleccionada : true
-            , geo : {}
-        },
-        {
-            id : 6
-            , login : {}
-            , tipo : "Melissa"
-            , cantidad : 0
-            , codigo : ""
-            , cruzamiento : ""
-            , seleccionada : true
-            , geo : {}
-        },
-        {
-            id : 7
-            , login : {}
-            , tipo : "Cannabis"
+            , tipo : "Arandanos"
             , cantidad : 0
             , codigo : ""
             , cruzamiento : ""
             , seleccionada : true
             , geo : {}
         }
-    ];
+   ];
 
     return plantaciones;
 }
