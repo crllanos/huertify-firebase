@@ -23,7 +23,11 @@ export default function MiHuertoScreen({ navigation }){
     */
 
     return (
-    <View>
+    <View style={Estilo.contenedor}>
+
+        <Avatar rounded source={require('../../assets/images/Cucumber_leaf.png')} />
+        <Text style={Estilo.h1}>Mi huerto</Text>
+
         <ScrollView style={Estilo.contenedor}>
             <Button title="Nueva germinacion" 
                 onPress={() => {

@@ -10,6 +10,10 @@ const Estilo = StyleSheet.create({
   contenedor_footer: {
     
   },
+  h1:{
+    fontSize: 22,
+    fontWeight: 'bold'
+  },
   parrafo: {
     marginTop: 16,
     fontSize: 16,

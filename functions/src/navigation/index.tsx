@@ -11,8 +11,8 @@
 
  import Colors          from '../constants/Colors';
  
- import BottomTabNavigator from './BottomTabNavigator';
- import NotFoundScreen from '../screens/NotFoundScreen';
+ import BottomTabNavigator  from './BottomTabNavigator';
+ import NotFoundScreen      from '../screens/NotFoundScreen';
  
 /*
 import { RootStackParamList } from '../types';

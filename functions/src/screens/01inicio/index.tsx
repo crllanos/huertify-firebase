@@ -10,6 +10,7 @@ export default function InicioScreen({ navigation }){
         <View style={Estilo.contenedor}>
 
             <Avatar rounded source={require('../../assets/images/Cucumber_leaf.png')} />
+            {/* <Text style={Estilo.h1}>Inicio</Text> */}
 
             <Text style={Estilo.parrafo}>Huertify es una aplicacion gratuita, de codigo abierto y sin fines de lucro.</Text>
 

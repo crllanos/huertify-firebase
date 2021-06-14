@@ -28,6 +28,7 @@ export default function LoginScreen({ navigation }){
     return (
         <View style={Estilo.contenedor}>
             <Avatar rounded source={require('../../assets/images/Cucumber_leaf.png')} />
+            <Text style={Estilo.h1}>Login</Text>
 
             <Text style={Estilo.parrafo}>Usuario</Text>
             <TextInput placeholder="demo" style={Estilo.input} onChangeText={(value) => handleChangeText(value, "usuario")} />
