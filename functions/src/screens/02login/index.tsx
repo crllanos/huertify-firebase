@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, Image, View, TextInput, ScrollView, Button } from 'react-native';
+import { Text, Alert, View, TextInput, Button } from 'react-native';
 import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
 import { Avatar } from "react-native-elements";
@@ -19,7 +19,18 @@ export default function LoginScreen({ navigation }){
     function doLogin(){
         if(estado.usuario === 'demo' || estado.password === 'demo' ){
             console.log('el navigation', navigation);
-            navigation.navigate('MiHuertoScreen');
+            
+            // HTFY-23 - @todo-002 no funciona navegacion entre screens Root
+            //navigation.navigate('MiHuertoScreen');
+
+            // REACT NATIVE ALERT "En construccion"
+            // REACT NATIVE ALERT "En construccion"
+            // REACT NATIVE ALERT "En construccion"
+            // REACT NATIVE ALERT "En construccion"
+            // REACT NATIVE ALERT "En construccion"
+            // https://reactnative.dev/docs/alert
+             
+
         }else{
             console.log('Login erroneo');
         }

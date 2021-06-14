@@ -29,26 +29,6 @@ export default function BottomTabNavigator() {
       initialRouteName="TabOne"
       tabBarOptions={{ activeTintColor: Colors.verde }}>
 
-      {/* componente 01InicioScreen */}
-      <BottomTab.Screen
-        name="Inicio"
-        component={InicioScreen}
-        options={{
-          title: 'Huertify.org',
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-        }}
-        style={{backgroundColor: Colors.verde}}
-      />
-
-
-      {/* componente 02LoginScreen */}
-      <BottomTab.Screen
-        name="Login"
-        component={LoginScreen}
-        options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-        }}
-      />
 
       {/* componente 03MiHuertoScreen */}
       <BottomTab.Screen
@@ -68,6 +48,26 @@ export default function BottomTabNavigator() {
         }}
       />
 
+
+      {/* componente 02LoginScreen */}
+      <BottomTab.Screen
+        name="Login"
+        component={LoginScreen}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+
+      {/* componente 01InicioScreen */}
+      <BottomTab.Screen
+        name="Inicio"
+        component={InicioScreen}
+        options={{
+          title: 'Huertify.org',
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+        style={{backgroundColor: Colors.verde}}
+      />
 
     </BottomTab.Navigator>
   );
