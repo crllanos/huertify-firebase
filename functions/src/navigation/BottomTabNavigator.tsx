@@ -11,6 +11,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import InicioScreen    from '../screens/01inicio/index'
 import LoginScreen     from '../screens/02login/index'
 import MiHuertoScreen  from '../screens/03mihuerto/index'
+import GerminacionScreen  from '../screens/04germinacion/index'
 
 import Colors from '../constants/Colors';
 // import useColorScheme from '../hooks/useColorScheme'; // @todo-001 generar scheme dark
@@ -58,6 +59,14 @@ export default function BottomTabNavigator() {
         }}
       />
 
+      {/* componente 04GerminacionScreen */}
+      <BottomTab.Screen
+        name="Germinacion"
+        component={GerminacionScreen}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
 
 
     </BottomTab.Navigator>
