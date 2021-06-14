@@ -29,7 +29,15 @@ export default function LoginScreen({ navigation }){
             // REACT NATIVE ALERT "En construccion"
             // REACT NATIVE ALERT "En construccion"
             // https://reactnative.dev/docs/alert
-             
+            
+            Alert.alert(
+                "Pronto!",
+                "En contruccion..",
+                [
+                  { text: "OK", style: "cancel", onPress: () => console.log("OK Pressed") }
+                ]
+              );
+                      
 
         }else{
             console.log('Login erroneo');

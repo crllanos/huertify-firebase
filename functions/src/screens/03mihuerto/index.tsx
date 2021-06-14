@@ -28,7 +28,7 @@ export default function MiHuertoScreen({ navigation }){
         <Avatar rounded source={require('../../assets/images/Cucumber_leaf.png')} />
         <Text style={Estilo.h1}>Mi huerto</Text>
 
-        <ScrollView style={Estilo.contenedor}>
+        <ScrollView>
             <Button title="Nueva germinacion" 
                 onPress={() => {
                     console.log('Tratando de navegar...')
