@@ -69,6 +69,16 @@ export default function BottomTabNavigator() {
         style={{backgroundColor: Colors.verde}}
       />
 
+
+      {/* https://huertify.atlassian.net/browse/HTFY-30 */}
+      {/* componente 05ClimaScreen */}
+      <BottomTab.Screen
+        name="Clima"
+        component={InicioScreen}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
     </BottomTab.Navigator>
   );
 }

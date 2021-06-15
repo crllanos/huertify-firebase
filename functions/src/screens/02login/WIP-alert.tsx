@@ -1,53 +1,69 @@
-import React, { useState } from "react";
-import { View, StyleSheet, Button, Alert } from "react-native";
+import React from "react";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import Alert from "react-native-awesome-alerts";
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { showAlert: false };
+  }
 
-const App = () => {
-  const createTwoButtonAlert = () =>
-    Alert.alert(
-      "Alert Title",
-      "My Alert Msg",
-      [
-        {
-          text: "Cancel",
-          onPress: () => console.log("Cancel Pressed"),
-          style: "cancel"
-        },
-        { text: "OK", onPress: () => console.log("OK Pressed") }
-      ]
+  showAlert = () => {
+    this.setState({
+      showAlert: true,
+    });
+  };
+
+  hideAlert = () => {
+    this.setState({
+      showAlert: false,
+    });
+  };
+
+  render() {
+    const { showAlert } = this.state;
+
+    return (
+      <View style={styles.container}>
+        <Text>Practice App</Text>
+        <Text style={{ padding: 10 }}>
+          Open up App.js to start working on your app!
+        </Text>
+        <TouchableOpacity
+          onPress={() => {
+            this.showAlert();
+          }}
+        >
+          <View style={styles.button}>
+            <Text style={styles.text}>Greet Me</Text>
+          </View>
+        </TouchableOpacity>
+
+        <Alert
+          show={showAlert}
+          message="Hello, Nice To Meet You  :"
+          closeOnTouchOutside={true}
+        />
+      </View>
     );
-
-  const createThreeButtonAlert = () =>
-    Alert.alert(
-      "Alert Title",
-      "My Alert Msg",
-      [
-        {
-          text: "Ask me later",
-          onPress: () => console.log("Ask me later pressed")
-        },
-        {
-          text: "Cancel",
-          onPress: () => console.log("Cancel Pressed"),
-          style: "cancel"
-        },
-        { text: "OK", onPress: () => console.log("OK Pressed") }
-      ]
-    );
-
-  return (
-    <View style={styles.container}>
-      <Button title={"2-Button Alert"} onPress={createTwoButtonAlert} />
-      <Button title={"3-Button Alert"} onPress={createThreeButtonAlert} />
-    </View>
-  );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "space-around",
-    alignItems: "center"
-  }
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#fff",
+  },
+  button: {
+    margin: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 7,
+    borderRadius: 5,
+    backgroundColor: "#AEDEF4",
+  },
+  text: {
+    color: "#fff",
+    fontSize: 15,
+  },
 });
-
-export default App;
