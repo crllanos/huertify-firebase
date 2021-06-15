@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Text, Alert, View, TextInput, Button } from 'react-native';
+import { Text, View, TextInput, Button } from 'react-native';
+import Alert from "react-native-awesome-alerts";
 import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
 import { Avatar } from "react-native-elements";
@@ -9,36 +10,22 @@ export default function LoginScreen({ navigation }){
         usuario:"",
         password: ""
     };
+
+    const [showPronto, setShowPronto] = useState(false);
     const [estado, setEstado] = useState(LoginForm);
     
     const handleChangeText = (value, name) => {
         setEstado({ ...estado, [name]: value });
     };
     
-    // TODO Implementar login Google
+    // TODO HTFY-28 Auth Firebase
     function doLogin(){
+        setShowPronto(true);
+        setTimeout(function(){ setShowPronto(false); }, 1500);
         if(estado.usuario === 'demo' || estado.password === 'demo' ){
-            console.log('el navigation', navigation);
-            
+            console.log('el navigation', navigation);            
             // HTFY-23 - @todo-002 no funciona navegacion entre screens Root
             //navigation.navigate('MiHuertoScreen');
-
-            // REACT NATIVE ALERT "En construccion"
-            // REACT NATIVE ALERT "En construccion"
-            // REACT NATIVE ALERT "En construccion"
-            // REACT NATIVE ALERT "En construccion"
-            // REACT NATIVE ALERT "En construccion"
-            // https://reactnative.dev/docs/alert
-            
-            Alert.alert(
-                "Pronto!",
-                "En contruccion..",
-                [
-                  { text: "OK", style: "cancel", onPress: () => console.log("OK Pressed") }
-                ]
-              );
-                      
-
         }else{
             console.log('Login erroneo');
         }
@@ -60,6 +47,11 @@ export default function LoginScreen({ navigation }){
                 <Button title="Entrar" onPress={() => doLogin()} />
             </View>
 
+            <Alert
+                show={showPronto}
+                message="Pronto!"
+                /* closeOnTouchOutside={true} */
+                />
 
             <FooterHf></FooterHf>
       </View>

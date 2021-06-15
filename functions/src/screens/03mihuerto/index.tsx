@@ -2,7 +2,8 @@ import React from "react";
 import { Text, Image, View, TextInput, ScrollView, Button, StyleSheet, Picker } from 'react-native';
 import { ListItem, Avatar } from "react-native-elements";
 
-import Estilo from '../../constants/Estilo';
+import Estilo       from '../../constants/Estilo';
+import FooterHf     from '../_layout/footer';
 import Plantacion, {getPlantaciones} from '../../model/plantacion'
 
 
@@ -64,6 +65,9 @@ export default function MiHuertoScreen({ navigation }){
                 })}
 
         </ScrollView>
+
+        <FooterHf></FooterHf>
+
     </View>
   );
 

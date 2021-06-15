@@ -37,9 +37,6 @@ export default function InicioScreen({ navigation }){
                 <Text style={Estilo.parrafo_mini}><Enlace texto="AgStack.org" donde="https://agstack.org/" /></Text>
                 <Text style={Estilo.parrafo_mini}><Enlace texto="Wikipedia" donde="https://es.wikipedia.org/wiki/Fundaci%C3%B3n_Linux" /></Text>
                 <Text style={Estilo.parrafo_mini}><Enlace texto="Imagen: Wikipedia" donde="https://es.wikipedia.org/wiki/Brote_(bot%C3%A1nica)#/media/Archivo:Cucumber_leaf.jpg" /></Text>
-                <Text style={[Estilo.parrafo_mini, Estilo.enlace]} onPress={() => navigation.navigate('LoginScreen') } >Acceso</Text>
-
-                
             </View>
 
             <FooterHf></FooterHf>
