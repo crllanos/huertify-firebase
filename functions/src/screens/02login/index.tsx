@@ -44,17 +44,17 @@ export default function LoginScreen({ navigation }){
 
             {/* poando comments */}
             <View style={Estilo.parrafo}>
-            <Button title="Entrar" onPress={() => doLogin()} />
+            	<Button title="Entrar" onPress={() => doLogin()} />
             </View>
 
             <Alert
-            show={showPronto}
-            message="Pronto!"
-            /* closeOnTouchOutside={true} */
-            />
+			show={showPronto}
+			message="Pronto!"
+			/* closeOnTouchOutside={true} */
+			/>
 
-            <FooterHf></FooterHf>
-            
+            <FooterHf />
+
         </View>
     );
 }

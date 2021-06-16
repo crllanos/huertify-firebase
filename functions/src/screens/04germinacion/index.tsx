@@ -19,42 +19,51 @@ export default function GerminacionScreen({ navigation }){
 
 			<ScrollView>
 
-				<View style={Estilo.inputGroup}>
-					<Text style={Estilo.label}>Qu&eacute; es?</Text>
-					<TextInput
+				<Text style={Estilo.parrafo}>Qu&eacute; es?</Text>
+				<TextInput
 					placeholder="Menu plantas"
+					style={Estilo.input}
 					//onChangeText={(value) => handleChangeText(value, "name")}
-					//value={state.name}
 					/>
-				</View>
 
-				<View style={Estilo.inputGroup}>
-					<Text style={Estilo.label}>Cu&aacute;ntas son?</Text>
-					<TextInput
+				<Text style={Estilo.parrafo}>Cu&aacute;ntas son?</Text>
+				<TextInput
 					placeholder="numero"
-					multiline={true}
-					numberOfLines={4}
-					//onChangeText={(value) => handleChangeText(value, "email")}
-					//value={state.email}
+					style={Estilo.input}
+					//onChangeText={(value) => handleChangeText(value, "name")}
 					/>
+
+
+{/*
+Ubicación
+[ ver en el mapa ]
+
+Cruzamiento
+menu
+
+Código QR
+(el codigo qr)
+
+- Seleccionada (checked)
+
+Código [QR] - Mandar al e-mail
+
+* Nos falta la tuya? Avísanos!
+
+*/}
+
+
+
+				<View style={Estilo.parrafo}>
+					<Button 
+						title="Generar QR" 
+						onPress={() => console.log('saveNewUser()')}
+						/>
 				</View>
 
-				{/* Input */}
-				<View style={Estilo.inputGroup}>
-					<TextInput
-					placeholder="phone"
-					//onChangeText={(value) => handleChangeText(value, "phone")}
-					//value={state.phone}
-					/>
-				</View>
-
-				<View /* style={styles.button} */> 
-					<Button title="Save User" onPress={() => console.log('saveNewUser()')} />
-				</View>
-				
 			</ScrollView>
 
-			<FooterHf></FooterHf>
+			<FooterHf />
 
 		</View>
 	);

@@ -12,6 +12,11 @@ export default class Plantacion {
 
     geo : any = {}                  // Ubicación
 
+    constructor(cantidad: number, tipo: string){
+		this.cantidad = cantidad;
+		this.tipo = tipo;
+    }
+
 };
 
 // TODO Implementar backend
