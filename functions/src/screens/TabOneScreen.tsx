@@ -5,12 +5,11 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
 export default function TabOneScreen() {
-  //  darkColor="rgba(255,255,255,0.1)"
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab uno</Text>
-      <View style={styles.separator} lightColor="#eee" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+      <View style={styles.separator} darkColor="rgba(255,255,255,0.1)" lightColor="#eee" />
+      <EditScreenInfo texto="este es el texto" />
     </View>
   );
 }

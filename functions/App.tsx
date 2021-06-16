@@ -1,24 +1,19 @@
+import React from "react";
 import 'react-native-gesture-handler';
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { StatusBar } from 'expo-status-bar';
 
-import useCachedResources from './src/hooks/useCachedResources';
-import useColorScheme from './src/hooks/useColorScheme';
-import Navigation from './src/navigation';
+import { Text, View, StyleSheet } from 'react-native';
+
+//import useCachedResources   from './hooks/useCachedResources';
+//import useColorScheme       from './hooks/useColorScheme';
+import Navigation           from './src/navigation';
 
 export default function App() {
-  const isLoadingComplete = useCachedResources();
-  const colorScheme = useColorScheme();
-
-  if (!isLoadingComplete) {
-    return null;
-  } else {
-    return (
-      <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
-        <StatusBar />
-      </SafeAreaProvider>
-    );
-  }
+  return (
+    <SafeAreaProvider>
+      <Navigation /* colorScheme={colorScheme}  // @todo-001 generar scheme dark */ />
+      <StatusBar />
+    </SafeAreaProvider>
+  );
 }

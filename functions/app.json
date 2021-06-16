@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "huertify",
-    "slug": "huertify",
+    "name": "Huertify.org",
+    "slug": "Huertify - agro microescala",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/images/Cucumber_leaf.jpg",
+    "icon": "./src/assets/images/Cucumber_leaf.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./src/assets/images/Cucumber_leaf.jpg",
+      "image": "./src/assets/images/Cucumber_leaf.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -23,12 +23,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/images/Cucumber_leaf.jpg",
+        "foregroundImage": "./src/assets/images/Cucumber_leaf.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
-      "favicon": "./src/assets/images/Cucumber_leaf.jpg"
+      "favicon": "./src/assets/images/Cucumber_leaf.png"
     }
   }
 }
