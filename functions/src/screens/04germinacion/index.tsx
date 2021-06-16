@@ -7,9 +7,12 @@ import { Avatar } from "react-native-elements";
 
 import Estilo       from '../../constants/Estilo';
 import FooterHf     from '../_layout/footer';
-import Plantacion, {getPlantaciones} from '../../model/plantacion'
+import Plantacion, {PlantacionPro, getPlantaciones} from '../../model/plantacion'
 
 export default function GerminacionScreen({ navigation }){
+
+	let planta = new PlantacionPro(1, 'Tomate', 'hfy001');
+	console.log(planta);
 
 	return (
 		<View style={Estilo.contenedor}>

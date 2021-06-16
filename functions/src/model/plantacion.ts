@@ -1,23 +1,52 @@
+/**
+ * Plantacion
+ * 
+ */
 export default class Plantacion {
-    id: number= 0;                  // id interno
-    fec_germina : Date = new Date();
+	id: number		= 0; 	// id interno
+	tipo: string 		= ""; 	// Qué es?
+	cantidad: number 	= 0; 	// Cuántas son?
+	geo : any 		= {}; 	// Ubicación
+	login: any 		= {}; 	// de quien es - Auth Firebase - https://huertify.atlassian.net/browse/HTFY-28
+	fec_germina: Date;			// Fecha germiancion
 
-    login: any = {}                 // de quien es
-    tipo: string = ""               // Qué es?
-    cantidad: number = 0            // Cuántas son?
-
-    codigo : string = ""            // pro
-    cruzamiento : string = ""       // pro
-    seleccionada : boolean = true   // pro
-
-    geo : any = {}                  // Ubicación
-
-    constructor(cantidad: number, tipo: string){
+	constructor(cantidad: number, tipo: string){
 		this.cantidad = cantidad;
 		this.tipo = tipo;
-    }
-
+		this.fec_germina = new Date();
+	}
 };
+
+
+/**
+ * Plantacion pro
+ * 
+ */
+export class PlantacionPro extends Plantacion {
+	codigo: string 		= "";
+	cruzamiento: string 	= "";
+	seleccionada: boolean 	= true;
+
+	constructor(cantidad: number
+			, tipo: string
+			, codigo: string)
+	{
+		
+		super(cantidad, tipo);
+		this.codigo = codigo;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
 
 // TODO Implementar backend
 export function getPlantaciones(params:string) :[] {
