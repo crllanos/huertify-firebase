@@ -3,17 +3,17 @@
  * 
  */
 export default class Plantacion {
-	id: number		= 0; 	// id interno
-	tipo: string 		= ""; 	// Qué es?
-	cantidad: number 	= 0; 	// Cuántas son?
-	geo : any 		= {}; 	// Ubicación
-	login: any 		= {}; 	// de quien es - Auth Firebase - https://huertify.atlassian.net/browse/HTFY-28
-	fec_germina: Date;			// Fecha germiancion
+	hf_id: number			= 0; 	// id interno
+	hf_tipo: string 		= ""; 	// Qué es?
+	hf_cantidad: number 	= 0; 	// Cuántas son?
+	hf_geo : any 			= {}; 	// Ubicación
+	hf_login: any 			= {}; 	// de quien es - Auth Firebase - https://huertify.atlassian.net/browse/HTFY-28
+	hf_germinacion: Date;			// Fecha germiancion
 
 	constructor(cantidad: number, tipo: string){
-		this.cantidad = cantidad;
-		this.tipo = tipo;
-		this.fec_germina = new Date();
+		this.hf_cantidad = cantidad;
+		this.hf_tipo = tipo;
+		this.hf_germinacion = new Date();
 	}
 };
 
@@ -23,9 +23,9 @@ export default class Plantacion {
  * 
  */
 export class PlantacionPro extends Plantacion {
-	codigo: string 		= "";
-	cruzamiento: string 	= "";
-	seleccionada: boolean 	= true;
+	hf_codigo: string 		= "";
+	hf_cruzamiento: string 	= "";
+	hf_seleccionada: boolean 	= true;
 
 	constructor(cantidad: number
 			, tipo: string
@@ -33,7 +33,7 @@ export class PlantacionPro extends Plantacion {
 	{
 		
 		super(cantidad, tipo);
-		this.codigo = codigo;
+		this.hf_codigo = codigo;
 	}
 
 }
