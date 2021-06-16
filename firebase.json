@@ -13,7 +13,7 @@
     ]
   },
   "hosting": {
-    "public": "public",
+    "public": "functions/web-build",
     "site": "huertify-org",
     "ignore": [
       "firebase.json",
