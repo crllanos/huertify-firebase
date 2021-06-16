@@ -14,7 +14,7 @@
   },
   "hosting": {
     "public": "public",
-    "site": "huertify",
+    "site": "huertify-org",
     "ignore": [
       "firebase.json",
       "**/.*",
