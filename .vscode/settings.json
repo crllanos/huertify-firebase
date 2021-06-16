@@ -1,0 +1,26 @@
+{
+	"breadcrumbs.enabled": false,
+	"git.autofetch": true,
+	"terminal.integrated.defaultProfile.windows": "Git Bash",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"zenMode.hideLineNumbers": false,
+	
+	"editor.cursorBlinking": "smooth",
+	"editor.matchBrackets": "never",
+	"editor.minimap.enabled": false,
+	"editor.tabSize": 5,
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"editor.copyWithSyntaxHighlighting": false,
+	"editor.definitionLinkOpensInPeek": true,
+
+	"bracketPairColorizer.showBracketsInGutter": true,
+	"bracketPairColorizer.highlightActiveScope": true,
+	"bracketPairColorizer.showVerticalScopeLine": false,
+	"bracketPairColorizer.showHorizontalScopeLine": false,
+	"bracketPairColorizer.scopeLineCSS": [
+		"borderStyle : solid",
+		"borderWidth : 1px",
+		"borderColor : red; opacity: 0.5"
+	],
+}

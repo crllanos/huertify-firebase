@@ -34,6 +34,17 @@ const Estilo = StyleSheet.create({
   strong: {
     fontWeight: 'bold'
   },
+  inputGroup:{
+    flex: 1,
+    padding: 0,
+    marginBottom: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: "#cccccc",
+  },
+  label: {
+    fontSize: 12,
+    fontWeight: 'bold'
+  },
   lista: {
     marginTop: 16,
     marginLeft: 16,
