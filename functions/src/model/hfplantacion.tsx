@@ -5,7 +5,7 @@ import { Text, View } from 'react-native';
  * Plantacion
  * 
  */
-export default class Plantacion extends React.Component {
+export default class HfPlantacion extends React.Component {
 	hf_id: number		 = 0; // id interno
 	hf_cantidad: number  = 0; // Cuántas son?
 	hf_tipo: string 	 = ""; // Qué es?
@@ -44,40 +44,8 @@ export default class Plantacion extends React.Component {
 };
 
 
-
-
-
- /**
- * Plantacion pro
- * 
- */
-export class PlantacionPro extends Plantacion {
-	hf_codigo: string 		= "";
-	hf_cruzamiento: string 	= "";
-	hf_seleccionada: boolean = true;
-
-	constructor(cantidad: number
-			, tipo: string
-			, fecha: Date
-			, codigo: string)
-	{		
-		super(cantidad, tipo, fecha, {});
-		this.hf_codigo = codigo;
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
 // TODO Implementar backend
-export function getPlantaciones(params:string) :[] {
+export function getPlantaciones(params:string) :HfPlantacion[] {
 
     console.log(params);   
 

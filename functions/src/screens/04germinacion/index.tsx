@@ -7,7 +7,8 @@ import { Avatar } from "react-native-elements";
 
 import Estilo       from '../../constants/Estilo';
 import FooterHf     from '../_layout/footer';
-import Plantacion, {PlantacionPro, getPlantaciones} from '../../model/plantacion'
+import { getPlantaciones} from '../../model/hfplantacion'
+import PlantacionPro from '../../model/hfplantacionpro'
 
 export default function GerminacionScreen({ navigation }){
 

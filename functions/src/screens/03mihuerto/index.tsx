@@ -4,7 +4,7 @@ import { ListItem, Avatar } from "react-native-elements";
 
 import Estilo       from '../../constants/Estilo';
 import FooterHf     from '../_layout/footer';
-import Plantacion, {getPlantaciones} from '../../model/plantacion'
+import HfPlantacion, {getPlantaciones} from '../../model/hfplantacion'
 
 
 export default function MiHuertoScreen({ navigation }){
