@@ -1,32 +1,35 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, TextInput } from 'react-native';
+import Estilo from '../constants/Estilo';
 
 /**
  * Plantacion
  * 
  */
 export default class HfPlantacion extends React.Component {
-	hf_id: number		 = 0; // id interno
-	hf_cantidad: number  = 0; // Cuántas son?
-	hf_tipo: string 	 = ""; // Qué es?
-	hf_germinacion: Date = new Date(); // Fecha germiancion
+/* 
+	hf_id: number; // id interno
+	hftipo: string; // Qué es?
+	hf_cantidad: number; // Cuántas son?
+	hf_germinacion: Date; // Fecha germiancion
 
-	hf_login: any 		 = {}; // de quien es - Auth Firebase - https://huertify.atlassian.net/browse/HTFY-28
-	hf_geo : any 		 = {}; // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
+	hf_login: any; // de quien es - Auth Firebase - https://huertify.atlassian.net/browse/HTFY-28
+	hf_geo : any; // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
 
-	constructor(hf_cantidad: number, hf_tipo: string, hf_fecha:Date, hf_props:any = {}){
-		super({...hf_props});
+ */	
+/* 	constructor(hf_cantidad: number, hf_tipo: string, hf_fecha:Date, hf_props:any = {}){
+		//super({...hf_props});
 		this.hf_cantidad = hf_cantidad;
-		this.hf_tipo = hf_tipo;
+		this.hftipo = hf_tipo;
 		this.hf_germinacion = hf_fecha;
 	}
-
-	hf_toString() {
-		return 'Hf:' +  this.hf_cantidad + " " + this.hf_tipo;
+ */
+ 	hf_toString() {
+		return `Hf: ${this.hf_cantidad}  ${this.hf_tipo}`;
 	}
 
 	render() {
-		return (<Text>{ this.hf_cantidad }</Text>);
+		return (<Text>hola {this.props.hftipo}</Text>);
 	}
 
 	hf_inputCantidad(){
@@ -42,6 +45,58 @@ export default class HfPlantacion extends React.Component {
  
 	
 };
+
+
+export class HFPlantacionTipo extends React.Component {
+	render() {
+		return (
+			<View>
+				<Text style={Estilo.parrafo}>Qu&eacute; es?</Text>
+				<TextInput
+					style={Estilo.input}
+					placeholder="Menu de las plantas"
+					//onChangeText={(value) => handleChangeText(value, "name")}
+					/>
+			</View>
+		);
+	};
+}
+
+export class HFPlantacionCantidad extends React.Component {
+	render() {
+		return (
+			<View>
+				<Text style={Estilo.parrafo}>Cu&aacute;ntas son?</Text>
+				<TextInput
+					style={Estilo.input}
+					placeholder="numero"
+					//onChangeText={(value) => handleChangeText(value, "name")}
+					/>
+
+			</View>
+		);
+	};
+}
+
+export class HFPlantacionUbicacion extends React.Component {
+	render() {
+		return (
+			<View>
+				<Text style={Estilo.parrafo}>Ubicación</Text>
+				<TextInput
+					style={Estilo.input}
+					placeholder="[ ver en el mapa ]"
+					//onChangeText={(value) => handleChangeText(value, "name")}
+					/>
+
+			</View>
+		);
+	};
+}
+
+
+
+
 
 
 // TODO Implementar backend

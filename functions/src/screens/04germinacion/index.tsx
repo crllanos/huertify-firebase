@@ -9,11 +9,11 @@ import Estilo       from '../../constants/Estilo';
 import FooterHf     from '../_layout/footer';
 import { getPlantaciones} from '../../model/hfplantacion'
 //import PlantacionPro from '../../model/hfplantacionpro'
-import HfPlantacion from '../../model/hfplantacion'
+import HfPlantacion, { HFPlantacionTipo, HFPlantacionCantidad, HFPlantacionUbicacion } from '../../model/hfplantacion'
 
 export default function GerminacionScreen({ navigation }){
 
-	//let planta = new HfPlantacion(1, 'Tomate', new Date(), 'hfy001'); <HfPlantacion />
+	//let planta = new HfPlantacion(1, 'Tomate', new Date(), 'hfy001'); 
 	//console.log(planta.hf_toString());
 	//console.log(planta);
 
@@ -26,24 +26,18 @@ export default function GerminacionScreen({ navigation }){
 
 			<ScrollView>
 
-				<Text style={Estilo.parrafo}>Qu&eacute; es?</Text>
-				<TextInput
-					placeholder="Menu plantas"
-					style={Estilo.input}
-					//onChangeText={(value) => handleChangeText(value, "name")}
-					/>
+				<HFPlantacionTipo />
 
-				<Text style={Estilo.parrafo}>Cu&aacute;ntas son?</Text>
-				<TextInput
-					placeholder="numero"
-					style={Estilo.input}
-					//onChangeText={(value) => handleChangeText(value, "name")}
-					/>
+				<HFPlantacionCantidad />
+
+				<HFPlantacionUbicacion />
+
+
 
 
 {/*
-Ubicación
-[ ver en el mapa ]
+
+
 
 Cruzamiento
 menu
