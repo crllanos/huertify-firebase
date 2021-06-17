@@ -1,41 +1,69 @@
+import * as React from 'react';
+import { Text, View } from 'react-native';
+
 /**
  * Plantacion
  * 
  */
-export default class Plantacion {
-	hf_id: number			= 0; 	// id interno
-	hf_tipo: string 		= ""; 	// Qué es?
-	hf_cantidad: number 	= 0; 	// Cuántas son?
-	hf_geo : any 			= {}; 	// Ubicación
-	hf_login: any 			= {}; 	// de quien es - Auth Firebase - https://huertify.atlassian.net/browse/HTFY-28
-	hf_germinacion: Date;			// Fecha germiancion
+export default class Plantacion extends React.Component {
+	hf_id: number		 = 0; // id interno
+	hf_cantidad: number  = 0; // Cuántas son?
+	hf_tipo: string 	 = ""; // Qué es?
+	hf_germinacion: Date = new Date(); // Fecha germiancion
 
-	constructor(cantidad: number, tipo: string){
-		this.hf_cantidad = cantidad;
-		this.hf_tipo = tipo;
-		this.hf_germinacion = new Date();
+	hf_login: any 		 = {}; // de quien es - Auth Firebase - https://huertify.atlassian.net/browse/HTFY-28
+	hf_geo : any 		 = {}; // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
+
+	constructor(hf_cantidad: number, hf_tipo: string, hf_fecha:Date, hf_props:any){
+		super({...hf_props});
+		this.hf_cantidad = hf_cantidad;
+		this.hf_tipo = hf_tipo;
+		this.hf_germinacion = hf_fecha;
 	}
+
+	hf_toString() {
+		return 'Hf:' +  this.hf_cantidad + " " + this.hf_tipo;
+	}
+
+	render() {
+		return (<Text>{ this.hf_toString() }</Text>);
+	}
+
+	hf_inputCantidad(){
+		//return (<input type="text" />)
+		return (
+			<Text> {this.hf_cantidad} </Text>
+		);
+	}
+
+	hf_inputTipo(){
+		//return (<select />)
+	}
+ 
+	
 };
 
 
-/**
+
+
+
+ /**
  * Plantacion pro
  * 
  */
 export class PlantacionPro extends Plantacion {
 	hf_codigo: string 		= "";
 	hf_cruzamiento: string 	= "";
-	hf_seleccionada: boolean 	= true;
+	hf_seleccionada: boolean = true;
 
 	constructor(cantidad: number
 			, tipo: string
+			, fecha: Date
 			, codigo: string)
-	{
-		
-		super(cantidad, tipo);
+	{		
+		super(cantidad, tipo, fecha, {});
 		this.hf_codigo = codigo;
 	}
-
 }
 
 

@@ -11,7 +11,8 @@ import Plantacion, {PlantacionPro, getPlantaciones} from '../../model/plantacion
 
 export default function GerminacionScreen({ navigation }){
 
-	let planta = new PlantacionPro(1, 'Tomate', 'hfy001');
+	let planta = new PlantacionPro(1, 'Tomate', new Date(), 'hfy001');
+	console.log(planta.hf_toString());
 	console.log(planta);
 
 	return (
@@ -19,6 +20,7 @@ export default function GerminacionScreen({ navigation }){
 		
 			<Avatar rounded source={require('../../assets/images/Cucumber_leaf.png')} />
 			<Text style={Estilo.h1}>Germinacion</Text>
+			<PlantacionPro />
 
 			<ScrollView>
 
