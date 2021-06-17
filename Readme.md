@@ -3,6 +3,7 @@
 - cd functions/
 - git fetch
 - git pull
+- npm install --global expo-cli
 - npm clean-install
 - expo start
 - 
