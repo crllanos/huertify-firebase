@@ -14,7 +14,7 @@ export default class HfPlantacion extends React.Component {
 	hf_login: any 		 = {}; // de quien es - Auth Firebase - https://huertify.atlassian.net/browse/HTFY-28
 	hf_geo : any 		 = {}; // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
 
-	constructor(hf_cantidad: number, hf_tipo: string, hf_fecha:Date, hf_props:any){
+	constructor(hf_cantidad: number, hf_tipo: string, hf_fecha:Date, hf_props:any = {}){
 		super({...hf_props});
 		this.hf_cantidad = hf_cantidad;
 		this.hf_tipo = hf_tipo;
@@ -26,7 +26,7 @@ export default class HfPlantacion extends React.Component {
 	}
 
 	render() {
-		return (<Text>{ this.hf_toString() }</Text>);
+		return (<Text>{ this.hf_cantidad }</Text>);
 	}
 
 	hf_inputCantidad(){

@@ -8,20 +8,21 @@ import { Avatar } from "react-native-elements";
 import Estilo       from '../../constants/Estilo';
 import FooterHf     from '../_layout/footer';
 import { getPlantaciones} from '../../model/hfplantacion'
-import PlantacionPro from '../../model/hfplantacionpro'
+//import PlantacionPro from '../../model/hfplantacionpro'
+import HfPlantacion from '../../model/hfplantacion'
 
 export default function GerminacionScreen({ navigation }){
 
-	let planta = new PlantacionPro(1, 'Tomate', new Date(), 'hfy001');
-	console.log(planta.hf_toString());
-	console.log(planta);
+	//let planta = new HfPlantacion(1, 'Tomate', new Date(), 'hfy001'); <HfPlantacion />
+	//console.log(planta.hf_toString());
+	//console.log(planta);
 
 	return (
 		<View style={Estilo.contenedor}>
 		
 			<Avatar rounded source={require('../../assets/images/Cucumber_leaf.png')} />
 			<Text style={Estilo.h1}>Germinacion</Text>
-			<PlantacionPro />
+			
 
 			<ScrollView>
 

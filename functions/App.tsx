@@ -12,8 +12,18 @@ import Navigation           from './src/navigation';
 export default function App() {
   return (
     <SafeAreaProvider>
-      <Navigation /* colorScheme={colorScheme}  // @todo-001 generar scheme dark */ />
+      <HfHeader />
+	 <Navigation /* colorScheme={colorScheme}  // @todo-001 generar scheme dark */ />
       <StatusBar />
     </SafeAreaProvider>
   );
+}
+
+
+class HfHeader extends React.Component {
+	render() {
+		return (
+			<Text>holi</Text> 
+		);
+	}
 }
