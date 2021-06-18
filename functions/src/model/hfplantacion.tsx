@@ -78,6 +78,7 @@ export class HFPlantacionCantidad extends React.Component {
 	};
 }
 
+// https://huertify.atlassian.net/browse/HTFY-31
 export class HFPlantacionUbicacion extends React.Component {
 	render() {
 		return (
