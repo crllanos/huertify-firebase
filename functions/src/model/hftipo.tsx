@@ -16,8 +16,6 @@ export default class HfTipo {
 	}
 }
 
-
-
 // TODO Implementar backend
 export function getHfTipo(params: string): HfTipo[] {
 	console.log(params);
@@ -29,33 +27,31 @@ export function getHfTipo(params: string): HfTipo[] {
 		, dias_riego: number
 		, fertilizacion: any
 	}[] = [
-
-
-		{
-			tipo: "Acelga"
-			, siembra_desde: 8
-			, siembra_hasta: 1
-			, dias_cosecha: 90
-			, dias_riego: 2
-			, fertilizacion: {}
-		},
-		{
-			tipo: "Zapallo italiano"
-			, siembra_desde: 3
-			, siembra_hasta: 6
-			, dias_cosecha: 120
-			, dias_riego: 2
-			, fertilizacion: {}
-		},
-		{
-			tipo: "Pimentón"
-			, siembra_desde: 1
-			, siembra_hasta: 4
-			, dias_cosecha: 240
-			, dias_riego: 3
-			, fertilizacion: {}
-		},
-	{
+			{
+				tipo: "Acelga"
+				, siembra_desde: 8
+				, siembra_hasta: 1
+				, dias_cosecha: 90
+				, dias_riego: 2
+				, fertilizacion: {}
+			},
+			{
+				tipo: "Zapallo italiano"
+				, siembra_desde: 3
+				, siembra_hasta: 6
+				, dias_cosecha: 120
+				, dias_riego: 2
+				, fertilizacion: {}
+			},
+			{
+				tipo: "Pimentón"
+				, siembra_desde: 1
+				, siembra_hasta: 4
+				, dias_cosecha: 240
+				, dias_riego: 3
+				, fertilizacion: {}
+			},
+			{
 				tipo: "Apio"
 				, siembra_desde: 8
 				, siembra_hasta: 12
