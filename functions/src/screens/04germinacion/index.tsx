@@ -10,6 +10,7 @@ import FooterHf     from '../_layout/footer';
 import { getPlantaciones} from '../../model/hfplantacion'
 //import PlantacionPro from '../../model/hfplantacionpro'
 import HfPlantacion, { HFPlantacionTipo, HFPlantacionCantidad, HFPlantacionUbicacion } from '../../model/hfplantacion'
+import HfTipo from '../../model/hftipo'
 
 export default function GerminacionScreen({ navigation }){
 
@@ -26,7 +27,7 @@ export default function GerminacionScreen({ navigation }){
 
 			<ScrollView>
 
-				<HFPlantacionTipo />
+				<HfTipo />
 
 				<HFPlantacionCantidad />
 

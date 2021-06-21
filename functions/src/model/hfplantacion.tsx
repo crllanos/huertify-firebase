@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Text, View, TextInput } from 'react-native';
 import Estilo from '../constants/Estilo';
-import {Picker} from '@react-native-picker/picker';
 
 /**
  * Plantacion
@@ -65,27 +64,6 @@ export default class HfPlantacion extends React.Component {
 */
 
 export class HFPlantacionTipo extends React.Component {
-	/* style={Estilo.input} */
-	
-//	const [selectedLanguage, setSelectedLanguage] = useState();
-// selectedValue={selectedLanguage}
-// setSelectedLanguage(itemValue)
-
-	render() {
-		return (
-			<View>
-				<Text style={Estilo.parrafo}>Qu&eacute; es?</Text>
-				<Picker
-					onValueChange={(itemValue, itemIndex) =>
-						//setSelectedLanguage(itemValue)
-						console.log(itemValue)
-					}>
-					<Picker.Item label="Java" value="java" />
-					<Picker.Item label="JavaScript" value="js" />
-					</Picker>
-			</View>
-		);
-	};
 }
 
 export class HFPlantacionCantidad extends React.Component {

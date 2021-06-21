@@ -1,0 +1,11 @@
+export default [
+"Acelga"
+, "Albahaca"
+, "Apio"
+, "Lechuga"
+, "Pimentón"
+, "Rabano"
+, "Tomates"
+, "Zanahoria"
+, "Zapallo italiano"
+]
