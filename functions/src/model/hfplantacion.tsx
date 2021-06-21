@@ -1,12 +1,22 @@
 import * as React from 'react';
 import { Text, View, TextInput } from 'react-native';
 import Estilo from '../constants/Estilo';
-import RNPickerSelect from 'react-native-picker-select';
+import {Picker} from '@react-native-picker/picker';
 
 /**
  * Plantacion
  * 
- */
+NOTAS
+Periodos, en días múltiplos de 5
+"Periodo de siembra" = "recuerda que este mes puedes plantar a,b y c"
+Acá el usuario debería cargar en la app lo que plantó (OPCIONAL)
+"Periodo de Germinación" = "tu planta brotará en X días" (y una foto de un gatito o algo)
+"Periodo de Fertilización" = "Recuerda que tu tomate necesita fertilizantes, tus rabanos necesitan potasio, etc..."
+"Periodo de Poda" = "es momento de la poda" (no sé si tiene mucho sentido, en tod caso)
+"Periodo de Cosecha" = "Ya puedes ir cosechando tus tomates"
+"Periodo de riego" = Notificación a las 8 de la tarde (¿CUANDO Y COMO SERÍA MEJOR EL RECORDATORIO? CADA CUANTOS DIAS? MAÑANA O TARDE??
+
+*/
 export default class HfPlantacion extends React.Component {
 	/* 
 		hf_id: number; // id interno
@@ -56,18 +66,23 @@ export default class HfPlantacion extends React.Component {
 
 export class HFPlantacionTipo extends React.Component {
 	/* style={Estilo.input} */
+	
+//	const [selectedLanguage, setSelectedLanguage] = useState();
+// selectedValue={selectedLanguage}
+// setSelectedLanguage(itemValue)
+
 	render() {
 		return (
 			<View>
 				<Text style={Estilo.parrafo}>Qu&eacute; es?</Text>
-				<RNPickerSelect
-					onValueChange={(value) => console.log(value)}
-					items={[
-						{ label: 'Football', value: 'football' },
-						{ label: 'Baseball', value: 'baseball' },
-						{ label: 'Hockey', value: 'hockey' },
-					]}
-				/>
+				<Picker
+					onValueChange={(itemValue, itemIndex) =>
+						//setSelectedLanguage(itemValue)
+						console.log(itemValue)
+					}>
+					<Picker.Item label="Java" value="java" />
+					<Picker.Item label="JavaScript" value="js" />
+					</Picker>
 			</View>
 		);
 	};
