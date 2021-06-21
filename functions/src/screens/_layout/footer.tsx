@@ -6,7 +6,7 @@ import Config from '../../constants/Config';
 export default function FooterHf(){
     return (
         <View style={Estilo.contenedor_footer}>
-            <Text style={Estilo.parrafo_mini}>-</Text>
+            <Text>(*) Nos falta tu planta? Avisanos!</Text>
             <Text style={Estilo.parrafo_mini}><Enlace texto="twitter.com/Huertify" donde={Config.url} /></Text>
             <Text style={[Estilo.parrafo_mini, Estilo.italic]}>Huertify.org - 2021</Text>
        </View>

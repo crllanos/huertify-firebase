@@ -34,7 +34,7 @@ export default class HfTipo extends React.Component {
 	render() {
 		return (
 			<View>
-				<Text style={Estilo.parrafo}>Qu&eacute; es?</Text>
+				<Text style={Estilo.parrafo}>Qu&eacute; es? (*)</Text>
 				<Picker
 					style={Estilo.input}
 					onValueChange={(itemValue, itemIndex) =>
