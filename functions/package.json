@@ -8,7 +8,7 @@
     "start": "expo start",
     "eject": "expo eject",
     "MIO": "git fetch; git pull; expo start",
-    "eslint": "eslint . --fix",
+    "eslint": "eslint .",
     "test": "jest --watchAll",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
