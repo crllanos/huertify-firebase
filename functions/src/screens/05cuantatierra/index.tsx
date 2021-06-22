@@ -1,8 +1,7 @@
 import React from "react";
 import { Avatar } from "react-native-elements";
-import { Text, Image, View, TextInput, ScrollView, Button, StyleSheet, Picker } from 'react-native';
+import { Text, View, ScrollView } from 'react-native';
 
-import Alert from "react-native-awesome-alerts";
 import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
 
