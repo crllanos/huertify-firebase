@@ -29,16 +29,12 @@ export default function MiHuertoScreen({ navigation }) {
 			<Avatar rounded source={require('../../assets/images/Cucumber_leaf.png')} />
 			<Text style={Estilo.h1}>Mi huerto</Text>
 
-			<ScrollView>
-				<Button title="Nueva germinacion"
-					onPress={() => {
-						console.log('Tratando de navegar...')
-						navigation.navigate('Root'/* , { // @todo-002 no funciona navegacion entre screens Root
-                        screen: 'InicioScreen',
-                        params: { user: 'jane' },
-                    } */)
-					}} />
+			{/* parche*/}
+			<View style={Estilo.InicioEnlaces}>
+				<Text style={Estilo.parrafo}>usuario@ejemplo.cl</Text>
+			</View>
 
+			<ScrollView>
 				{getPlantaciones("param de busqueda").map((planta) => {
 					return (
 						<ListItem
@@ -58,15 +54,25 @@ export default function MiHuertoScreen({ navigation }) {
 							/>
 							<ListItem.Content>
 								<ListItem.Title>{planta.tipo}</ListItem.Title>
-								<ListItem.Subtitle>Germinacion: jun/12</ListItem.Subtitle>
+								<ListItem.Subtitle>Germinacion: 12/jun</ListItem.Subtitle>
 							</ListItem.Content>
 						</ListItem>
 					);
 				})}
 
+
+				<Button title="Nueva germinacion"
+					onPress={() => {
+						console.log('Tratando de navegar...')
+						navigation.navigate('Root'/* , { // @todo-002 no funciona navegacion entre screens Root
+						screen: 'InicioScreen',
+						params: { user: 'jane' },
+					} */)
+					}} />
+
 			</ScrollView>
 
-			<FooterHf></FooterHf>
+			<FooterHf />
 
 		</View>
 	);

@@ -1,48 +1,58 @@
 /** 
 https://huertify.atlassian.net/browse/HTFY-25
 */
-import React from "react";
+import React, { useState } from 'react';
 import { Text, Image, View, TextInput, ScrollView, Button, StyleSheet, Picker } from 'react-native';
 import { Avatar } from "react-native-elements";
+import Alert from "react-native-awesome-alerts";
 
-import Estilo       from '../../constants/Estilo';
-import FooterHf     from '../_layout/footer';
-import { getPlantaciones} from '../../model/hfplantacion'
-//import PlantacionPro from '../../model/hfplantacionpro'
+import Estilo from '../../constants/Estilo';
+import FooterHf from '../_layout/footer';
 import HfPlantacion, { HFPlantacionTipo, HFPlantacionCantidad, HFPlantacionUbicacion } from '../../model/hfplantacion'
 import HfTipo from '../../model/hftipo'
 
-export default function GerminacionScreen({ navigation }){
+export default function GerminacionScreen({ navigation }) {
+	const [showPronto, setShowPronto] = useState(false);
 
-	//let planta = new HfPlantacion(1, 'Tomate', new Date(), 'hfy001'); 
-	//console.log(planta.hf_toString());
-	//console.log(planta);
+	function pronto() {
+		setShowPronto(true);
+		setTimeout(function () { setShowPronto(false); }, 1500);
+	}
 
 	return (
 		<View style={Estilo.contenedor}>
-		
+
 			<Avatar rounded source={require('../../assets/images/Cucumber_leaf.png')} />
 			<Text style={Estilo.h1}>Germinacion</Text>
-			
 
 			<ScrollView>
+
+				{/* parche*/}
+				<View>
+					<Text style={Estilo.parrafo}>Usuario</Text>
+					<TextInput
+						style={Estilo.input}
+						placeholder="usuario@ejemplo.cl"
+					//onChangeText={(value) => handleChangeText(value, "name")}
+					/>
+				</View>
 
 				<HfTipo />
 
 				<HFPlantacionCantidad />
 
-{/* parche*/}				
-			<View>
-				<Text style={Estilo.parrafo}>Fecha</Text>
-				<Text>(hoy)</Text>
-			</View>
+				{/* parche*/}
+				<View>
+					<Text style={Estilo.parrafo}>Fecha</Text>
+					<Text>(hoy)</Text>
+				</View>
 
-				<HFPlantacionUbicacion />
-
-
+				{/* <HFPlantacionUbicacion /> */}
 
 
-{/*
+
+
+				{/*
 
 
 
@@ -63,13 +73,19 @@ Código [QR] - Mandar al e-mail
 
 
 				<View style={Estilo.parrafo}>
-					<Button 
-						title="Generar QR" 
-						onPress={() => console.log('saveNewUser()')}
-						/>
+					<Button
+						title="Generar QR"
+						onPress={() => pronto()}
+					/>
 				</View>
 
 			</ScrollView>
+
+			<Alert
+				show={showPronto}
+				message="Pronto!"
+			/* closeOnTouchOutside={true} */
+			/>
 
 			<FooterHf />
 
