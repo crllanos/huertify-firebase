@@ -17,7 +17,7 @@ export default function GerminacionScreen({ navigation }) {
 	const [planta, setPlanta] = useState(
 		{
 			  hftipo:'Tomates'
-			, hfcantidad: 1
+			, hfcantidad: 15
 			, hfgerminacion: new Date()
 			, hflogin: 'usuario@ejemplo.cl'
 			, hfgeo : 'any' // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
@@ -46,14 +46,14 @@ export default function GerminacionScreen({ navigation }) {
 					<Text style={Estilo.parrafo}>Usuario</Text>
 					<TextInput
 						style={Estilo.input}
-						placeholder="usuario@ejemplo.cl"
+						placeholder={planta.hflogin}
 					//onChangeText={(value) => handleChangeText(value, "name")}
 					/>
 				</View>
 
 				<HfTipo />
 
-				<HFPlantacionCantidad />
+				<HFPlantacionCantidad hfcantidad={planta.hfcantidad} />
 
 				{/* parche*/}
 				<View>

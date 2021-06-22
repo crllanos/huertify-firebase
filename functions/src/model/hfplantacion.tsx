@@ -18,13 +18,13 @@ Acá el usuario debería cargar en la app lo que plantó (OPCIONAL)
 */
 export default class HfPlantacion extends React.Component {
 	/* 
-		hf_id: number; // id interno
+		hfid: number; // id interno
 		hftipo: string; // Qué es?
-		hf_cantidad: number; // Cuántas son?
-		hf_germinacion: Date; // Fecha germiancion
+		hfcantidad: number; // Cuántas son?
+		hfgerminacion: Date; // Fecha germiancion
 	
-		hf_login: any; // de quien es - Auth Firebase - https://huertify.atlassian.net/browse/HTFY-28
-		hf_geo : any; // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
+		hflogin: any; // de quien es - Auth Firebase - https://huertify.atlassian.net/browse/HTFY-28
+		hfgeo : any; // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
 	
 	 */
 	/* 	constructor(hf_cantidad: number, hf_tipo: string, hf_fecha:Date, hf_props:any = {}){
@@ -67,13 +67,21 @@ export class HFPlantacionTipo extends React.Component {
 }
 
 export class HFPlantacionCantidad extends React.Component {
+
+	hfcantidad = 1;
+
+	constructor(props){
+		super(props);
+		this.hfcantidad = props.hfcantidad;
+	}
+
 	render() {
 		return (
 			<View>
 				<Text style={Estilo.parrafo}>Cu&aacute;ntas son?</Text>
 				<TextInput
 					style={Estilo.input}
-					placeholder="numero"
+					placeholder={this.hfcantidad}
 				//onChangeText={(value) => handleChangeText(value, "name")}
 				/>
 
