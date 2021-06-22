@@ -8,7 +8,7 @@ import Alert from "react-native-awesome-alerts";
 
 import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
-import HfPlantacion, { HFPlantacionTipo, HFPlantacionCantidad, HFPlantacionUbicacion } from '../../model/hfplantacion'
+import HfPlantacion, {HFLogin, HFPlantacionTipo, HFCantidad, HFPlantacionUbicacion } from '../../model/hfplantacion'
 import HfTipo from '../../model/hftipo'
 
 export default function GerminacionScreen({ navigation }) {
@@ -19,7 +19,7 @@ export default function GerminacionScreen({ navigation }) {
 			  hftipo:'Tomates'
 			, hfcantidad: 15
 			, hfgerminacion: new Date()
-			, hflogin: 'usuario@ejemplo.cl'
+			, hflogin: 'aaaausuario@ejemplo.cl'
 			, hfgeo : 'any' // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
 		}
 	);
@@ -33,6 +33,7 @@ export default function GerminacionScreen({ navigation }) {
 		setTimeout(function () { setShowPronto(false); }, 1500);
 	}
 
+
 	return (
 		<View style={Estilo.contenedor}>
 
@@ -41,19 +42,11 @@ export default function GerminacionScreen({ navigation }) {
 
 			<ScrollView>
 
-				{/* parche*/}
-				<View>
-					<Text style={Estilo.parrafo}>Usuario</Text>
-					<TextInput
-						style={Estilo.input}
-						placeholder={planta.hflogin}
-					//onChangeText={(value) => handleChangeText(value, "name")}
-					/>
-				</View>
+				<HFLogin hflogin={planta.hflogin} />
 
-				<HfTipo />
+				<HfTipo hftipo={planta.hftipo} />
 
-				<HFPlantacionCantidad hfcantidad={planta.hfcantidad} />
+				<HFCantidad hfcantidad={planta.hfcantidad} />
 
 				{/* parche*/}
 				<View>

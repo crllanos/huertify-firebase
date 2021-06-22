@@ -56,23 +56,46 @@ export default class HfPlantacion extends React.Component {
 
 };
 
+/**
+ * Login
+ */
+ export class HFLogin extends React.Component
+ {
+	hflogin = 'usuario@ejemplo.cl';
+	constructor(props){
+		super(props);
+		this.hflogin = (props.hflogin || this.hflogin);
+	}
+
+	render() {
+		return (
+			<View>
+				<Text style={Estilo.parrafo}>Usuario</Text>
+				<TextInput
+					name="hflogin"
+					style={Estilo.input}
+					placeholder={this.hflogin}
+					//onChangeText={(value) => handleChangeText(value, "name")}
+					/>
+			</View>
+		);
+	};
+}
+
 
 
 /**
-
-
+@todo traerse la logica de HFTipo.tsx? o modularizar?
 */
-
 export class HFPlantacionTipo extends React.Component {
 }
 
-export class HFPlantacionCantidad extends React.Component {
-
+export class HFCantidad extends React.Component
+{
 	hfcantidad = 1;
-
 	constructor(props){
 		super(props);
-		this.hfcantidad = props.hfcantidad;
+		this.hfcantidad = (props.hfcantidad || this.hfcantidad);
 	}
 
 	render() {
@@ -80,11 +103,11 @@ export class HFPlantacionCantidad extends React.Component {
 			<View>
 				<Text style={Estilo.parrafo}>Cu&aacute;ntas son?</Text>
 				<TextInput
+					name="hfcantidad"
 					style={Estilo.input}
 					placeholder={this.hfcantidad}
-				//onChangeText={(value) => handleChangeText(value, "name")}
-				/>
-
+					//onChangeText={(value) => handleChangeText(value, "name")}
+					/>
 			</View>
 		);
 	};

@@ -10,7 +10,7 @@ import { plantas } from './plantas'
  */
 export default class HfTipo extends React.Component {
 
-	hf_tipo: string = "";
+	hftipo: string = "";
 	hf_siembra_desde: number = 0;
 	hf_siembra_hasta: number = 0;
 	hf_dias_cosecha: number = 0;
@@ -21,9 +21,8 @@ export default class HfTipo extends React.Component {
 	*/
 	constructor(props) {
 		super(props);
-		this.getHfTipo = this.getHfTipo.bind(props);
-			//this.hf_tipo = tipo;
-		}
+		this.hftipo = (props.hftipo || this.hftipo);
+	}
 
 	/* */
 
@@ -34,25 +33,26 @@ export default class HfTipo extends React.Component {
 	render() {
 		return (
 			<View>
-				<Text style={Estilo.parrafo}>Qu&eacute; es? (*)</Text>
+				<Text style={ Estilo.parrafo }>Qu&eacute; es? (*)</Text>
 				<Picker
-					style={Estilo.input}
-					onValueChange={(itemValue, itemIndex) =>
+					style={ Estilo.input }
+					selectedValue={ this.hftipo }
+					onValueChange={ (itemValue, itemIndex) =>
 						//setSelectedLanguage(itemValue)
 						console.log(itemValue)
 					}>
-						<Picker.Item label="..." value="..." />
-						{
-							//plantas.map((v) => <Picker.Item key={v} label={v} value={v} />)
-							this.getHfTipo("").map((v) => <Picker.Item key={v} label={v} value={v} />)
-						}
+					<Picker.Item label="..." value="..." />
+					{
+						//plantas.map((v) => <Picker.Item key={v} label={v} value={v} />)
+						this.getHfTipo("").map((v) => <Picker.Item key={v} label={v} value={v} />)
+					}
 				</Picker>
 			</View>
 		);
 	};
 
 
-	getHfTipo(param:string){
+	getHfTipo(param: string) {
 		return [
 			"Acelga"
 			, "Albahaca"
