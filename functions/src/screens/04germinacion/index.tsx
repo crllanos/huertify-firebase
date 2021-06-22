@@ -31,6 +31,12 @@ export default function GerminacionScreen({ navigation }){
 
 				<HFPlantacionCantidad />
 
+{/* parche*/}				
+			<View>
+				<Text style={Estilo.parrafo}>Fecha</Text>
+				<Text>(hoy)</Text>
+			</View>
+
 				<HFPlantacionUbicacion />
 
 

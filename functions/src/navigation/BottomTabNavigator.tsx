@@ -8,13 +8,15 @@ import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import InicioScreen    from '../screens/01inicio/index'
-import LoginScreen     from '../screens/02login/index'
-import MiHuertoScreen  from '../screens/03mihuerto/index'
-import GerminacionScreen  from '../screens/04germinacion/index'
+import InicioScreen from '../screens/01inicio/index'
+import LoginScreen from '../screens/02login/index'
+import MiHuertoScreen from '../screens/03mihuerto/index'
+import GerminacionScreen from '../screens/04germinacion/index'
+import CuantatierraScreen from '../screens/05cuantatierra/index.tsx'
+
 
 import Colors from '../constants/Colors';
-// import useColorScheme from '../hooks/useColorScheme'; // @todo-001 generar scheme dark
+// import useColorScheme from '../hooks/useColorSchegstme'; // @todo-001 generar scheme dark
 
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 
@@ -35,9 +37,9 @@ export default function BottomTabNavigator() {
 				name="Germinacion"
 				component={GerminacionScreen}
 				options={{
-				tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+					tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
 				}}
-				/>
+			/>
 
 
 			{/* componente 03MiHuertoScreen */}
@@ -47,7 +49,7 @@ export default function BottomTabNavigator() {
 				options={{
 					tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
 				}}
-				/>
+			/>
 
 
 			{/* componente 02LoginScreen */}
@@ -57,7 +59,7 @@ export default function BottomTabNavigator() {
 				options={{
 					tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
 				}}
-				/>
+			/>
 
 			{/* componente 01InicioScreen */}
 			<BottomTab.Screen
@@ -67,8 +69,8 @@ export default function BottomTabNavigator() {
 					title: 'Huertify.org',
 					tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
 				}}
-				style={{backgroundColor: Colors.verde}}
-				/>
+				style={{ backgroundColor: Colors.verde }}
+			/>
 
 
 			{/* https://huertify.atlassian.net/browse/HTFY-30 */}
@@ -79,7 +81,16 @@ export default function BottomTabNavigator() {
 				options={{
 					tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
 				}}
-				/>
+			/>
+
+			{/* componente 05ClimaScreen */}
+			<BottomTab.Screen
+				name="Cuanta tierra.."
+				component={CuantatierraScreen}
+				options={{
+					tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+				}}
+			/>
 		</BottomTab.Navigator>
 	);
 }
@@ -107,22 +118,24 @@ function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
 const TabOneStack = createStackNavigator<TabOneParamList>();
 function TabOneNavigator() {
-// const colorScheme = useColorScheme();
+	// const colorScheme = useColorScheme();
 	return (
 		<TabOneStack.Navigator
 			screenOptions={{
-			headerTintColor: Colors.tint,
-			headerStyle: { backgroundColor: Colors.verde },
-			}}    
-			>
+				headerTintColor: Colors.tint,
+				headerStyle: { backgroundColor: Colors.verde },
+			}}
+		>
 			<TabOneStack.Screen
 				name="TabOneScreen"
 				component={TabOneScreen}
 				options={
-				{ headerTitle: 'Huertify.org'
-				, cardStyle: { backgroundColor: 'red' } }
+					{
+						headerTitle: 'Huertify.org'
+						, cardStyle: { backgroundColor: 'red' }
+					}
 				}
-				/>
+			/>
 		</TabOneStack.Navigator>
 	);
 }
@@ -132,12 +145,12 @@ function TabTwoNavigator() {
 	return (
 		<TabTwoStack.Navigator>
 			<TabTwoStack.Screen
-			name="TabTwoScreen"
-			component={TabTwoScreen}
-			options={{ 
-				headerTitle: 'Huertify.org'
-				, cardStyle: { backgroundColor: 'white' } 
-			}}
+				name="TabTwoScreen"
+				component={TabTwoScreen}
+				options={{
+					headerTitle: 'Huertify.org'
+					, cardStyle: { backgroundColor: 'white' }
+				}}
 			/>
 		</TabTwoStack.Navigator>
 	);
