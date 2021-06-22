@@ -12,8 +12,22 @@ import HfPlantacion, { HFPlantacionTipo, HFPlantacionCantidad, HFPlantacionUbica
 import HfTipo from '../../model/hftipo'
 
 export default function GerminacionScreen({ navigation }) {
-	const [showPronto, setShowPronto] = useState(false);
 
+	// Planta
+	const [planta, setPlanta] = useState(
+		{
+			  hftipo:'Tomates'
+			, hfcantidad: 1
+			, hfgerminacion: new Date()
+			, hflogin: 'usuario@ejemplo.cl'
+			, hfgeo : 'any' // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
+		}
+	);
+	console.log(planta)
+
+
+	// Pronto!
+	const [showPronto, setShowPronto] = useState(false);
 	function pronto() {
 		setShowPronto(true);
 		setTimeout(function () { setShowPronto(false); }, 1500);
