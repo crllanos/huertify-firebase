@@ -1,0 +1,23 @@
+
+=====
+
+
+
+
+
+
+=====
+
+const [planta, setPlanta] = useState(
+	[
+		tipo:''
+	]
+); 
+
+
+
+Con Git tienes acceso al punto exacto en que se dirimió un texto. Fechas, responsables y con capacidades de escalado.
+
+https://github.com/crllanos/huertify-firebase/commit/497076b16f5bb6ea353bcd94da1155374bc7c7ae
+
+Imagina esto para un texto importante. Llegar y "notariar".
