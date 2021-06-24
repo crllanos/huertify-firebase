@@ -1,34 +1,34 @@
 {
-  "expo": {
-    "name": "Huertify.org",
-    "slug": "Huertify - agro microescala",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./src/assets/images/Cucumber_leaf.png",
-    "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
-    "splash": {
-      "image": "./src/assets/images/Cucumber_leaf.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./src/assets/images/Cucumber_leaf.png",
-        "backgroundColor": "#ffffff"
-      }
-    },
-    "web": {
-      "favicon": "./src/assets/images/Cucumber_leaf.png"
-    }
-  }
+	"expo": {
+		"name": "Huertify.org",
+		"slug": "Huertify agro microescala",
+		"version": "1.0.0",
+		"orientation": "portrait",
+		"icon": "./src/assets/images/Cucumber_leaf_mini.png",
+		"scheme": "myapp",
+		"userInterfaceStyle": "automatic",
+		"splash": {
+			"image": "./src/assets/images/Cucumber_leaf.png",
+			"resizeMode": "contain",
+			"backgroundColor": "#ffffff"
+		},
+		"updates": {
+			"fallbackToCacheTimeout": 0
+		},
+		"assetBundlePatterns": [
+			"**/*"
+		],
+		"ios": {
+			"supportsTablet": true
+		},
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./src/assets/images/Cucumber_leaf_mini.png",
+				"backgroundColor": "#ffffff"
+			}
+		},
+		"web": {
+			"favicon": "./src/assets/images/Cucumber_leaf.png"
+		}
+	}
 }

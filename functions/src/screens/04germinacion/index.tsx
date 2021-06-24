@@ -29,7 +29,7 @@ export default function GerminacionScreen({ navigation })
 		{
 			hflogin: 'usuario@ejemplo.cl'
 			, hftipo: ''
-			, hfcantidad: 1
+			, hfcantidad: '1'
 			, hfgerminacion: new Date()
 			, hfgeo: 'any' // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
 		}
