@@ -6,20 +6,25 @@ import { Text, Image, View, TextInput, ScrollView, Button, StyleSheet, Picker } 
 import { Avatar } from "react-native-elements";
 import Alert from "react-native-awesome-alerts";
 
-import Estilo from '../../constants/Estilo';
-import FooterHf from '../_layout/footer';
+import firebase from '../../model/hfdb/firebase'
 import HfPlantacion, { HFLogin, HFPlantacionTipo, HFCantidad, HFPlantacionUbicacion } from '../../model/hfplantacion'
 import HfTipo from '../../model/hftipo'
+
+import Estilo from '../../constants/Estilo';
+import FooterHf from '../_layout/footer';
 
 export default function GerminacionScreen({ navigation })
 {
 
 	// Pronto!
-	const [ showPronto, setShowPronto ] = useState(false);
-	function pronto()
+	const [ showGuardado, setShowGuardado ] = useState(false);
+	function guardado()
 	{
-		setShowPronto(true);
-		setTimeout(function () { setShowPronto(false); }, 1500);
+		setShowGuardado(true);
+		setTimeout(function () { setShowGuardado(false); }, 1500);
+
+		// redireccionar a Mi Huerto
+		// https://huertify.atlassian.net/browse/HTFY-23
 	}
 
 
@@ -34,10 +39,27 @@ export default function GerminacionScreen({ navigation })
 			, hfgeo: 'any' // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
 		}
 	);
+
 	const guardaPlanta = (k, v) =>
 	{
 		setPlanta({ ...planta, [ k ]: v });
-		console.log(planta)
+	}
+
+	const generaQR = async () =>
+	{
+		console.log('generaQR', planta);
+
+		// validar
+		if ("parche" === "parche2")
+		{
+
+		} else
+		{
+			// dejar dentro de '../../model/hfdb/firebase'
+			await firebase.hfdb.collection('hfplanta').add(planta);
+
+			// Generar QR https://huertify.atlassian.net/browse/HTFY-39
+		}
 	}
 
 	return (
@@ -97,15 +119,15 @@ Código [QR] - Mandar al e-mail
 				<View style={ Estilo.parrafo }>
 					<Button
 						title="Generar QR"
-						onPress={ () => console.log(planta) }
+						onPress={ () => generaQR() }
 					/>
 				</View>
 
 			</ScrollView>
 
 			<Alert
-				show={ showPronto }
-				message="Pronto!"
+				show={ showGuardado }
+				message="Guardado!"
 			/* closeOnTouchOutside={true} */
 			/>
 
