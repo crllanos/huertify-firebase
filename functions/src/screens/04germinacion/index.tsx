@@ -1,4 +1,4 @@
-/** 
+/**
 https://huertify.atlassian.net/browse/HTFY-25
 */
 import React, { useState } from 'react';
@@ -8,53 +8,68 @@ import Alert from "react-native-awesome-alerts";
 
 import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
-import HfPlantacion, {HFLogin, HFPlantacionTipo, HFCantidad, HFPlantacionUbicacion } from '../../model/hfplantacion'
+import HfPlantacion, { HFLogin, HFPlantacionTipo, HFCantidad, HFPlantacionUbicacion } from '../../model/hfplantacion'
 import HfTipo from '../../model/hftipo'
 
-export default function GerminacionScreen({ navigation }) {
-
-	// Planta
-	const [planta, setPlanta] = useState(
-		{
-			  hftipo:'Tomates'
-			, hfcantidad: 15
-			, hfgerminacion: new Date()
-			, hflogin: 'aaaausuario@ejemplo.cl'
-			, hfgeo : 'any' // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
-		}
-	);
-	console.log(planta)
-
+export default function GerminacionScreen({ navigation })
+{
 
 	// Pronto!
-	const [showPronto, setShowPronto] = useState(false);
-	function pronto() {
+	const [ showPronto, setShowPronto ] = useState(false);
+	function pronto()
+	{
 		setShowPronto(true);
 		setTimeout(function () { setShowPronto(false); }, 1500);
 	}
 
 
-	return (
-		<View style={Estilo.contenedor}>
 
-			<Avatar rounded source={require('../../assets/images/Cucumber_leaf.png')} />
-			<Text style={Estilo.h1}>Germinacion</Text>
+	// Planta
+	const [ planta, setPlanta ] = useState(
+		{
+			hflogin: 'usuario@ejemplo.cl'
+			, hftipo: ''
+			, hfcantidad: 1
+			, hfgerminacion: new Date()
+			, hfgeo: 'any' // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
+		}
+	);
+	const guardaPlanta = (k, v) =>
+	{
+		setPlanta({ ...planta, [ k ]: v });
+		console.log(planta)
+	}
+
+	return (
+		<View style={ Estilo.contenedor }>
+
+			<Avatar rounded source={ require('../../assets/images/Cucumber_leaf.png') } />
+			<Text style={ Estilo.h1 }>Germinacion</Text>
 
 			<ScrollView>
 
-				<HFLogin hflogin={planta.hflogin} />
+				<HFLogin
+					hfplanta={ planta }
+					onChangeText={ (v) => guardaPlanta('hflogin', v) }
+				/>
 
-				<HfTipo hftipo={planta.hftipo} />
+				<HfTipo
+					hfplanta={ planta }
+					onChangeValue={ (v) => guardaPlanta('hftipo', v) }
+				/>
 
-				<HFCantidad hfcantidad={planta.hfcantidad} />
+				<HFCantidad
+					hfplanta={ planta }
+					onChangeText={ (v) => guardaPlanta('hfcantidad', v) }
+				/>
 
-				{/* parche*/}
+				{/* parche*/ }
 				<View>
-					<Text style={Estilo.parrafo}>Fecha</Text>
+					<Text style={ Estilo.parrafo }>Fecha</Text>
 					<Text>(hoy)</Text>
 				</View>
 
-				{/* <HFPlantacionUbicacion /> */}
+				{/* <HFPlantacionUbicacion /> */ }
 
 
 
@@ -79,17 +94,17 @@ Código [QR] - Mandar al e-mail
 
 
 
-				<View style={Estilo.parrafo}>
+				<View style={ Estilo.parrafo }>
 					<Button
 						title="Generar QR"
-						onPress={() => pronto()}
+						onPress={ () => console.log(planta) }
 					/>
 				</View>
 
 			</ScrollView>
 
 			<Alert
-				show={showPronto}
+				show={ showPronto }
 				message="Pronto!"
 			/* closeOnTouchOutside={true} */
 			/>
