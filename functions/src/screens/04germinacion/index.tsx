@@ -22,6 +22,7 @@ export default function GerminacionScreen({ navigation })
 	{
 		setShowGuardado(true);
 		setTimeout(function () { setShowGuardado(false); }, 1500);
+		console.log('setShowGuardado(true)')
 
 		// redireccionar a Mi Huerto
 		// https://huertify.atlassian.net/browse/HTFY-23
@@ -43,6 +44,15 @@ export default function GerminacionScreen({ navigation })
 	const guardaPlanta = (k, v) =>
 	{
 		setPlanta({ ...planta, [ k ]: v });
+
+		/* sintaxis funcion
+		setPlanta((planta) =>
+		{
+			return {
+				console.log('[ k ]: v')
+				[ k ]: v // ???
+				   }
+		});*/
 	}
 
 	const generaQR = async () =>
@@ -55,6 +65,15 @@ export default function GerminacionScreen({ navigation })
 
 		} else
 		{
+			// dejar dentro de '../../model/hfdb/firebase'
+			// dejar dentro de '../../model/hfdb/firebase'
+			// dejar dentro de '../../model/hfdb/firebase'
+			// dejar dentro de '../../model/hfdb/firebase'
+			// dejar dentro de '../../model/hfdb/firebase'
+			// dejar dentro de '../../model/hfdb/firebase'
+			// dejar dentro de '../../model/hfdb/firebase'
+			// dejar dentro de '../../model/hfdb/firebase'
+			// dejar dentro de '../../model/hfdb/firebase'
 			// dejar dentro de '../../model/hfdb/firebase'
 			await firebase.hfdb.collection('hfplanta').add(planta);
 
