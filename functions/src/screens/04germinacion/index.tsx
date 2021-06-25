@@ -60,9 +60,9 @@ export default function GerminacionScreen({ navigation })
 		console.log('generaQR', planta);
 
 		// validar
-		if ("parche" === "parche2")
+		if ("parche" === "parche")
 		{
-
+			alert('holi');
 		} else
 		{
 			// dejar dentro de '../../model/hfdb/firebase'
@@ -75,6 +75,8 @@ export default function GerminacionScreen({ navigation })
 			// dejar dentro de '../../model/hfdb/firebase'
 			// dejar dentro de '../../model/hfdb/firebase'
 			// dejar dentro de '../../model/hfdb/firebase'
+
+			// NOTA: OPCIONAL
 			await firebase.hfdb.collection('hfplanta').add(planta);
 
 			// Generar QR https://huertify.atlassian.net/browse/HTFY-39
@@ -108,6 +110,10 @@ export default function GerminacionScreen({ navigation })
 				<View>
 					<Text style={ Estilo.parrafo }>Fecha</Text>
 					<Text>(hoy)</Text>
+				</View>
+				<View>
+					<Text style={ Estilo.parrafo }> </Text>
+					<Text> [ ] quiero compartir la información de mi huerto.</Text>
 				</View>
 
 				{/* <HFPlantacionUbicacion /> */ }
