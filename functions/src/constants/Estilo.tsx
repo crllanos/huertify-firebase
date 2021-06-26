@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import Colors from './Colors';
 
 
-const Estilo = StyleSheet.create({
+const Estilo = StyleSheet.create( {
 	contenedor: {
 		flex: 1,
 		padding: 35
@@ -25,6 +25,12 @@ const Estilo = StyleSheet.create({
 		borderWidth: 1,
 		borderColor: '#ddd',
 		padding: 5
+	},
+	checkbox: {
+		/* alignSelf: "left", */
+	},
+	checkboxLabel: {
+		/* margin: 8 */
 	},
 	enlace: {
 		color: 'blue',
@@ -65,7 +71,7 @@ const Estilo = StyleSheet.create({
 		textAlign: 'right',
 		alignItems: 'flex-end'
 	}
-});
+} );
 
 export default Estilo;
 

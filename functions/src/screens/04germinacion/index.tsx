@@ -6,28 +6,20 @@ import { Text, Image, View, TextInput, ScrollView, Button, StyleSheet, Picker } 
 import { Avatar } from "react-native-elements";
 import Alert from "react-native-awesome-alerts";
 
-import { addPlantacionBackend } from '../../model/hfdb/hfdb'
-import HfPlantacion, { HFLogin, HFPlantacionTipo, HFCantidad, HFPlantacionUbicacion } from '../../model/hfplantacion'
+import HfPlantacion, {
+	HFLogin
+	, HFCantidad
+	, HFPlantacionUbicacion
+	, HFPlantacionConsentimiento
+} from '../../model/hfplantacion'
 import HfTipo from '../../model/hftipo'
+import { addPlantacionBackend } from '../../model/hfdb/hfdb'
 
 import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
 
 export default function GerminacionScreen ( { navigation } )
 {
-
-	// Pronto!
-	const [ showGuardado, setShowGuardado ] = useState( false );
-	function guardado ()
-	{
-		setShowGuardado( true );
-		setTimeout( function () { setShowGuardado( false ); }, 1500 );
-		console.log( 'setShowGuardado(true)' )
-
-		// redireccionar a Mi Huerto
-		// https://huertify.atlassian.net/browse/HTFY-23
-	}
-
 
 
 	// Planta @todo como pasar a Objeto HFPlanta
@@ -41,12 +33,24 @@ export default function GerminacionScreen ( { navigation } )
 	};
 
 	const [ planta, setPlanta ] = useState( hfplantacion );
+	const [ consentimiento, setConsentimiento ] = useState( false );
+	const [ showGuardado, setShowGuardado ] = useState( false );
+
+
+
 
 	const guardaPlanta = ( k, v ) =>
 	{
 		console.log( 'guardaPlanta 1', planta );
 		setPlanta( { ...planta, [ k ]: v } );
 		console.log( 'guardaPlanta 2', planta );
+	}
+
+
+	const guardaConsentimiento = ( c ) =>
+	{
+		console.log( 'setConsentimiento', c );
+		setConsentimiento( c );
 	}
 
 	const generaQR = () =>
@@ -65,6 +69,19 @@ export default function GerminacionScreen ( { navigation } )
 
 			// Generar QR https://huertify.atlassian.net/browse/HTFY-39
 		}
+
+		guardado()
+
+	}
+
+	function guardado ()
+	{
+		setShowGuardado( true );
+		setTimeout( function () { setShowGuardado( false ); }, 1500 );
+		console.log( 'setShowGuardado(true)' )
+
+		// redireccionar a Mi Huerto
+		// https://huertify.atlassian.net/browse/HTFY-23
 	}
 
 	return (
@@ -98,10 +115,10 @@ export default function GerminacionScreen ( { navigation } )
 
 				<HFPlantacionUbicacion />
 
-				<View>
-					<Text style={ Estilo.parrafo }> </Text>
-					<Text> [ ] quiero compartir la información de mi huerto.</Text>
-				</View>
+				<HFPlantacionConsentimiento
+					consentimiento={ consentimiento }
+					onChangeValue={ ( v ) => setConsentimiento( v ) }
+				/>
 
 
 

@@ -1,5 +1,11 @@
 import * as React from 'react';
-import { Text, View, TextInput } from 'react-native';
+import
+{
+	Text
+	, View
+	, TextInput
+	, CheckBox
+} from 'react-native';
 import Estilo from '../constants/Estilo';
 
 /**
@@ -104,6 +110,7 @@ export class HFCantidad extends React.Component
 // https://huertify.atlassian.net/browse/HTFY-31
 export class HFPlantacionUbicacion extends React.Component
 {
+	//const[ isSelected, setSelection ] = useState (false );
 	render ()
 	{
 		return (
@@ -122,6 +129,49 @@ export class HFPlantacionUbicacion extends React.Component
 				//onChangeText={(value) => handleChangeText(value, "name")}
 				/>
 
+			</View>
+		);
+	};
+}
+
+/**
+ * Consentimiento para compartir
+ *
+ * https://huertify.atlassian.net/browse/HTFY-41
+ *
+ * ESTILO https://reactnative.dev/docs/checkbox
+ * ESTILO https://reactnative.dev/docs/checkbox
+ * ESTILO https://reactnative.dev/docs/checkbox
+ * ESTILO https://reactnative.dev/docs/checkbox
+ * ESTILO https://reactnative.dev/docs/checkbox
+ * ESTILO https://reactnative.dev/docs/checkbox
+ * ESTILO https://reactnative.dev/docs/checkbox
+ * ESTILO https://reactnative.dev/docs/checkbox
+ * ESTILO https://reactnative.dev/docs/checkbox
+ */
+export class HFPlantacionConsentimiento extends React.Component
+{
+	consentimiento = true;
+	constructor( props )
+	{
+		super( props );
+		this.consentimiento = ( props.consentimiento || this.consentimiento );
+		this.setConsentimiento = this.setConsentimiento.bind( this )
+	}
+
+	setConsentimiento = () => this.consentimiento = !this.consentimiento;
+
+	render ()
+	{
+		return (
+			<View>
+				<Text style={ Estilo.parrafo }> </Text>
+				<CheckBox
+					value={ this.consentimiento }
+					onValueChange={ this.setConsentimiento }
+					style={ Estilo.checkbox }
+				/>
+				<Text style={ Estilo.checkboxLabel }>quiero compartir la información de mi huerto.</Text>
 			</View>
 		);
 	};
