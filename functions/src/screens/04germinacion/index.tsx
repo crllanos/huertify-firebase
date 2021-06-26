@@ -2,7 +2,18 @@
 https://huertify.atlassian.net/browse/HTFY-25
 */
 import React, { useState } from 'react';
-import { Text, Image, View, TextInput, ScrollView, Button, StyleSheet, Picker } from 'react-native';
+import
+{
+	Text
+	, Image
+	, View
+	, TextInput
+	, ScrollView
+	, Button
+	, StyleSheet
+	, Picker
+	, CheckBox
+} from 'react-native';
 import { Avatar } from "react-native-elements";
 import Alert from "react-native-awesome-alerts";
 
@@ -10,7 +21,6 @@ import HfPlantacion, {
 	HFLogin
 	, HFCantidad
 	, HFPlantacionUbicacion
-	, HFPlantacionConsentimiento
 } from '../../model/hfplantacion'
 import HfTipo from '../../model/hftipo'
 import { addPlantacionBackend } from '../../model/hfdb/hfdb'
@@ -33,7 +43,7 @@ export default function GerminacionScreen ( { navigation } )
 	};
 
 	const [ planta, setPlanta ] = useState( hfplantacion );
-	const [ consentimiento, setConsentimiento ] = useState( false );
+	const [ consentimiento, setConsentimiento ] = useState( true );
 	const [ showGuardado, setShowGuardado ] = useState( false );
 
 
@@ -56,6 +66,9 @@ export default function GerminacionScreen ( { navigation } )
 	const generaQR = () =>
 	{
 		console.log( 'generaQR', planta );
+		console.log( 'consentimiento', consentimiento );
+
+		return;
 
 		// validar
 		if ( "parche" !== "parche" )
@@ -63,8 +76,11 @@ export default function GerminacionScreen ( { navigation } )
 			alert( 'holi' );
 		} else
 		{
-			// NOTA: OPCIONAL
-			addPlantacionBackend( planta )
+			// persistencia backend opcional
+			if ( consentimiento )
+			{
+				addPlantacionBackend( planta )
+			}
 
 
 			// Generar QR https://huertify.atlassian.net/browse/HTFY-39
@@ -115,10 +131,13 @@ export default function GerminacionScreen ( { navigation } )
 
 				<HFPlantacionUbicacion />
 
-				<HFPlantacionConsentimiento
-					consentimiento={ consentimiento }
-					onChangeValue={ ( v ) => setConsentimiento( v ) }
-				/>
+				<View style={ Estilo.checkboxContainer }>
+					<CheckBox
+						value={ consentimiento }
+						onValueChange={ ( v ) => guardaConsentimiento( v ) }
+					/>
+					<Text style={ Estilo.checkboxLabel }>quiero compartir la información de mi huerto.</Text>
+				</View>
 
 
 

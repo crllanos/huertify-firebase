@@ -26,11 +26,15 @@ const Estilo = StyleSheet.create( {
 		borderColor: '#ddd',
 		padding: 5
 	},
+	checkboxContainer: {
+		flexDirection: "row",
+		marginBottom: 20,
+	},
 	checkbox: {
-		/* alignSelf: "left", */
+		alignSelf: "center",
 	},
 	checkboxLabel: {
-		/* margin: 8 */
+		margin: 8
 	},
 	enlace: {
 		color: 'blue',

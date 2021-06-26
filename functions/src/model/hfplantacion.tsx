@@ -4,7 +4,6 @@ import
 	Text
 	, View
 	, TextInput
-	, CheckBox
 } from 'react-native';
 import Estilo from '../constants/Estilo';
 
@@ -139,15 +138,6 @@ export class HFPlantacionUbicacion extends React.Component
  *
  * https://huertify.atlassian.net/browse/HTFY-41
  *
- * ESTILO https://reactnative.dev/docs/checkbox
- * ESTILO https://reactnative.dev/docs/checkbox
- * ESTILO https://reactnative.dev/docs/checkbox
- * ESTILO https://reactnative.dev/docs/checkbox
- * ESTILO https://reactnative.dev/docs/checkbox
- * ESTILO https://reactnative.dev/docs/checkbox
- * ESTILO https://reactnative.dev/docs/checkbox
- * ESTILO https://reactnative.dev/docs/checkbox
- * ESTILO https://reactnative.dev/docs/checkbox
  */
 export class HFPlantacionConsentimiento extends React.Component
 {
@@ -159,22 +149,18 @@ export class HFPlantacionConsentimiento extends React.Component
 		this.setConsentimiento = this.setConsentimiento.bind( this )
 	}
 
-	setConsentimiento = () => this.consentimiento = !this.consentimiento;
+	setConsentimiento = ( v ) => this.consentimiento = v;
 
-	render ()
-	{
-		return (
-			<View>
-				<Text style={ Estilo.parrafo }> </Text>
-				<CheckBox
-					value={ this.consentimiento }
-					onValueChange={ this.setConsentimiento }
-					style={ Estilo.checkbox }
-				/>
-				<Text style={ Estilo.checkboxLabel }>quiero compartir la información de mi huerto.</Text>
-			</View>
-		);
-	};
+	/* 	value = { this.consentimiento }
+		onValueChange = { this.setConsentimiento }
+		style = { Estilo.checkbox }
+
+		render ()
+		{
+			return (
+				);
+			};
+			*/
 }
 
 
