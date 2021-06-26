@@ -6,23 +6,23 @@ import { Text, Image, View, TextInput, ScrollView, Button, StyleSheet, Picker } 
 import { Avatar } from "react-native-elements";
 import Alert from "react-native-awesome-alerts";
 
-import firebase from '../../model/hfdb/firebase'
+import { addPlantacionBackend } from '../../model/hfdb/hfdb'
 import HfPlantacion, { HFLogin, HFPlantacionTipo, HFCantidad, HFPlantacionUbicacion } from '../../model/hfplantacion'
 import HfTipo from '../../model/hftipo'
 
 import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
 
-export default function GerminacionScreen({ navigation })
+export default function GerminacionScreen ( { navigation } )
 {
 
 	// Pronto!
-	const [ showGuardado, setShowGuardado ] = useState(false);
-	function guardado()
+	const [ showGuardado, setShowGuardado ] = useState( false );
+	function guardado ()
 	{
-		setShowGuardado(true);
-		setTimeout(function () { setShowGuardado(false); }, 1500);
-		console.log('setShowGuardado(true)')
+		setShowGuardado( true );
+		setTimeout( function () { setShowGuardado( false ); }, 1500 );
+		console.log( 'setShowGuardado(true)' )
 
 		// redireccionar a Mi Huerto
 		// https://huertify.atlassian.net/browse/HTFY-23
@@ -30,54 +30,38 @@ export default function GerminacionScreen({ navigation })
 
 
 
-	// Planta
-	const [ planta, setPlanta ] = useState(
-		{
-			hflogin: 'usuario@ejemplo.cl'
-			, hftipo: ''
-			, hfcantidad: '1'
-			, hfgerminacion: new Date()
-			, hfgeo: 'any' // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
-		}
-	);
+	// Planta @todo como pasar a Objeto HFPlanta
 
-	const guardaPlanta = (k, v) =>
+	const hfplantacion: HfPlantacion = {
+		hflogin: 'usuario@ejemplo.cl'
+		, hftipo: ''
+		, hfcantidad: 1
+		, hfgerminacion: new Date()
+		, hfgeo: 'any' // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
+	};
+
+	const [ planta, setPlanta ] = useState( hfplantacion );
+
+	const guardaPlanta = ( k, v ) =>
 	{
-		setPlanta({ ...planta, [ k ]: v });
-
-		/* sintaxis funcion
-		setPlanta((planta) =>
-		{
-			return {
-				console.log('[ k ]: v')
-				[ k ]: v // ???
-				   }
-		});*/
+		console.log( 'guardaPlanta 1', planta );
+		setPlanta( { ...planta, [ k ]: v } );
+		console.log( 'guardaPlanta 2', planta );
 	}
 
-	const generaQR = async () =>
+	const generaQR = () =>
 	{
-		console.log('generaQR', planta);
+		console.log( 'generaQR', planta );
 
 		// validar
-		if ("parche" === "parche")
+		if ( "parche" !== "parche" )
 		{
-			alert('holi');
+			alert( 'holi' );
 		} else
 		{
-			// dejar dentro de '../../model/hfdb/firebase'
-			// dejar dentro de '../../model/hfdb/firebase'
-			// dejar dentro de '../../model/hfdb/firebase'
-			// dejar dentro de '../../model/hfdb/firebase'
-			// dejar dentro de '../../model/hfdb/firebase'
-			// dejar dentro de '../../model/hfdb/firebase'
-			// dejar dentro de '../../model/hfdb/firebase'
-			// dejar dentro de '../../model/hfdb/firebase'
-			// dejar dentro de '../../model/hfdb/firebase'
-			// dejar dentro de '../../model/hfdb/firebase'
-
 			// NOTA: OPCIONAL
-			await firebase.hfdb.collection('hfplanta').add(planta);
+			addPlantacionBackend( planta )
+
 
 			// Generar QR https://huertify.atlassian.net/browse/HTFY-39
 		}
@@ -86,24 +70,24 @@ export default function GerminacionScreen({ navigation })
 	return (
 		<View style={ Estilo.contenedor }>
 
-			<Avatar rounded source={ require('../../assets/images/Cucumber_leaf.png') } />
+			<Avatar rounded source={ require( '../../assets/images/Cucumber_leaf.png' ) } />
 			<Text style={ Estilo.h1 }>Germinacion</Text>
 
 			<ScrollView>
 
 				<HFLogin
 					hfplanta={ planta }
-					onChangeText={ (v) => guardaPlanta('hflogin', v) }
+					onChangeText={ ( v ) => guardaPlanta( 'hflogin', v ) }
 				/>
 
 				<HfTipo
 					hfplanta={ planta }
-					onChangeValue={ (v) => guardaPlanta('hftipo', v) }
+					onChangeValue={ ( v ) => guardaPlanta( 'hftipo', v ) }
 				/>
 
 				<HFCantidad
 					hfplanta={ planta }
-					onChangeText={ (v) => guardaPlanta('hfcantidad', v) }
+					onChangeText={ ( v ) => guardaPlanta( 'hfcantidad', v ) }
 				/>
 
 				{/* parche*/ }
