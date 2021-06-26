@@ -15,7 +15,6 @@ import
 	, CheckBox
 } from 'react-native';
 import { Avatar } from "react-native-elements";
-import Alert from "react-native-awesome-alerts";
 
 import HfPlantacion, {
 	HFLogin
@@ -23,17 +22,17 @@ import HfPlantacion, {
 	, HFPlantacionUbicacion
 } from '../../model/hfplantacion'
 import HfTipo from '../../model/hftipo'
-import { addPlantacionBackend } from '../../model/hfdb/hfdb'
+import { addPlantacionLocal, addPlantacionBackend } from '../../model/hfdb'
 
 import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
 
 export default function GerminacionScreen ( { navigation } )
 {
-
+	const [ planta, setPlanta ] = useState( hfplantacion );
+	const [ consentimiento, setConsentimiento ] = useState( true );
 
 	// Planta @todo como pasar a Objeto HFPlanta
-
 	const hfplantacion: HfPlantacion = {
 		hflogin: 'usuario@ejemplo.cl'
 		, hftipo: ''
@@ -42,20 +41,12 @@ export default function GerminacionScreen ( { navigation } )
 		, hfgeo: 'any' // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
 	};
 
-	const [ planta, setPlanta ] = useState( hfplantacion );
-	const [ consentimiento, setConsentimiento ] = useState( true );
-	const [ showGuardado, setShowGuardado ] = useState( false );
-
-
-
-
 	const guardaPlanta = ( k, v ) =>
 	{
 		console.log( 'guardaPlanta 1', planta );
 		setPlanta( { ...planta, [ k ]: v } );
 		console.log( 'guardaPlanta 2', planta );
 	}
-
 
 	const guardaConsentimiento = ( c ) =>
 	{
@@ -68,36 +59,28 @@ export default function GerminacionScreen ( { navigation } )
 		console.log( 'generaQR', planta );
 		console.log( 'consentimiento', consentimiento );
 
-		return;
-
 		// validar
 		if ( "parche" !== "parche" )
 		{
 			alert( 'holi' );
 		} else
 		{
+			// Persistencia local - localStore https://huertify.atlassian.net/browse/HTFY-40
+			addPlantacionLocal( planta );
+
+			// Generar QR https://huertify.atlassian.net/browse/HTFY-39
+
 			// persistencia backend opcional
 			if ( consentimiento )
 			{
-				addPlantacionBackend( planta )
+				addPlantacionBackend( planta );
 			}
-
-
-			// Generar QR https://huertify.atlassian.net/browse/HTFY-39
 		}
 
-		guardado()
-
-	}
-
-	function guardado ()
-	{
-		setShowGuardado( true );
-		setTimeout( function () { setShowGuardado( false ); }, 1500 );
-		console.log( 'setShowGuardado(true)' )
-
+		console.log( 'Guardada', planta )
 		// redireccionar a Mi Huerto
 		// https://huertify.atlassian.net/browse/HTFY-23
+
 	}
 
 	return (
@@ -135,6 +118,7 @@ export default function GerminacionScreen ( { navigation } )
 					<CheckBox
 						value={ consentimiento }
 						onValueChange={ ( v ) => guardaConsentimiento( v ) }
+						testID="testID"
 					/>
 					<Text style={ Estilo.checkboxLabel }>quiero compartir la información de mi huerto.</Text>
 				</View>
@@ -157,8 +141,6 @@ Código QR
 
 Código [QR] - Mandar al e-mail
 
-* Nos falta la tuya? Avísanos!
-
 */}
 
 
@@ -171,12 +153,6 @@ Código [QR] - Mandar al e-mail
 				</View>
 
 			</ScrollView>
-
-			<Alert
-				show={ showGuardado }
-				message="Guardado!"
-			/* closeOnTouchOutside={true} */
-			/>
 
 			<FooterHf />
 
