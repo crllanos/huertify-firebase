@@ -95,12 +95,14 @@ export default function GerminacionScreen ( { navigation } )
 					<Text style={ Estilo.parrafo }>Fecha</Text>
 					<Text>(hoy)</Text>
 				</View>
+
+				<HFPlantacionUbicacion />
+
 				<View>
 					<Text style={ Estilo.parrafo }> </Text>
 					<Text> [ ] quiero compartir la información de mi huerto.</Text>
 				</View>
 
-				{/* <HFPlantacionUbicacion /> */ }
 
 
 

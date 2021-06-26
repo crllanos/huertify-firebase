@@ -109,6 +109,13 @@ export class HFPlantacionUbicacion extends React.Component
 		return (
 			<View>
 				<Text style={ Estilo.parrafo }>Ubicación</Text>
+				{/* Generar checkbox */ }
+				{/* Generar checkbox */ }
+				{/* Generar checkbox */ }
+				{/* Generar checkbox */ }
+				{/* Generar checkbox */ }
+				{/* Generar checkbox */ }
+				{/* Generar checkbox */ }
 				<TextInput
 					style={ Estilo.input }
 					placeholder="[ ver en el mapa ]"
@@ -126,6 +133,7 @@ export class HFPlantacionUbicacion extends React.Component
 
 
 // TODO Implementar backend
+// TODO Llevar a hfdb.js
 export function getPlantaciones ( params: string ): HfPlantacion[]
 {
 
