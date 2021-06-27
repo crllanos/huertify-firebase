@@ -1,8 +1,8 @@
 import firebase from 'firebase'
 import 'firebase/firestore'
 
+import HfPlantacion from '../hfplantacion'
 import FirebaseConfig from './connection'
-import HfPlantacion from '../../model/hfplantacion'
 
 
 /**

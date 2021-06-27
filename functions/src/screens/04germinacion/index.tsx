@@ -106,7 +106,8 @@ export default function GerminacionScreen ( { navigation } )
 					onChangeText={ ( v ) => guardaPlanta( 'hfcantidad', v ) }
 				/>
 
-				{/* parche*/ }
+				{/* Fecha - enum [hoy, 1 semana, 1 mes]*/ }
+				{/* https://huertify.atlassian.net/browse/HTFY-42 */ }
 				<View>
 					<Text style={ Estilo.parrafo }>Fecha</Text>
 					<Text>(hoy)</Text>
@@ -114,6 +115,7 @@ export default function GerminacionScreen ( { navigation } )
 
 				<HFPlantacionUbicacion />
 
+				{/* https://huertify.atlassian.net/browse/HTFY-41 */ }
 				<View style={ Estilo.checkboxContainer }>
 					<CheckBox
 						value={ consentimiento }

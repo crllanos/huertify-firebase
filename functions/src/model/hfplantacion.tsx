@@ -4,6 +4,7 @@ import
 	Text
 	, View
 	, TextInput
+	, CheckBox
 } from 'react-native';
 import Estilo from '../constants/Estilo';
 
@@ -35,6 +36,8 @@ export default class HfPlantacion
 
 /**
  * Login
+ *
+ * https://huertify.atlassian.net/browse/HTFY-28
  */
 export class HFLogin extends React.Component
 {
@@ -66,16 +69,10 @@ export class HFLogin extends React.Component
 	};
 }
 
-
-
 /**
- * Tipo
- * @todo traerse la logica de HFTipo.tsx? o modularizar?
- export class HFPlantacionTipo extends React.Component
- {
-}
-*/
-
+ * Cantidad
+ *
+ */
 export class HFCantidad extends React.Component
 {
 	hfplanta = {}
@@ -106,7 +103,11 @@ export class HFCantidad extends React.Component
 	};
 }
 
-// https://huertify.atlassian.net/browse/HTFY-31
+/**
+ * Ubicacion
+ *
+ * https://huertify.atlassian.net/browse/HTFY-31
+ */
 export class HFPlantacionUbicacion extends React.Component
 {
 	//const[ isSelected, setSelection ] = useState (false );
@@ -137,30 +138,20 @@ export class HFPlantacionUbicacion extends React.Component
  * Consentimiento para compartir
  *
  * https://huertify.atlassian.net/browse/HTFY-41
- *
  */
-export class HFPlantacionConsentimiento extends React.Component
+export const HFPlantacionConsentimiento = ( props ) => // extends React.Component
 {
-	consentimiento = true;
-	constructor( props )
-	{
-		super( props );
-		this.consentimiento = ( props.consentimiento || this.consentimiento );
-		this.setConsentimiento = this.setConsentimiento.bind( this )
-	}
+	return (
+		<View style={ Estilo.checkboxContainer }>
+			<CheckBox
+				value={ consentimiento }
+				onValueChange={ ( v ) => guardaConsentimiento( v ) }
+				testID="testID"
+			/>
+			<Text style={ Estilo.checkboxLabel }>quiero compartir la información de mi huerto.</Text>
+		</View>
 
-	setConsentimiento = ( v ) => this.consentimiento = v;
-
-	/* 	value = { this.consentimiento }
-		onValueChange = { this.setConsentimiento }
-		style = { Estilo.checkbox }
-
-		render ()
-		{
-			return (
-				);
-			};
-			*/
+	)
 }
 
 
