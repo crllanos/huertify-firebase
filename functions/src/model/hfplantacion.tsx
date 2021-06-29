@@ -41,11 +41,11 @@ export default class HfPlantacion
  */
 export class HFLogin extends React.Component
 {
-	hfplanta = {}
+	hflogin = '';
 	constructor( props )
 	{
 		super( props );
-		this.hfplanta = ( props.hfplanta || this.hfplanta );
+		this.hflogin = ( props.hflogin || this.hflogin );
 	}
 
 	render ()
@@ -56,11 +56,12 @@ export class HFLogin extends React.Component
 				<TextInput
 					name="hflogin"
 					style={ Estilo.input }
-					placeholder={ this.hfplanta.hflogin }
+					placeholder={ this.hflogin }
 					onChangeText={ ( v ) =>
 					{
 						//console.log('onChangeHfLogin', v);
-						this.hfplanta.hflogin = v;
+						this.hflogin = v;
+						return v;
 					}
 					}
 				/>
@@ -75,11 +76,11 @@ export class HFLogin extends React.Component
  */
 export class HFCantidad extends React.Component
 {
-	hfplanta = {}
+	hfcantidad = 1
 	constructor( props )
 	{
 		super( props );
-		this.hfplanta = ( props.hfplanta || this.hfplanta );
+		this.hfcantidad = ( props.hfcantidad || this.hfcantidad );
 	}
 
 	render ()
@@ -90,11 +91,10 @@ export class HFCantidad extends React.Component
 				<TextInput
 					name="hfcantidad"
 					style={ Estilo.input }
-					placeholder={ this.hfplanta.hfcantidad }
+					value={ this.hfcantidad }
 					onChangeText={ ( v ) =>
 					{
-						//console.log('onChangeHfCantidad', v);
-						this.hfplanta.hfcantidad = v;
+						return v;
 					}
 					}
 				/>

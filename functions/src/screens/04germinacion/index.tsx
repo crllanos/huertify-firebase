@@ -29,17 +29,16 @@ import FooterHf from '../_layout/footer';
 
 export default function GerminacionScreen ( { navigation } )
 {
-	const [ planta, setPlanta ] = useState( hfplantacion );
-	const [ consentimiento, setConsentimiento ] = useState( true );
 
 	// Planta @todo como pasar a Objeto HFPlanta
 	const hfplantacion: HfPlantacion = {
 		hflogin: 'usuario@ejemplo.cl'
-		, hftipo: ''
-		, hfcantidad: 1
+		, hftipo: 'Apio'
 		, hfgerminacion: new Date()
 		, hfgeo: 'any' // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
 	};
+	const [ planta, setPlanta ] = useState( hfplantacion );
+	const [ consentimiento, setConsentimiento ] = useState( true );
 
 	const guardaPlanta = ( k, v ) =>
 	{
@@ -92,17 +91,17 @@ export default function GerminacionScreen ( { navigation } )
 			<ScrollView>
 
 				<HFLogin
-					hfplanta={ planta }
+					hflogin={ planta.hflogin }
 					onChangeText={ ( v ) => guardaPlanta( 'hflogin', v ) }
 				/>
 
 				<HfTipo
-					hfplanta={ planta }
+					hftipo={ planta.hftipo }
 					onChangeValue={ ( v ) => guardaPlanta( 'hftipo', v ) }
 				/>
 
 				<HFCantidad
-					hfplanta={ planta }
+					hfcantidad={ planta.hfcantidad }
 					onChangeText={ ( v ) => guardaPlanta( 'hfcantidad', v ) }
 				/>
 

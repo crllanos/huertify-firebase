@@ -11,7 +11,6 @@ import { plantas } from './plantas'
 export default class HfTipo extends React.Component
 {
 
-	hfplanta = {}
 	hftipo: string = "";
 	hf_siembra_desde: number = 0;
 	hf_siembra_hasta: number = 0;
@@ -19,38 +18,30 @@ export default class HfTipo extends React.Component
 	hf_dias_riego: number = 0;
 	hf_fertilizacion: any = {};
 
-	/*
-	*/
-	constructor(props)
+
+	constructor( props )
 	{
-		super(props);
-		this.hfplanta = (props.hfplanta || this.hfplanta);
-		this.hftipo = (props.hftipo || this.hftipo);
+		super( props );
+		this.hftipo = ( props.hftipo || this.hftipo );
 	}
 
-	/* */
-
-	//	const [selectedLanguage, setSelectedLanguage] = useState();
-	// selectedValue={selectedLanguage}
-	// setSelectedLanguage(itemValue)
-
-	render()
+	render ()
 	{
 		return (
 			<View>
 				<Text style={ Estilo.parrafo }>Qu&eacute; es? (*)</Text>
 				<Picker
 					style={ Estilo.input }
-					onValueChange={ (v, i) =>
+					selectedValue={ this.hftipo }
+					onValueChange={ ( v, i ) =>
 					{
-						//console.log('onChangeHfTipo', v);
-						this.hfplanta.hftipo = v;
+						return v;
 					}
 					}>
-					<Picker.Item label="..." value="..." />
+					<Picker.Item label="..." value="" />
 					{
 						//plantas.map((v) => <Picker.Item key={v} label={v} value={v} />)
-						this.getHfTipo("").map((v) => <Picker.Item key={ v } label={ v } value={ v } />)
+						this.getHfTipo( "" ).map( ( v ) => <Picker.Item key={ v } label={ v } value={ v } /> )
 					}
 				</Picker>
 			</View>
@@ -58,7 +49,7 @@ export default class HfTipo extends React.Component
 	};
 
 
-	getHfTipo(param: string)
+	getHfTipo ( param: string )
 	{
 		return [
 			"Acelga"
@@ -76,9 +67,9 @@ export default class HfTipo extends React.Component
 
 
 	// TODO Implementar backend
-	getHfTipoObj(params: string): []
+	getHfTipoObj ( params: string ): []
 	{ // HfTipo[]
-		console.log(params);
+		console.log( params );
 		let hf_tipo: {
 			tipo: string
 			, siembra_desde: number
