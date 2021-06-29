@@ -5,13 +5,9 @@ import React, { useState } from 'react';
 import
 {
 	Text
-	, Image
 	, View
-	, TextInput
 	, ScrollView
 	, Button
-	, StyleSheet
-	, Picker
 	, CheckBox
 } from 'react-native';
 import { Avatar } from "react-native-elements";

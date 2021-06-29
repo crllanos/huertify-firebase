@@ -12,7 +12,8 @@ import InicioScreen from '../screens/01inicio/index'
 import LoginScreen from '../screens/02login/index'
 import MiHuertoScreen from '../screens/03mihuerto/index'
 import GerminacionScreen from '../screens/04germinacion/index'
-import CuantatierraScreen from '../screens/05cuantatierra/index.tsx'
+import CuantatierraScreen from '../screens/05cuantatierra/index'
+import SandboxScreen from '../screens/sandbox/index'
 
 
 import Colors from '../constants/Colors';
@@ -24,72 +25,81 @@ import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
-export default function BottomTabNavigator() {
+export default function BottomTabNavigator ()
+{
 	// const colorScheme = useColorScheme();
 
 	return (
 		<BottomTab.Navigator
 			initialRouteName="TabOne"
-			tabBarOptions={{ activeTintColor: Colors.verde }}>
+			tabBarOptions={ { activeTintColor: Colors.verde } }>
 
-			{/* componente 04GerminacionScreen */}
+			{/* SANDBOX - https://huertify.atlassian.net/browse/HTFY-44 */ }
+			<BottomTab.Screen
+				name="SBX"
+				component={ SandboxScreen }
+				options={ {
+					tabBarIcon: ( { color } ) => <TabBarIcon name="ios-code" color={ color } />,
+				} }
+			/>
+
+			{/* componente 04GerminacionScreen */ }
 			<BottomTab.Screen
 				name="Germinacion"
-				component={GerminacionScreen}
-				options={{
-					tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-				}}
+				component={ GerminacionScreen }
+				options={ {
+					tabBarIcon: ( { color } ) => <TabBarIcon name="ios-code" color={ color } />,
+				} }
 			/>
 
 
-			{/* componente 03MiHuertoScreen */}
+			{/* componente 03MiHuertoScreen */ }
 			<BottomTab.Screen
 				name="Mi Huerto"
-				component={MiHuertoScreen}
-				options={{
-					tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-				}}
+				component={ MiHuertoScreen }
+				options={ {
+					tabBarIcon: ( { color } ) => <TabBarIcon name="ios-code" color={ color } />,
+				} }
 			/>
 
 
-			{/* componente 02LoginScreen */}
+			{/* componente 02LoginScreen */ }
 			<BottomTab.Screen
 				name="Login"
-				component={LoginScreen}
-				options={{
-					tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-				}}
+				component={ LoginScreen }
+				options={ {
+					tabBarIcon: ( { color } ) => <TabBarIcon name="ios-code" color={ color } />,
+				} }
 			/>
 
-			{/* componente 01InicioScreen */}
+			{/* componente 01InicioScreen */ }
 			<BottomTab.Screen
 				name="Inicio"
-				component={InicioScreen}
-				options={{
+				component={ InicioScreen }
+				options={ {
 					title: 'Huertify.org',
-					tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-				}}
-				style={{ backgroundColor: Colors.verde }}
+					tabBarIcon: ( { color } ) => <TabBarIcon name="ios-code" color={ color } />,
+				} }
+				style={ { backgroundColor: Colors.verde } }
 			/>
 
 
-			{/* https://huertify.atlassian.net/browse/HTFY-30 */}
-			{/* componente 05ClimaScreen */}
+			{/* https://huertify.atlassian.net/browse/HTFY-30 */ }
+			{/* componente 05ClimaScreen */ }
 			<BottomTab.Screen
 				name="Clima"
-				component={InicioScreen}
-				options={{
-					tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-				}}
+				component={ InicioScreen }
+				options={ {
+					tabBarIcon: ( { color } ) => <TabBarIcon name="ios-code" color={ color } />,
+				} }
 			/>
 
-			{/* componente 05ClimaScreen */}
 			<BottomTab.Screen
 				name="Cuanta tierra.."
-				component={CuantatierraScreen}
-				options={{
-					tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
-				}}
+				component={ CuantatierraScreen }
+				options={ {
+					tabBarIcon: ( { color } ) => <TabBarIcon name="ios-code" color={ color } />,
+				} }
 			/>
 		</BottomTab.Navigator>
 	);
@@ -106,8 +116,9 @@ export default function BottomTabNavigator() {
 
 // You can explore the built-in icon families and icons on the web at:
 // https://icons.expo.fyi/
-function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
-	return <Ionicons size={20} style={{ marginBottom: -3 }} {...props} />;
+function TabBarIcon ( props: { name: React.ComponentProps<typeof Ionicons>[ 'name' ]; color: string } )
+{
+	return <Ionicons size={ 20 } style={ { marginBottom: -3 } } { ...props } />;
 }
 
 
@@ -117,18 +128,19 @@ function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
 const TabOneStack = createStackNavigator<TabOneParamList>();
-function TabOneNavigator() {
+function TabOneNavigator ()
+{
 	// const colorScheme = useColorScheme();
 	return (
 		<TabOneStack.Navigator
-			screenOptions={{
+			screenOptions={ {
 				headerTintColor: Colors.tint,
 				headerStyle: { backgroundColor: Colors.verde },
-			}}
+			} }
 		>
 			<TabOneStack.Screen
 				name="TabOneScreen"
-				component={TabOneScreen}
+				component={ TabOneScreen }
 				options={
 					{
 						headerTitle: 'Huertify.org'
@@ -141,16 +153,17 @@ function TabOneNavigator() {
 }
 
 const TabTwoStack = createStackNavigator<TabTwoParamList>();
-function TabTwoNavigator() {
+function TabTwoNavigator ()
+{
 	return (
 		<TabTwoStack.Navigator>
 			<TabTwoStack.Screen
 				name="TabTwoScreen"
-				component={TabTwoScreen}
-				options={{
+				component={ TabTwoScreen }
+				options={ {
 					headerTitle: 'Huertify.org'
 					, cardStyle: { backgroundColor: 'white' }
-				}}
+				} }
 			/>
 		</TabTwoStack.Navigator>
 	);
