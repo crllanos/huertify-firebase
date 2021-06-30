@@ -1,27 +1,63 @@
-import React from "react";
+import React, { useState } from 'react';
 import { Avatar } from "react-native-elements";
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView, Button } from 'react-native';
 
+import Colors from '../../constants/Colors';
 import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
 import PruebaModal from './modal';
 
-export default function SandboxScreen ( { navigation } )
+export default class SandboxScreen extends React.Component // ( { navigation } )
 {
-	return (
-		<View style={ Estilo.contenedor }>
 
-			<Avatar rounded source={ require( '../../assets/images/Cucumber_leaf.png' ) } />
-			<Text style={ Estilo.h1 }>Sandbox</Text>
-			<Text style={ Estilo.italic }>espacio para pruebas</Text>
+	state = {
+		verModal: false
+	}
 
-			<ScrollView>
-				<PruebaModal />
+	handleModal = () =>
+	{
+		this.setState( ( prevState ) =>
+		{
+			this.state.verModal = !prevState.verModal;
+			return this.state.verModal
+		} );
+	}
 
-			</ScrollView>
+	closeModal = () =>
+	{
+		this.setState( ( prevState ) =>
+		{
+			this.state.verModal = false;
+			return this.state.verModal
+		} );
+	}
 
-			<FooterHf />
 
-		</View>
-	);
+	render ()
+	{
+		return (
+			<View style={ Estilo.contenedor } >
+
+				<Avatar rounded source={ require( '../../assets/images/Cucumber_leaf.png' ) } />
+				<Text style={ Estilo.h1 }>Sandbox</Text>
+				<Text style={ Estilo.italic }>espacio para pruebas</Text>
+
+				<ScrollView>
+					<Button
+						color={ Colors.verde }
+						onPress={ this.handleModal }
+						title="Abrir modal" />
+
+					<PruebaModal
+						verModal={ this.state.verModal }
+						/* texto="Holanda que Talca" */
+						closeModal={ this.closeModal } />
+
+				</ScrollView>
+
+				<FooterHf />
+
+			</View>
+		);
+	};
 };
