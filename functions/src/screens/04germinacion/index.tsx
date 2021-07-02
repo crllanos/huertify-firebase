@@ -26,6 +26,16 @@ import FooterHf from '../_layout/footer';
 export default function GerminacionScreen ( { navigation } )
 {
 
+	// PRUEBA SPREAD OBJECT - default values expansible
+	let spread = { name: 'toma', id: 9, prueba: 'testotro' };
+	console.log( {
+		prueba: 'teste',
+		...spread,
+		id: 10
+	} );
+
+
+
 	// Planta @todo como pasar a Objeto HFPlanta
 	const hfplantacion: HfPlantacion = {
 		hflogin: 'usuario@ejemplo.cl'

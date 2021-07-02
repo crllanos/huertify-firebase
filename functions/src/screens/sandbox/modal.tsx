@@ -7,6 +7,7 @@ const PruebaModal = ( props ) =>
 {
 	{/* hack: (!!undefined === false) */ }
 
+	console.log( 'props en PruebaModal', props );
 	console.log( 'props.verModal en PruebaModal', props.verModal );
 
 	Modal.setAppElement( '#root' );
@@ -26,7 +27,8 @@ const PruebaModal = ( props ) =>
 			<View>
 				<Button
 					title="Prueba de Modal"
-					onPress={ props.closeModal } />
+					onPress={ props.closeModal }
+				/>
 			</View>
 		</Modal>
 	);

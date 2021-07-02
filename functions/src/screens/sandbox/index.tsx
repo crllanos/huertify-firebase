@@ -10,6 +10,14 @@ import PruebaModal from './modal';
 export default class SandboxScreen extends React.Component // ( { navigation } )
 {
 
+
+	constructor( props )
+	{
+		super( props );
+		console.log( 'props', props );
+
+	}
+
 	state = {
 		verModal: false
 	}
@@ -53,7 +61,10 @@ export default class SandboxScreen extends React.Component // ( { navigation } )
 						/* texto="Holanda que Talca" */
 						closeModal={ this.closeModal } />
 
+
 				</ScrollView>
+
+				<TestPropsLog />
 
 				<FooterHf />
 
@@ -61,3 +72,13 @@ export default class SandboxScreen extends React.Component // ( { navigation } )
 		);
 	};
 };
+
+export const TestPropsLog = ( props ) =>
+{
+	console.log( 'TestPropsLog', props );
+
+	return (
+		<Text>TestPropsLog</Text>
+	);
+
+}
