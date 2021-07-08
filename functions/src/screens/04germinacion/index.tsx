@@ -11,6 +11,8 @@ import
 	, CheckBox
 } from 'react-native';
 import { Avatar } from "react-native-elements";
+import uuid from 'react-native-uuid';
+
 
 import HfPlantacion, {
 	HFLogin
@@ -38,11 +40,16 @@ export default function GerminacionScreen ( { navigation } )
 
 	// Planta @todo como pasar a Objeto HFPlanta
 	const hfplantacion: HfPlantacion = {
-		hflogin: 'usuario@ejemplo.cl'
+		hfid: uuid.v4()
+		, hflogin: 'usuario@ejemplo.cl'
 		, hftipo: 'Apio'
+		, hfcantidad: 2
 		, hfgerminacion: new Date()
 		, hfgeo: 'any' // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
 	};
+	console.log( 'hfplantacion', hfplantacion );
+
+
 	const [ planta, setPlanta ] = useState( hfplantacion );
 	const [ consentimiento, setConsentimiento ] = useState( true );
 
