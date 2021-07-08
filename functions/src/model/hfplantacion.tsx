@@ -1,5 +1,4 @@
 import * as React from 'react';
-import uuid from 'react-native-uuid';
 import
 {
 	Text
@@ -25,7 +24,7 @@ Acá el usuario debería cargar en la app lo que plantó (OPCIONAL)
 */
 export default class HfPlantacion
 {
-	hfid = uuid.v4(); // id interno
+	hfid; // id interno
 	hftipo: string = ""; // Qué es?
 	hfcantidad: number = 1; // Cuántas son?
 	hfgerminacion: Date = new Date(); // Fecha germiancion
