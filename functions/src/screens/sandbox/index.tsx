@@ -7,6 +7,27 @@ import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
 import PruebaModal from './modal';
 
+
+// High Order Components
+const HocInfo = ( props ) => (
+	<View>
+		<Text>Prueba de High Order Components: { props.info }</Text>
+	</View>
+);
+
+const HocAdminWarn = ( WrappedComponent ) =>
+{
+	return ( props ) => (
+		<View>
+			{ props.isAdmin && <Text>PRIVADO</Text> }
+			<WrappedComponent { ...props } />
+		</View>
+	)
+}
+const HocPrueba = HocAdminWarn( HocInfo );
+
+
+
 export default class SandboxScreen extends React.Component // ( { navigation } )
 {
 
@@ -41,6 +62,9 @@ export default class SandboxScreen extends React.Component // ( { navigation } )
 	}
 
 
+
+
+
 	render ()
 	{
 		return (
@@ -50,7 +74,12 @@ export default class SandboxScreen extends React.Component // ( { navigation } )
 				<Text style={ Estilo.h1 }>Sandbox</Text>
 				<Text style={ Estilo.italic }>espacio para pruebas</Text>
 
+
 				<ScrollView>
+					<TestPropsLog />
+
+					<HocPrueba info="holi!" isAdmin={ true } />
+
 					<Button
 						color={ Colors.verde }
 						onPress={ this.handleModal }
@@ -64,7 +93,6 @@ export default class SandboxScreen extends React.Component // ( { navigation } )
 
 				</ScrollView>
 
-				<TestPropsLog />
 
 				<FooterHf />
 
