@@ -1,23 +1,22 @@
-// SET_HFPLANTACION_FILTER
+import { HfFilters } from '../../constants/HfActions'
+
+
 export const setHFPlantacionFilter = ( text = '' ) => (
 	{
-		type: 'SET_HFPLANTACION_FILTER'
+		type: HfFilters.SET_HFPLANTACION_FILTER
 		, text
 	}
 );
 
-// SET_HFTIPO
 export const setHFTipo = ( hftipo ) => (
 	{
-		type: 'SET_HFTIPO'
+		type: HfFilters.SET_HFTIPO
 		, hftipo
 	}
 );
 
-
-// SORT_BY_HFTIPO
 export const sortByHFTipo = () => (
 	{
-		type: 'SORT_BY_HFTIPO'
+		type: HfFilters.SORT_BY_HFTIPO
 	}
 )

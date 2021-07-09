@@ -4,3 +4,10 @@ default export enum HfActions
 	, EDIT_HFPLANTACION
 	, REMOVE_HFPLANTACION
 }
+
+export enum HfFilters
+{
+	SET_HFPLANTACION_FILTER
+	, SET_HFTIPO
+	, SORT_BY_HFTIPO
+}
