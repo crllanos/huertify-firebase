@@ -7,7 +7,14 @@ default export enum HfActions
 
 export enum HfFilters
 {
-	SET_HFPLANTACION_FILTER
-	, SET_HFTIPO
-	, SORT_BY_HFTIPO
+	SET_HFTIPO
+	, SET_HFGERMINACION
+	, SORTBY_HFTIPO
+	, SORTBY_HFGERMINACION
+}
+
+export enum HfSortby
+{
+	HFTIPO
+	, HFGERMINACION
 }

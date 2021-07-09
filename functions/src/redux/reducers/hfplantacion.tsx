@@ -1,6 +1,6 @@
 import { HfActions } from '../../constants/HfActions'
 
-
+// hfplantacion reducer
 const hfplantacionDefaultState = [];
 
 export default ( state = hfplantacionDefaultState, action ) =>

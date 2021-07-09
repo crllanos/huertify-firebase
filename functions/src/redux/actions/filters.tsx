@@ -1,10 +1,11 @@
 import { HfFilters } from '../../constants/HfActions'
 
 
-export const setHFPlantacionFilter = ( text = '' ) => (
+export const setHFPlantacionFilter = ( { hftipo = '', hfgerminacion } ) => (
 	{
-		type: HfFilters.SET_HFPLANTACION_FILTER
-		, text
+		type: HfFilters.SET_HFTIPO
+		, hftipo
+		, hfgerminacion
 	}
 );
 
@@ -15,8 +16,21 @@ export const setHFTipo = ( hftipo ) => (
 	}
 );
 
+export const setHFGerminacion = ( hfgerminacion ) => (
+	{
+		type: HfFilters.SET_HFGERMINACION
+		, hfgerminacion
+	}
+);
+
 export const sortByHFTipo = () => (
 	{
-		type: HfFilters.SORT_BY_HFTIPO
+		type: HfFilters.SORTBY_HFTIPO
+	}
+)
+
+export const sortHFGerminacion = () => (
+	{
+		type: HfFilters.SORTBY_HFGERMINACION
 	}
 )
