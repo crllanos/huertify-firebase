@@ -1,4 +1,4 @@
-default export enum HfActions
+export enum HfActions
 {
 	ADD_HFPLANTACION
 	, EDIT_HFPLANTACION

@@ -9,6 +9,38 @@ import FooterHf from '../_layout/footer';
 import PruebaModal from './modal';
 
 
+// !--REDUX
+import configStore from '../../redux/store/configStore';
+import { addHfPlantacion } from '../../redux/actions/hfplantacion'
+import { setHFPlantacionFilter } from '../../redux/actions/filters'
+import getHfPlantacion from '../../redux/selectors/hfplantacion'
+
+const mi_store = configStore();
+
+mi_store.dispatch( addHfPlantacion( {
+	hftipo: "sativa"
+	, hfcantidad: 2
+	, hfgerminacion: new Date()
+	, hflogin: {}
+	, hfgeo: {}
+} ) );
+mi_store.dispatch( addHfPlantacion( {
+	hftipo: "indiga"
+	, hfcantidad: 1
+	, hfgerminacion: new Date()
+	, hflogin: {}
+	, hfgeo: {}
+} ) );
+mi_store.dispatch( setHFPlantacionFilter( { hftipo: 'sativa' } ) );
+
+const state = mi_store.getState();
+const mi_hfplantacion = getHfPlantacion( state.hfplantacion, state.filters );
+console.log( 'pinche mi_store', mi_store );
+console.log( 'mi_hfplantacion', mi_hfplantacion );
+
+// REDUX--
+
+
 // High Order Components
 const HocInfo = ( props ) => (
 	<View>

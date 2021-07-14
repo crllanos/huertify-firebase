@@ -3,7 +3,6 @@ import hfplantacionReducer from '../reducers/hfplantacion'
 import filtersReducer from '../reducers/filters'
 
 // Store creation
-
 export default () =>
 {
 	const store = createStore(

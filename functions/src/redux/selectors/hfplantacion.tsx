@@ -2,7 +2,7 @@ import { HfSortby } from "../../constants/HfActions";
 
 export default ( hfplantacion, { hftipo, hfgermincion, sortby } ) =>
 {
-	return hfplantacion.filter( ( hfp ) =>
+	return hfplantacion.filter( ( hfp = { hftipo: '' } ) =>
 	{
 		const hftipoMatch = hfp.hftipo
 			.toLowerCase()
