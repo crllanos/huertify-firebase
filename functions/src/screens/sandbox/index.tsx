@@ -52,7 +52,7 @@ const HocAdminWarn = ( WrappedComponent ) =>
 {
 	return ( props ) => (
 		<View>
-			{ props.isAdmin && <Text>PRIVADO</Text> }
+			{ props.isAdmin && <Text>UD ES ADMIN!</Text> }
 			<WrappedComponent { ...props } />
 		</View>
 	)
