@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Avatar } from "react-native-elements";
 import { Text, View, ScrollView, Button } from 'react-native';
-// import { Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 
 import Colors from '../../constants/Colors';
 import Estilo from '../../constants/Estilo';
