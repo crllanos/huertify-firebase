@@ -20,6 +20,8 @@ Avisanos!
 
 Huertify en Twitter : https://witter.com/Huertify
 
+Huertify demo : https://huertify-org.web.app/ (pendiente huertify.cl y huertify.org config)
+
 Huertify en Jira : https://huertify.atlassian.net/jira/software/projects/HTFY/boards/1/roadmap
 
 Huertify es MIT License : https://en.wikipedia.org/wiki/MIT_License
