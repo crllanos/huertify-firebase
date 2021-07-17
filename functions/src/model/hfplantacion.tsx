@@ -4,7 +4,7 @@ import Estilo from '../constants/Estilo';
 
 /**
  * Plantacion
- * 
+ *
 NOTAS
 Periodos, en días múltiplos de 5
 "Periodo de siembra" = "recuerda que este mes puedes plantar a,b y c"
@@ -16,16 +16,17 @@ Acá el usuario debería cargar en la app lo que plantó (OPCIONAL)
 "Periodo de riego" = Notificación a las 8 de la tarde (¿CUANDO Y COMO SERÍA MEJOR EL RECORDATORIO? CADA CUANTOS DIAS? MAÑANA O TARDE??
 
 */
-export default class HfPlantacion extends React.Component {
-	/* 
-		hf_id: number; // id interno
+export default class HfPlantacion extends React.Component
+{
+	/*
+		hfid: uuid; // id interno
 		hftipo: string; // Qué es?
-		hf_cantidad: number; // Cuántas son?
-		hf_germinacion: Date; // Fecha germiancion
-	
-		hf_login: any; // de quien es - Auth Firebase - https://huertify.atlassian.net/browse/HTFY-28
-		hf_geo : any; // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
-	
+		hfcantidad: number; // Cuántas son?
+		hfgerminacion: Date; // Fecha germiancion
+
+		hflogin: any; // de quien es - Auth Firebase - https://huertify.atlassian.net/browse/HTFY-28
+		hfgeo : any; // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
+
 	 */
 	/* 	constructor(hf_cantidad: number, hf_tipo: string, hf_fecha:Date, hf_props:any = {}){
 			//super({...hf_props});
@@ -34,22 +35,26 @@ export default class HfPlantacion extends React.Component {
 			this.hf_germinacion = hf_fecha;
 		}
 	 */
-	hf_toString() {
+	hf_toString ()
+	{
 		return `Hf: ${this.hf_cantidad} ${this.hf_tipo}`;
 	}
 
-	render() {
-		return (<Text>hola {this.props.hftipo}</Text>);
+	render ()
+	{
+		return ( <Text>hola { this.props.hftipo }</Text> );
 	}
 
-	hf_inputCantidad() {
+	hf_inputCantidad ()
+	{
 		//return (<input type="text" />)
 		return (
-			<Text> {this.hf_cantidad} </Text>
+			<Text> { this.hf_cantidad } </Text>
 		);
 	}
 
-	hf_inputTipo() {
+	hf_inputTipo ()
+	{
 		//return (<select />)
 	}
 
@@ -63,16 +68,19 @@ export default class HfPlantacion extends React.Component {
 
 */
 
-export class HFPlantacionTipo extends React.Component {
+export class HFPlantacionTipo extends React.Component
+{
 }
 
-export class HFPlantacionCantidad extends React.Component {
-	render() {
+export class HFPlantacionCantidad extends React.Component
+{
+	render ()
+	{
 		return (
 			<View>
-				<Text style={Estilo.parrafo}>Cu&aacute;ntas son?</Text>
+				<Text style={ Estilo.parrafo }>Cu&aacute;ntas son?</Text>
 				<TextInput
-					style={Estilo.input}
+					style={ Estilo.input }
 					placeholder="numero"
 				//onChangeText={(value) => handleChangeText(value, "name")}
 				/>
@@ -83,13 +91,15 @@ export class HFPlantacionCantidad extends React.Component {
 }
 
 // https://huertify.atlassian.net/browse/HTFY-31
-export class HFPlantacionUbicacion extends React.Component {
-	render() {
+export class HFPlantacionUbicacion extends React.Component
+{
+	render ()
+	{
 		return (
 			<View>
-				<Text style={Estilo.parrafo}>Ubicación</Text>
+				<Text style={ Estilo.parrafo }>Ubicación</Text>
 				<TextInput
-					style={Estilo.input}
+					style={ Estilo.input }
 					placeholder="[ ver en el mapa ]"
 				//onChangeText={(value) => handleChangeText(value, "name")}
 				/>
@@ -105,9 +115,10 @@ export class HFPlantacionUbicacion extends React.Component {
 
 
 // TODO Implementar backend
-export function getPlantaciones(params: string): HfPlantacion[] {
+export function getPlantaciones ( params: string ): HfPlantacion[]
+{
 
-	console.log(params);
+	console.log( params );
 
 	let plantaciones: { id: number, login: any, tipo: string, cantidad: number, codigo: string, cruzamiento: string, seleccionada: boolean, geo: any }[] = [
 		{ // :Plantacion

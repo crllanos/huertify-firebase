@@ -20,6 +20,21 @@ twitter.com/Huertify
 
 Pronto en Google Play!
 
+## Propósito
+1 planta = 1 QR ( https://es.wikipedia.org/wiki/QR )
+
+## Modelo
+
+### HfPlantacion
+	- hfid: uuid; // id interno
+	- hftipo: string; // Qué es?
+	- hfcantidad: number; // Cuántas son?
+	- hfgerminacion: Date; // Fecha germiancion
+
+	- hflogin: any; // de quien es - Auth Firebase - https://huertify.atlassian.net/browse/HTFY-28
+	- hfgeo : any; // Ubicación - https://huertify.atlassian.net/browse/HTFY-31
+
+
 ## Discalimers
 * La información queda en tu cuenta, en tu propio celular.
 * Information stays on your account, on your own cellphone.
