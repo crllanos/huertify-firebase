@@ -125,7 +125,7 @@ export function getPlantaciones ( params: string ): HfPlantacion[]
 			id: 1
 			, login: {}
 			, tipo: "Tomates"
-			, cantidad: 0
+			, cantidad: 2
 			, codigo: ""
 			, cruzamiento: ""
 			, seleccionada: true
@@ -135,7 +135,7 @@ export function getPlantaciones ( params: string ): HfPlantacion[]
 			id: 2
 			, login: {}
 			, tipo: "Albahaca"
-			, cantidad: 0
+			, cantidad: 3
 			, codigo: ""
 			, cruzamiento: ""
 			, seleccionada: true
@@ -145,7 +145,7 @@ export function getPlantaciones ( params: string ): HfPlantacion[]
 			id: 3
 			, login: {}
 			, tipo: "Arandanos"
-			, cantidad: 0
+			, cantidad: 1
 			, codigo: ""
 			, cruzamiento: ""
 			, seleccionada: true
