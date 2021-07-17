@@ -1,4 +1,4 @@
-# Huertify.org | Agro microescla.
+# Huertify.org | agro microescla.
 
 Huertify es una aplicacion gratuita, de codigo abierto y sin fines de lucro.
 
