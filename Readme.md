@@ -1,13 +1,8 @@
-# Huertify.org
-## Agro microescla.
+# Huertify.org | Agro microescla.
 
 Huertify es una aplicacion gratuita, de codigo abierto y sin fines de lucro.
 
 Huertify is a free open-source app.
-
-Huertify es MIT License : https://en.wikipedia.org/wiki/MIT_License
-
-Huertify en Jira : https://huertify.atlassian.net/jira/software/projects/HTFY/boards/1/roadmap
 
 La Linux Foundation lanzo su proyecto Ag Stack, 'Open-Source Digital Infrastructure for the Agriculture Ecosystem'.
 - Usted tiene su huerto.
@@ -19,10 +14,15 @@ La Linux Foundation lanzo su proyecto Ag Stack, 'Open-Source Digital Infrastruct
 - ...pero quien lo cuida, son tus propias manos.
 
 
-Nos falta tu planta? Pillaste un Bug? Avisanos!
+Nos falta tu planta?
+Pillaste un Bug?
+Avisanos!
 
-twitter.com/Huertify
+Huertify en Twitter : https://witter.com/Huertify
 
+Huertify en Jira : https://huertify.atlassian.net/jira/software/projects/HTFY/boards/1/roadmap
+
+Huertify es MIT License : https://en.wikipedia.org/wiki/MIT_License
 
 Pronto en Google Play!
 
