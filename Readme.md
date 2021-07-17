@@ -4,6 +4,8 @@
 Huertify es una aplicacion gratuita, de codigo abierto y sin fines de lucro.
 Huertify is a free open-source app.
 
+Huertify es MIT License : https://en.wikipedia.org/wiki/MIT_License
+
 La Linux Foundation lanzo su proyecto Ag Stack, 'Open-Source Digital Infrastructure for the Agriculture Ecosystem'.
 - Usted tiene su huerto.
 - Pero, a veces, olvida cuando regarlo, fertilizarlo, etc...
