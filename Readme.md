@@ -14,7 +14,7 @@ La Linux Foundation lanzo su proyecto Ag Stack, 'Open-Source Digital Infrastruct
 - ...pero quien lo cuida, son tus propias manos.
 
 
-Nos falta tu planta? Avisanos!
+Nos falta tu planta? Pillaste un Bug? Avisanos!
 twitter.com/Huertify
 
 

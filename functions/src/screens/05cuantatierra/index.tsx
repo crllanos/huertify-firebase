@@ -12,7 +12,7 @@ export default function GerminacionScreen({ navigation }) {
 		<View style={Estilo.contenedor}>
 
 			<Avatar rounded source={require('../../assets/images/Cucumber_leaf.png')} />
-			<Text style={Estilo.h1}>Cuanta Tierra Necesita un Hombre?</Text>
+			<Text style={Estilo.h1}>Cuanta tierra necesita un hombre?</Text>
 			<Text style={Estilo.italic}> Lev Tólstoi, 1886.</Text>
 
 			<ScrollView>
