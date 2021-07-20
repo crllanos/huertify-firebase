@@ -19,23 +19,25 @@ import { setHFPlantacionFilter } from './src/redux/actions/filters'
 import getHfPlantacion from './src/redux/selectors/hfplantacion'
 
 const mi_store = configStore();
+console.log( 'mi_store = configStore().getState()', mi_store.getState() );
+
 
 mi_store.dispatch( addHfPlantacion( {
-	hftipo: "sativa"
+	hftipo: "Tomate"
 	, hfcantidad: 2
 	, hfgerminacion: new Date()
 	, hflogin: {}
 	, hfgeo: {}
 } ) );
 mi_store.dispatch( addHfPlantacion( {
-	hftipo: "indiga"
+	hftipo: "Albahaca"
 	, hfcantidad: 1
 	, hfgerminacion: new Date()
 	, hflogin: {}
 	, hfgeo: {}
 } ) );
-// mi_store.dispatch( setHFPlantacionFilter( { hftipo: 'sativa' } ) );
-// mi_store.dispatch( setHFPlantacionFilter( { hftipo: 'indiga' } ) );
+mi_store.dispatch( setHFPlantacionFilter( 'Tomate', '' ) );
+mi_store.dispatch( setHFPlantacionFilter( 'Albahaca', '' ) );
 
 const state = mi_store.getState();
 const mi_hfplantacion = getHfPlantacion( state.hfplantacion, state.filters ); // ??? ESTE me da error en /selectors/hfplantacion.tsx:13

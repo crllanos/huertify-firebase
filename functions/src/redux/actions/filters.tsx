@@ -2,7 +2,7 @@ import { HfFilters } from '../../constants/HfActions'
 
 //  (99 Organizing Redux)
 
-export const setHFPlantacionFilter = ( hftipo: string, hfgerminacion: Date ) => (
+export const setHFPlantacionFilter = ( hftipo: string, hfgerminacion: any ) => (
 	{
 		type: HfFilters.SET_HFTIPO
 		, hftipo
@@ -17,7 +17,7 @@ export const setHFTipo = ( hftipo: string ) => (
 	}
 );
 
-export const setHFGerminacion = ( hfgerminacion: Date ) => (
+export const setHFGerminacion = ( hfgerminacion: any ) => (
 	{
 		type: HfFilters.SET_HFGERMINACION
 		, hfgerminacion
