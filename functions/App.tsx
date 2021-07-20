@@ -11,7 +11,7 @@ import Navigation from './src/navigation';
 
 
 
-// !--REDUX
+// !--REDUX (99 Organizing Redux)
 import { Provider } from 'react-redux';
 import configStore from './src/redux/store/configStore';
 import { addHfPlantacion } from './src/redux/actions/hfplantacion'
@@ -38,7 +38,7 @@ mi_store.dispatch( addHfPlantacion( {
 // mi_store.dispatch( setHFPlantacionFilter( { hftipo: 'indiga' } ) );
 
 const state = mi_store.getState();
-const mi_hfplantacion = getHfPlantacion( state.hfplantacion, state.filters );
+const mi_hfplantacion = getHfPlantacion( state.hfplantacion, state.filters ); // ??? ESTE me da error en /selectors/hfplantacion.tsx:13
 console.log( 'pinche mi_store', mi_store );
 console.log( 'mi_hfplantacion', mi_hfplantacion );
 

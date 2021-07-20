@@ -1,5 +1,6 @@
 import { HfFilters } from '../../constants/HfActions'
 
+//  (99 Organizing Redux)
 
 export const setHFPlantacionFilter = ( hftipo: string, hfgerminacion: Date ) => (
 	{

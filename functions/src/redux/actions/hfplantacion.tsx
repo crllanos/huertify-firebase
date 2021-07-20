@@ -1,7 +1,7 @@
 import uuid from 'react-native-uuid';
 import { HfActions } from '../../constants/HfActions'
 
-// ADD_HFPLANTACION
+// ADD_HFPLANTACION (99 Organizing Redux)
 export const addHfPlantacion = (
 	{
 		hftipo = ""

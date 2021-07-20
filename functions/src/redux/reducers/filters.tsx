@@ -1,6 +1,6 @@
 import { HfFilters, HfSortby } from '../../constants/HfActions'
 
-// filters reducer
+// filters reducer (99 Organizing Redux)
 
 const filtersReducerDefaultState = {
 	hftipo: ''
