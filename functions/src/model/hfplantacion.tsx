@@ -24,7 +24,7 @@ Acá el usuario debería cargar en la app lo que plantó (OPCIONAL)
 */
 export default class HfPlantacion
 {
-	hfid; // id interno
+	hfid: any; // id interno
 	hftipo: string = ""; // Qué es?
 	hfcantidad: number = 1; // Cuántas son?
 	hfgerminacion: Date = new Date(); // Fecha germiancion

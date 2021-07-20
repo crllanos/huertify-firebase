@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Avatar } from "react-native-elements";
 import { Text, View, ScrollView, Button } from 'react-native';
-import { Provider } from 'react-redux';
 
 import Colors from '../../constants/Colors';
 import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
 import PruebaModal from './modal';
 
-
+/**
 // !--REDUX
+import { Provider } from 'react-redux';
 import configStore from '../../redux/store/configStore';
 import { addHfPlantacion } from '../../redux/actions/hfplantacion'
 import { setHFPlantacionFilter } from '../../redux/actions/filters'
@@ -39,7 +39,7 @@ console.log( 'pinche mi_store', mi_store );
 console.log( 'mi_hfplantacion', mi_hfplantacion );
 
 // REDUX--
-
+*/
 
 // High Order Components
 const HocInfo = ( props ) => (

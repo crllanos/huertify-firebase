@@ -1,7 +1,7 @@
 import { HfFilters } from '../../constants/HfActions'
 
 
-export const setHFPlantacionFilter = ( { hftipo = '', hfgerminacion = undefined } ) => (
+export const setHFPlantacionFilter = ( hftipo: string, hfgerminacion: Date ) => (
 	{
 		type: HfFilters.SET_HFTIPO
 		, hftipo
@@ -9,14 +9,14 @@ export const setHFPlantacionFilter = ( { hftipo = '', hfgerminacion = undefined 
 	}
 );
 
-export const setHFTipo = ( hftipo ) => (
+export const setHFTipo = ( hftipo: string ) => (
 	{
 		type: HfFilters.SET_HFTIPO
 		, hftipo
 	}
 );
 
-export const setHFGerminacion = ( hfgerminacion ) => (
+export const setHFGerminacion = ( hfgerminacion: Date ) => (
 	{
 		type: HfFilters.SET_HFGERMINACION
 		, hfgerminacion

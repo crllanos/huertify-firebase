@@ -34,23 +34,6 @@ export default function BottomTabNavigator ()
 			initialRouteName="TabOne"
 			tabBarOptions={ { activeTintColor: Colors.verde } }>
 
-			{/* SANDBOX - https://huertify.atlassian.net/browse/HTFY-44 */ }
-			<BottomTab.Screen
-				name="SBX"
-				component={ SandboxScreen }
-				options={ {
-					tabBarIcon: ( { color } ) => <TabBarIcon name="ios-code" color={ color } />,
-				} }
-			/>
-
-			{/* componente 04GerminacionScreen */ }
-			<BottomTab.Screen
-				name="Germinacion"
-				component={ GerminacionScreen }
-				options={ {
-					tabBarIcon: ( { color } ) => <TabBarIcon name="ios-code" color={ color } />,
-				} }
-			/>
 
 
 			{/* componente 03MiHuertoScreen */ }
@@ -62,6 +45,16 @@ export default function BottomTabNavigator ()
 				} }
 			/>
 
+
+
+			{/* componente 04GerminacionScreen */ }
+			<BottomTab.Screen
+				name="Germinacion"
+				component={ GerminacionScreen }
+				options={ {
+					tabBarIcon: ( { color } ) => <TabBarIcon name="ios-code" color={ color } />,
+				} }
+			/>
 
 			{/* componente 02LoginScreen */ }
 			<BottomTab.Screen
@@ -97,6 +90,16 @@ export default function BottomTabNavigator ()
 			<BottomTab.Screen
 				name="Cuanta tierra.."
 				component={ CuantatierraScreen }
+				options={ {
+					tabBarIcon: ( { color } ) => <TabBarIcon name="ios-code" color={ color } />,
+				} }
+			/>
+
+
+			{/* SANDBOX - https://huertify.atlassian.net/browse/HTFY-44 */ }
+			<BottomTab.Screen
+				name="SBX"
+				component={ SandboxScreen }
 				options={ {
 					tabBarIcon: ( { color } ) => <TabBarIcon name="ios-code" color={ color } />,
 				} }

@@ -2,16 +2,28 @@ import { HfSortby } from "../../constants/HfActions";
 
 export default ( hfplantacion, { hftipo, hfgermincion, sortby } ) =>
 {
-	return hfplantacion.filter( ( hfp = { hftipo: '' } ) =>
+	return hfplantacion.filter( ( hfp = { hftipo: '', hfgermincion: undefined } ) =>
 	{
-		const hftipoMatch = hfp.hftipo
-			.toLowerCase()
-			.includes(
-				hftipo.toLowerCase()
-			);
+		let hftipoMatch = true;
+		if ( hfp.hftipo !== '' )
+		{
+			hftipoMatch = hfp.hftipo
+				.toLowerCase()
+				.includes(
+					hftipo.toLowerCase() // ???????????????????????
+				);
+		}
+		console.log( 'hftipoMatch', hftipoMatch );
 
-		const hfgermincionMatch = typeof hfgermincion !== 'number'
-			&& hfp.hfgermincion === hfgermincion;
+
+		let hfgermincionMatch = true;
+		if ( typeof hfgermincion !== undefined )
+		{
+			hfgermincionMatch = hfp.hfgermincion === hfgermincion;
+		}
+
+		console.log( 'hfgermincionMatch', hftipoMatch );
+
 
 		return hftipoMatch && hfgermincionMatch;
 	} ).sort( ( uno, dos ) =>
