@@ -49,7 +49,7 @@ Pronto en Google Play!
 * Information of your garden stays on your account, on your own cellphone: to share it on cloud is optional.
 ### Búsquedas / Searchs
 * Huertify no se hace responsable de las búsquedas realizadas por los usuarios del sistema.
-* Huertify does not take responsability for the search made by the users.
+* Huertify does not take responsability for the searchs made by the users.
 
 # Dev
 - cd functions/
