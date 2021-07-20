@@ -36,8 +36,11 @@ Pronto en Google Play!
 
 
 ## Discalimers
-* La información queda en tu cuenta, en tu propio celular.
-* Information stays on your account, on your own cellphone.
+* La información de tu huerto queda en tu cuenta, en tu propio celular: compartir en la nube es opcional.
+* Information of your garden stays on your account, on your own cellphone: to share it on cloud is optional.
+
+* Huertify no se hace responsable de las búsquedas realizadas por los usuarios del sistema.
+* Huertify does not take responsability for the search made by the users.
 
 # Dev
 - cd functions/
