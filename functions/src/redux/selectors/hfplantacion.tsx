@@ -5,12 +5,13 @@ import { HfSortby } from "../../constants/HfActions";
 export default ( hfplantacion, filter ) => // { hftipo: string = '', hfgermincion: Date = undefined, sortby = undefined }
 {
 	// hfp = { hftipo: '', hfgermincion: undefined }
-	return hfplantacion.filter( ( hfplanta ) =>
+	return hfplantacion.filter( hfplanta =>
 	{
 
 		console.log( 'hfplantacion', hfplantacion );
-		console.log( 'hfplanta', hfplanta );
+		console.log( 'hfplanta.hftipo', hfplanta.hftipo );
 		console.log( 'filter.hftipo', filter.hftipo );
+		console.log( 'filter', filter );
 
 
 		let hftipoMatch = true;
@@ -30,14 +31,13 @@ export default ( hfplantacion, filter ) => // { hftipo: string = '', hfgermincio
 		{
 			hfgermincionMatch = hfplanta.hfgermincion === filter.hfgermincion;
 		}
-
 		console.log( 'hfgermincionMatch', hftipoMatch );
 
 
 		return hftipoMatch && hfgermincionMatch;
 	} ).sort( ( uno, dos ) =>
 	{
-		switch ( _sortby )
+		switch ( filter.sortby )
 		{
 			case HfSortby.HFTIPO:
 				return uno.hftipo < dos.hftipo ? 1 : -1;
