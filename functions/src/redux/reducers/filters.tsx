@@ -3,8 +3,8 @@ import { HfFilters, HfSortby } from '../../constants/HfActions'
 // filters reducer (99 Organizing Redux)
 
 const filtersReducerDefaultState = {
-	hftipo: ''
-	, hfgerminacion: undefined
+	hftipo: "string"
+	, hfgerminacion: {}
 	, sortBy: HfSortby.HFTIPO
 };
 

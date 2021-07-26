@@ -19,12 +19,9 @@ import { setHFPlantacionFilter } from './src/redux/actions/filters'
 import getHfPlantacion from './src/redux/selectors/hfplantacion'
 
 const mi_store = configStore();
-console.log( 'mi_store.getState() !!!', mi_store.getState() );
-/*
 
-const state = mi_store.getState();
-//console.log( 'pinche state', state );
 
+// 1) insert
 mi_store.dispatch( addHfPlantacion( {
 	hftipo: "Tomate"
 	, hfcantidad: 2
@@ -40,15 +37,30 @@ mi_store.dispatch( addHfPlantacion( {
 	, hfgeo: {}
 } ) );
 
-mi_store.dispatch( setHFPlantacionFilter( 'Tomate', '' ) );
-//mi_store.dispatch( setHFPlantacionFilter( 'Albahaca', '' ) );
+
+// 2) filter
+mi_store.dispatch( setHFPlantacionFilter( 'mate', '' ) );
+//mi_store.dispatch( setHFPlantacionFilter( 'a', '' ) ); // uno u otro..
 
 
-
+// 3) select
+const state = mi_store.getState();
 const mi_hfplantacion = getHfPlantacion( state.hfplantacion, state.filters ); // ??? ESTE me da error en /selectors/hfplantacion.tsx:13
+
+console.log( 'mi_hfplantacion', mi_hfplantacion );
+console.log( 'mi_store.getState() !!!', mi_store.getState() );
+
+
+/*
+
+//console.log( 'pinche state', state );
+
+
+
+
+
 console.log( 'pinche mi_store II', mi_store );
 console.log( 'pinche state II', state );
-console.log( 'mi_hfplantacion', mi_hfplantacion );
 */
 
 // REDUX--
