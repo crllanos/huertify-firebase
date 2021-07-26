@@ -20,7 +20,6 @@ import getHfPlantacion from './src/redux/selectors/hfplantacion'
 
 const mi_store = configStore();
 
-
 // 1) insert
 mi_store.dispatch( addHfPlantacion( {
 	hftipo: "Tomate"
@@ -39,13 +38,13 @@ mi_store.dispatch( addHfPlantacion( {
 
 
 // 2) filter
-mi_store.dispatch( setHFPlantacionFilter( 'mate', '' ) );
-//mi_store.dispatch( setHFPlantacionFilter( 'a', '' ) ); // uno u otro..
+//mi_store.dispatch( setHFPlantacionFilter( 'mate', '' ) );
+mi_store.dispatch( setHFPlantacionFilter( 'a', '' ) ); // uno u otro..
 
 
 // 3) select
 const state = mi_store.getState();
-const mi_hfplantacion = getHfPlantacion( state.hfplantacion, state.filters ); // ??? ESTE me da error en /selectors/hfplantacion.tsx:13
+const mi_hfplantacion = getHfPlantacion( state.hfplantacion, state.filters );
 
 console.log( 'mi_hfplantacion', mi_hfplantacion );
 console.log( 'mi_store.getState() !!!', mi_store.getState() );

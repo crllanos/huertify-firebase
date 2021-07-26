@@ -1,16 +1,16 @@
 import { HfFilters, HfSortby } from '../../constants/HfActions'
 
 // filters reducer (99 Organizing Redux)
-
+// https://huertify.atlassian.net/browse/HTFY-54
 const filtersReducerDefaultState = {
 	hftipo: "string"
-	, hfgerminacion: {}
+	, hfgerminacion: "@HTFY-54"
 	, sortBy: HfSortby.HFTIPO
 };
 
 export default ( state = filtersReducerDefaultState, action ) =>
 {
-	console.log( "reducers/filter.tsx action", action );
+	// console.log( "reducers/filter.tsx action", action );
 
 	switch ( action.type )
 	{
