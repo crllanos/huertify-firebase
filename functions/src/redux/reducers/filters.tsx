@@ -10,6 +10,8 @@ const filtersReducerDefaultState = {
 
 export default ( state = filtersReducerDefaultState, action ) =>
 {
+	console.log( "reducers/filter.tsx action", action );
+
 	switch ( action.type )
 	{
 		case HfFilters.SET_HFTIPO:

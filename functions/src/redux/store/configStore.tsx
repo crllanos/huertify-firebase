@@ -9,7 +9,8 @@ export default () =>
 		combineReducers( {
 			hfplantacion: hfplantacionReducer
 			, filters: filtersReducer
-		} ) );
+		} )
+	);
 
 	return store;
 };

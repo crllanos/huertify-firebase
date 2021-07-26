@@ -2,7 +2,7 @@ import { HfSortby } from "../../constants/HfActions";
 
 //  (99 Organizing Redux)
 
-export default ( hfplantacion, filter ) => // { hftipo: string = '', hfgermincion: Date = undefined, sortby = undefined }
+export default ( hfplantacion, { fhftipo, fhfgermincion, fsortby } ) =>
 {
 	// hfp = { hftipo: '', hfgermincion: undefined }
 	return hfplantacion.filter( hfplanta =>
@@ -10,26 +10,26 @@ export default ( hfplantacion, filter ) => // { hftipo: string = '', hfgermincio
 
 		console.log( 'hfplantacion', hfplantacion );
 		console.log( 'hfplanta.hftipo', hfplanta.hftipo );
-		console.log( 'filter.hftipo', filter.hftipo );
-		console.log( 'filter', filter );
+		//console.log( 'filter.hftipo', filter.hftipo );
+		console.log( 'fhftipo', fhftipo );
 
 
 		let hftipoMatch = true;
-		if ( hfplanta.hftipo !== '' && filter.hftipo !== '' )
+		if ( hfplanta.hftipo !== '' && fhftipo !== '' )
 		{
 			hftipoMatch = hfplanta.hftipo
 				.toLowerCase()
 				.includes(
-					filter.hftipo.toLowerCase() // ???????????????????????
+					fhftipo.toLowerCase() // ???????????????????????
 				);
 		}
 		console.log( 'hftipoMatch', hftipoMatch );
 
 
 		let hfgermincionMatch = true;
-		if ( typeof filter.hfgermincion !== undefined )
+		if ( typeof fhfgermincion !== undefined )
 		{
-			hfgermincionMatch = hfplanta.hfgermincion === filter.hfgermincion;
+			hfgermincionMatch = hfplanta.hfgermincion === fhfgermincion;
 		}
 		console.log( 'hfgermincionMatch', hftipoMatch );
 
@@ -37,7 +37,7 @@ export default ( hfplantacion, filter ) => // { hftipo: string = '', hfgermincio
 		return hftipoMatch && hfgermincionMatch;
 	} ).sort( ( uno, dos ) =>
 	{
-		switch ( filter.sortby )
+		switch ( fsortby )
 		{
 			case HfSortby.HFTIPO:
 				return uno.hftipo < dos.hftipo ? 1 : -1;
