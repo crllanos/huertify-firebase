@@ -2,9 +2,9 @@ import { HfSortby } from "../../constants/HfActions";
 
 //  (99 Organizing Redux)
 
-export default ( hfplantacion, filter = { hftipo: string, hfgermincion: any, sortby: HfSortby } ) =>
+export default ( hfplantacion, filter = { hftipo: '', hfgerminacion: '', sortby: HfSortby.HFTIPO } ) =>
 {
-	// hfp = { hftipo: '', hfgermincion: undefined }
+	// hfp = { hftipo: '', hfgerminacion: undefined }
 	return hfplantacion.filter( hfplanta =>
 	{
 		console.log( 'selector.hfplanta', hfplanta );
@@ -17,22 +17,22 @@ export default ( hfplantacion, filter = { hftipo: string, hfgermincion: any, sor
 			hftipoMatch = hfplanta.hftipo
 				.toLowerCase()
 				.includes(
-					filter.hftipo.toLowerCase() // ???????????????????????
+					filter.hftipo.toLowerCase()
 				);
 		}
 
 
-		let hfgermincionMatch = true;
+		let hfgerminacionMatch = true;
 		/** // @TODO Revisar comparacion de fechas - https://huertify.atlassian.net/browse/HTFY-54
-		if ( fhfgermincion )
+		if ( fhfgerminacion )
 		{
-			hfgermincionMatch = hfplanta.hfgermincion === filter.hfgermincion;
+			hfgerminacionMatch = hfplanta.hfgerminacion === filter.hfgerminacion;
 		}
 		 */
-		//console.log( 'hfgermincionMatch @HTFY-54', hfgermincionMatch );
+		//console.log( 'hfgerminacionMatch @HTFY-54', hfgerminacionMatch );
 
 
-		return hftipoMatch && hfgermincionMatch;
+		return hftipoMatch && hfgerminacionMatch;
 	} ).sort( ( uno, dos ) =>
 	{
 		switch ( filter.sortby )
@@ -41,7 +41,7 @@ export default ( hfplantacion, filter = { hftipo: string, hfgermincion: any, sor
 				return uno.hftipo < dos.hftipo ? 1 : -1;
 
 			default: //case HfSortby.HFGERMINACION:
-				return uno.hfgermincion < dos.hfgermincion ? 1 : -1;
+				return uno.hfgerminacion < dos.hfgerminacion ? 1 : -1;
 
 		}
 	} );

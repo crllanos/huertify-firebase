@@ -1,7 +1,7 @@
 import { HfActions } from '../../constants/HfActions'
 
 // hfplantacion reducer (99 Organizing Redux)
-const hfplantacionDefaultState = [];
+const hfplantacionDefaultState = []; // @todo tipo hfplantacion
 
 export default ( state = hfplantacionDefaultState, action ) =>
 {

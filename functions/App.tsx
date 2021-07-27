@@ -3,8 +3,6 @@ import 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 
-import { Text, View, StyleSheet } from 'react-native';
-
 //import useCachedResources   from './hooks/useCachedResources';
 //import useColorScheme       from './hooks/useColorScheme';
 import Navigation from './src/navigation';
@@ -39,7 +37,7 @@ mi_store.dispatch( addHfPlantacion( {
 
 // 2) filter
 //mi_store.dispatch( setHFPlantacionFilter( 'mate', '' ) );
-mi_store.dispatch( setHFPlantacionFilter( 'a', '' ) ); // uno u otro..
+mi_store.dispatch( setHFPlantacionFilter( 'a', new Date() ) ); // uno u otro..
 
 
 // 3) select
@@ -49,21 +47,7 @@ const mi_hfplantacion = getHfPlantacion( state.hfplantacion, state.filters );
 console.log( 'mi_hfplantacion', mi_hfplantacion );
 console.log( 'mi_store.getState() !!!', mi_store.getState() );
 
-
-/*
-
-//console.log( 'pinche state', state );
-
-
-
-
-
-console.log( 'pinche mi_store II', mi_store );
-console.log( 'pinche state II', state );
-*/
-
 // REDUX--
-
 
 
 
@@ -71,7 +55,9 @@ export default function App ()
 {
 	return (
 		<SafeAreaProvider>
-			<Navigation /* colorScheme={colorScheme}  // @todo-001 generar scheme dark */ />
+			<Provider store={ mi_store }>
+				<Navigation /* colorScheme={colorScheme}  // @todo-001 generar scheme dark */ />
+			</Provider>
 			<StatusBar />
 		</SafeAreaProvider>
 	);
