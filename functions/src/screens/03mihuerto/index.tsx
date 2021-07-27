@@ -14,14 +14,14 @@ export default function MiHuertoScreen ( { navigation } )
 	// const [ plantacion, setPlantacion ] = useState(Plantacion);
 	/* no
 	useEffect(() => {
-	    const planta:Plantacion = {};
-	    setPlantacion(planta);
+		const planta:Plantacion = {};
+		setPlantacion(planta);
 	}, []);
 	*/
 
 	/* si
 	const setVal = (k, v) => {
-	    setPlantacion({ ...plantacion, [k]: v });
+		setPlantacion({ ...plantacion, [k]: v });
 	};
 	*/
 

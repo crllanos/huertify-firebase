@@ -14,7 +14,7 @@ import { Provider } from 'react-redux';
 import configStore from './src/redux/store/configStore';
 import { addHfPlantacion } from './src/redux/actions/hfplantacion'
 import { setHFPlantacionFilter } from './src/redux/actions/filters'
-import getHfPlantacion from './src/redux/selectors/hfplantacion'
+//import getHfPlantacion from './src/redux/selectors/hfplantacion'
 
 const hfstore = configStore();
 
