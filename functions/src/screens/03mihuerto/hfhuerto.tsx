@@ -2,12 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
 import HfHuertoItem from './hfhuertoitem'
+import getHfPlantacion from '../../redux/selectors/hfplantacion'
 
 // mapeo
 const mapStateToProps = ( state ) =>
 {
 	return {
-		hfplantacion: state.hfplantacion
+		hfplantacion: getHfPlantacion( state.hfplantacion, state.filters )
 	}
 }
 

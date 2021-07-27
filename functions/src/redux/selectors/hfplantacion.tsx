@@ -35,10 +35,12 @@ export default ( hfplantacion, filter = { hftipo: '', hfgerminacion: '', sortby:
 		return hftipoMatch && hfgerminacionMatch;
 	} ).sort( ( uno, dos ) =>
 	{
+		//console.log( 'INTENTA HfSortby.HFTIPO ', filter );
+		//console.log( 'INTENTA HfSortby.HFTIPO ', HfSortby.HFTIPO );
 		switch ( filter.sortby )
 		{
 			case HfSortby.HFTIPO:
-				return uno.hftipo < dos.hftipo ? 1 : -1;
+				return uno.hftipo > dos.hftipo ? 1 : -1;
 
 			default: //case HfSortby.HFGERMINACION:
 				return uno.hfgerminacion < dos.hfgerminacion ? 1 : -1;

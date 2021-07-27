@@ -1,6 +1,8 @@
 import React from 'react';
 import { ListItem, Avatar } from "react-native-elements";
 
+//  (102 Rendering individual)
+
 const HfHuertoItem = ( { hfid, hftipo, hfcantidad, hfgerminacion } ) => (
     <ListItem
         key={ hfid }
