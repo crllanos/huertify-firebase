@@ -6,6 +6,7 @@ import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
 //import HfPlantacion, { getPlantaciones } from '../../model/hfplantacion'
 import HfHuerto from './hfhuerto';
+import HfHuertoFilter from "./hfhuertofilter";
 
 
 export default function MiHuertoScreen ( { navigation } )
@@ -23,6 +24,7 @@ export default function MiHuertoScreen ( { navigation } )
 
 			<ScrollView>
 
+				<HfHuertoFilter />
 				<HfHuerto />
 
 				<Button title="Nueva germinacion"
