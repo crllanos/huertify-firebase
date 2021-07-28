@@ -3,7 +3,8 @@ import { HfFilters, HfSortby } from '../../constants/HfActions'
 // filters reducer (99 Organizing Redux)
 // https://huertify.atlassian.net/browse/HTFY-54
 const filtersReducerDefaultState = {
-	hftipo: "string"
+	hftipo: ""
+	, hfcantidad: 1
 	, hfgerminacion: "@HTFY-54"
 	, sortBy: HfSortby.HFTIPO
 };
@@ -18,6 +19,12 @@ export default ( state = filtersReducerDefaultState, action ) =>
 			return {
 				...state
 				, hftipo: action.hftipo
+			}
+
+		case HfFilters.SET_HFCANTIDAD:
+			return {
+				...state
+				, hfcantidad: action.hfcantidad
 			}
 
 		case HfFilters.SET_HFGERMINACION:
