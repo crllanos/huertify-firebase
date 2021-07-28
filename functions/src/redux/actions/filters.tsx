@@ -10,14 +10,14 @@ export const setHFPlantacionFilter = ( hftipo: string, hfgerminacion: Date ) => 
 	}
 );
 
-export const setHFTipo = ( hftipo: string ) => (
+export const setHFTipoFilter = ( hftipo: string ) => (
 	{
 		type: HfFilters.SET_HFTIPO
 		, hftipo
 	}
 );
 
-export const setHFGerminacion = ( hfgerminacion: Date ) => (
+export const setHFGerminacionFilter = ( hfgerminacion: Date ) => (
 	{
 		type: HfFilters.SET_HFGERMINACION
 		, hfgerminacion

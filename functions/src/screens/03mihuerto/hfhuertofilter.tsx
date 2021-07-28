@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { View, Text, TextInput } from 'react-native';
 import Estilo from '../../constants/Estilo';
-
+import { setHFTipoFilter } from '../../redux/actions/filters'
 
 // mapeo
 const mapStateToProps = ( state ) =>
@@ -20,7 +20,11 @@ const HfHuertoFilter = ( props ) => (
             placeholder="Tipo"
             style={ Estilo.input }
             value={ props.filters.hftipo }
-            onChangeText={ ( value ) => console.log( value ) } />
+            onChangeText={ ( filtro ) =>
+            {
+                //console.log( filtro );
+                props.dispatch( setHFTipoFilter( filtro ) );
+            } } />
     </View>
 );
 
