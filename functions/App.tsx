@@ -26,6 +26,13 @@ hfstore.dispatch( addHfPlantacion( {
 	, hfgeo: {}
 } ) );
 hfstore.dispatch( addHfPlantacion( {
+	hftipo: "Zapallo"
+	, hfcantidad: 1
+	, hfgerminacion: new Date()
+	, hflogin: {}
+	, hfgeo: {}
+} ) );
+hfstore.dispatch( addHfPlantacion( {
 	hftipo: "Albahaca"
 	, hfcantidad: 1
 	, hfgerminacion: new Date()

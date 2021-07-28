@@ -10,21 +10,6 @@ import HfHuerto from './hfhuerto';
 
 export default function MiHuertoScreen ( { navigation } )
 {
-	// , { useState, useEffect } from "react";
-	// const [ plantacion, setPlantacion ] = useState(Plantacion);
-	/* no
-	useEffect(() => {
-		const planta:Plantacion = {};
-		setPlantacion(planta);
-	}, []);
-	*/
-
-	/* si
-	const setVal = (k, v) => {
-		setPlantacion({ ...plantacion, [k]: v });
-	};
-	*/
-
 	return (
 		<View style={ Estilo.contenedor }>
 
@@ -37,10 +22,6 @@ export default function MiHuertoScreen ( { navigation } )
 			</View>
 
 			<ScrollView>
-				{/*getPlantaciones("param de busqueda").map((planta) => {
-					return (
-					);
-				})*/}
 
 				<HfHuerto />
 
