@@ -1,8 +1,10 @@
 # Huertify.org LLC | agro microescla.
 
 Huertify es una aplicacion gratuita, de codigo abierto y sin fines de lucro.
+* El set de datos debiera refrescarse con una frecuencia suficiente base para mantener exactitud. 
 
 Huertify is a free open-source app.
+* The data set should be refreshed on a frequent enough basis to maintain accuracy.
 
 La Linux Foundation lanzo su proyecto Ag Stack, 'Open-Source Digital Infrastructure for the Agriculture Ecosystem'.
 - Usted tiene su huerto.
