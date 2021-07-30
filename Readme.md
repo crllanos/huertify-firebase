@@ -1,6 +1,6 @@
 # Huertify.org LLC | agro microescla.
 
-Huertify es una aplicacion gratuita, de codigo abierto y sin fines de lucro.
+Huertify es una aplicacion gratuita, de codigo abierto y sin fines de lucro por parte de Cristian Llanos M.
 * El set de datos debiera refrescarse con una frecuencia suficiente base para mantener exactitud. 
 
 Huertify is a free open-source app.
@@ -68,3 +68,5 @@ Pronto en Google Play!
 - firebase deploy --only hosting:huertify-org
 - - sudo npm install -g firebase-tools
 - git push
+
+En memoria de Violeta Parra.
