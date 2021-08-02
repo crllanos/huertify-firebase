@@ -21,6 +21,7 @@ import HfPlantacion, {
 } from '../../model/hfplantacion'
 import HfTipo from '../../model/hftipo'
 import { addPlantacionLocal, addPlantacionBackend } from '../../model/hfdb'
+import GerminacionForm from './germinacionForm'
 
 import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
@@ -102,6 +103,8 @@ export default function GerminacionScreen ( { navigation } )
 			<Text style={ Estilo.h1 }>Germinacion</Text>
 
 			<ScrollView>
+
+				<GerminacionForm />
 
 				<HFLogin
 					hflogin={ planta.hflogin }

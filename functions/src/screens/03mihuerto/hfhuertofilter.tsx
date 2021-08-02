@@ -40,14 +40,18 @@ const HfHuertoFilter = ( props ) => (
 
                 if ( e.target.value === 'hftipo' )
                 {
+                    console.log( 'dispatch( sortByHFTipo )' );
                     props.dispatch( sortByHFTipo() );
 
                 } else if ( e.target.value === 'hfcantidad' )
                 {
+                    // https://huertify.atlassian.net/browse/HTFY-59
+                    console.log( 'dispatch( sortByHFCantidad )' ); // ???? RARO, imprime pero no parece ejecutar nada más, a diferencia de sortByHFTipo
                     props.dispatch( sortByHFCantidad() );
 
                 } else if ( e.target.value === 'hfgerminacion' )
                 {
+                    console.log( 'dispatch( hfgerminacion )' );
                     alert( 'hfgerminacion @HTFY-58' );
 
                 }
