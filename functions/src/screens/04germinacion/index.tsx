@@ -104,7 +104,7 @@ export default function GerminacionScreen ( { navigation } )
 
 			<ScrollView>
 
-				<GerminacionForm />
+				--GerminacionForm--
 
 				<HFLogin
 					hflogin={ planta.hflogin }
