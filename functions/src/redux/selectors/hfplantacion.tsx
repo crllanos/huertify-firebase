@@ -40,8 +40,8 @@ export default ( hfplantacion, filter = { hftipo: '', hfcantidad: 1, hfgerminaci
 		return hftipoMatch && hfcantidadMatch && hfgerminacionMatch;
 	} ).sort( ( uno, dos ) =>
 	{
-		//console.log( 'INTENTA HfSortby.HFTIPO ', filter );
-		//console.log( 'INTENTA HfSortby.HFTIPO ', HfSortby.HFTIPO );
+		console.log( 'INTENTA HfSortby.HFTIPO ', filter );
+		console.log( 'INTENTA HfSortby.HFTIPO ', HfSortby.HFTIPO );
 		switch ( filter.sortby )
 		{
 			case HfSortby.HFTIPO:

@@ -43,7 +43,7 @@ hfstore.dispatch( addHfPlantacion( {
 
 // 2) filter
 //hfstore.dispatch( setHFPlantacionFilter( 'mate', '' ) );
-hfstore.dispatch( setHFPlantacionFilter( 'a', new Date() ) ); // uno u otro..
+//hfstore.dispatch( setHFPlantacionFilter( 'a', 1, new Date() ) ); // uno u otro..
 
 
 // 3) select

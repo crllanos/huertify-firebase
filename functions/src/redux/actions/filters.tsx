@@ -1,7 +1,7 @@
 import { HfFilters } from '../../constants/HfActions'
 
 //  (99 Organizing Redux)
-
+// hfgerminacion: https://huertify.atlassian.net/browse/HTFY-54
 export const setHFPlantacionFilter = ( hftipo: string, hfcantidad: number, hfgerminacion: Date ) => (
 	{
 		type: HfFilters.SET_HFTIPO
@@ -44,6 +44,8 @@ export const sortByHFCantidad = () => (
 	}
 )
 
+// PENDIENTE
+// https://huertify.atlassian.net/browse/HTFY-54
 export const sortHFGerminacion = () => (
 	{
 		type: HfFilters.SORTBY_HFGERMINACION
