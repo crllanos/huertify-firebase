@@ -44,7 +44,11 @@ console.log( 'mi_hfplantacion', mi_hfplantacion );
 // High Order Components
 const HocInfo = ( props ) => (
 	<View>
+		{ props.isAuthenticated && <Text>UD isAuthenticated!</Text> }
+		{ !props.isAuthenticated && <Text>UD !isAuthenticated</Text> }
 		<Text>Prueba de High Order Components: { props.info }</Text>
+		<Text>Please login to view the info</Text>
+
 	</View>
 );
 
@@ -55,8 +59,6 @@ const HocAdminWarn = ( WrappedComponent ) =>
 			<Text>!--HoC Example</Text>
 			{ props.isAdmin && <Text>UD isAdmin!</Text> }
 			{ !props.isAdmin && <Text>UD !isAdmin</Text> }
-			{ props.isAuthenticated && <Text>UD isAuthenticated!</Text> }
-			{ !props.isAuthenticated && <Text>UD !isAuthenticated</Text> }
 			<WrappedComponent { ...props } />
 			<Text>HoC Example--</Text>
 		</View>
@@ -68,7 +70,23 @@ const HocAdminWarn = ( WrappedComponent ) =>
  * evaluar boolean isAuthenticated
  *
  */
+const requireAuthentication = ( WrappedComponent ) =>
+{
+	return ( props ) => (
+		<View>
+			{ props.isAuthenticated ? (
+				<WrappedComponent { ...props } />
+			) : (
+				<Text>Please login para ver este coso!</Text>
+			) }
+		</View>
+	)
+}
+
+
+
 const HocPrueba = HocAdminWarn( HocInfo );
+const AuthInfo = requireAuthentication( HocInfo );
 
 
 
@@ -123,6 +141,7 @@ export default class SandboxScreen extends React.Component // ( { navigation } )
 					<TestPropsLog />
 
 					<HocPrueba info="holi!" isAdmin={ true } isAuthenticated={ false } />
+					<AuthInfo isAuthenticated={ false } />
 
 					<Button
 						color={ Colors.verde }
