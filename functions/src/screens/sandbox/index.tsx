@@ -52,11 +52,22 @@ const HocAdminWarn = ( WrappedComponent ) =>
 {
 	return ( props ) => (
 		<View>
-			{ props.isAdmin && <Text>UD ES ADMIN!</Text> }
+			<Text>!--HoC Example</Text>
+			{ props.isAdmin && <Text>UD isAdmin!</Text> }
+			{ !props.isAdmin && <Text>UD !isAdmin</Text> }
+			{ props.isAuthenticated && <Text>UD isAuthenticated!</Text> }
+			{ !props.isAuthenticated && <Text>UD !isAuthenticated</Text> }
 			<WrappedComponent { ...props } />
+			<Text>HoC Example--</Text>
 		</View>
 	)
 }
+
+// requireAuthentication
+/**
+ * evaluar boolean isAuthenticated
+ *
+ */
 const HocPrueba = HocAdminWarn( HocInfo );
 
 
@@ -111,7 +122,7 @@ export default class SandboxScreen extends React.Component // ( { navigation } )
 				<ScrollView>
 					<TestPropsLog />
 
-					<HocPrueba info="holi!" isAdmin={ true } />
+					<HocPrueba info="holi!" isAdmin={ true } isAuthenticated={ false } />
 
 					<Button
 						color={ Colors.verde }
