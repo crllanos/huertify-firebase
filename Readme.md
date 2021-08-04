@@ -46,6 +46,9 @@ Pronto en Google Play!
 
 
 ## Discalimers
+* Huertify promueve la adopción, protección y cuidado de vegetación nativa de tu área.
+* Huertify promotes the adoption, protection and care of native vegetation from your zone.
+
 ### Almacenamiento local / Local Storage
 * La información de tu huerto queda en tu cuenta, en tu propio celular: compartir en la nube es opcional.
 * Information of your garden stays on your account, on your own cellphone: to share it on cloud is optional.
