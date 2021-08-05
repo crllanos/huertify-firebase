@@ -29,13 +29,15 @@ const HfHuertoFilter = ( props ) => (
             } } />
 
         {/** @todo alternativas select https://huertify.atlassian.net/browse/HTFY-57 */ }
+        {/** Será HTFY-57 el motivo de la falla?? */ }
         {/** @todo Sacar los value de ENUM https://huertify.atlassian.net/browse/HTFY-58 */ }
         <select
-            value={ props.filters.sortBy }
+            value={ props.filters.sortBy } // estará bien escrito "sortBy"??
             onChange={ ( e ) =>
             {
                 {/** @todo No funciona el sortBy https://huertify.atlassian.net/browse/HTFY-59 */ }
                 console.log( 'SORTING BY', e.target.value );
+                console.log( 'props.dispatch', props.dispatch ); // Imprime: "props.dispatch // function dispatch ( action ) // hfhuertofilter.tsx: 40" TIRURIRU!!
 
                 if ( e.target.value === 'hftipo' )
                 {
