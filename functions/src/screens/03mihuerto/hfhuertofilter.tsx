@@ -15,7 +15,6 @@ const mapStateToProps = ( state ) =>
 
 const HfHuertoFilter = ( props ) => (
 
-
     < View >
         <Text style={ Estilo.parrafo }>Filtro</Text>
         <TextInput
@@ -40,7 +39,7 @@ const HfHuertoFilter = ( props ) => (
 
                 if ( e.target.value === 'hftipo' )
                 {
-                    console.log( 'dispatch( sortByHFTipo )' );
+                    console.log( 'dispatch( sortByHFTipo )' ); // Consola muestra 2 veces: "INTENTA HfSortby.HFTIPO  HFTIPO" pero no parece funcionar bien. Ni idea..
                     props.dispatch( sortByHFTipo() );
 
                 } else if ( e.target.value === 'hfcantidad' )
@@ -48,11 +47,12 @@ const HfHuertoFilter = ( props ) => (
                     // https://huertify.atlassian.net/browse/HTFY-59
                     console.log( 'dispatch( sortByHFCantidad )' ); // ???? RARO, imprime pero no parece ejecutar nada más, a diferencia de sortByHFTipo
                     props.dispatch( sortByHFCantidad() );
+                    console.log( 'dispatch( sortByHFCantidad ) II' ); // imprime pero no parece ejecutar nada más
 
                 } else if ( e.target.value === 'hfgerminacion' )
                 {
                     console.log( 'dispatch( hfgerminacion )' );
-                    alert( 'hfgerminacion @HTFY-58' );
+                    alert( 'hfgerminacion @HTFY-58' ); // Se ve esta alerta
 
                 }
             } }
