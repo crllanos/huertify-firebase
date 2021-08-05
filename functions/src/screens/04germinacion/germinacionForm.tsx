@@ -8,6 +8,17 @@ import HfPlantacion, {
 
 export default class GerminacionForm extends React.Component
 {
+
+    state = {
+        hftipo: 'Durazno'
+    };
+
+    onHfTipoChange = ( e ) =>
+    {
+        const hftipo = e.target.value;
+        this.setState( () => ( { hftipo } ) );
+    }
+
     render ()
     {
         return (
@@ -15,6 +26,26 @@ export default class GerminacionForm extends React.Component
                 <Text>Formulario de Germinacion</Text>
                 <form>
 
+                    <input
+                        type="text"
+                        placeholder="hftipo"
+                        value={ this.state.hftipo }
+                        onChange={ this.onHfTipoChange }
+                        autoFocus />
+
+                    <input
+                        type="number"
+                        placeholder="hfcantidad"
+                        autoFocus />
+
+                    <textarea
+                        placeholder="hflogin">
+                    </textarea>
+
+                    <button>Agregar plantación</button>
+
+
+                    {/**
                     <HFLogin
                         hflogin={ planta.hflogin }
                         onChangeText={ ( v ) => guardaPlanta( 'hflogin', v ) }
@@ -29,7 +60,7 @@ export default class GerminacionForm extends React.Component
                         hfcantidad={ planta.hfcantidad }
                         onChangeText={ ( v ) => guardaPlanta( 'hfcantidad', v ) }
                     />
-
+                     */}
 
                 </form>
             </View>

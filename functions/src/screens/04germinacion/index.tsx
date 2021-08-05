@@ -104,8 +104,9 @@ export default function GerminacionScreen ( { navigation } )
 
 			<ScrollView>
 
-				--GerminacionForm--
+				<GerminacionForm />
 
+				{/*
 				<HFLogin
 					hflogin={ planta.hflogin }
 					onChangeText={ ( v ) => guardaPlanta( 'hflogin', v ) }
@@ -120,15 +121,18 @@ export default function GerminacionScreen ( { navigation } )
 					hfcantidad={ planta.hfcantidad }
 					onChangeText={ ( v ) => guardaPlanta( 'hfcantidad', v ) }
 				/>
+				*/ }
 
 				{/* Fecha - enum [hoy, 1 semana, 1 mes]*/ }
 				{/* https://huertify.atlassian.net/browse/HTFY-42 */ }
+				{/*
 				<View>
 					<Text style={ Estilo.parrafo }>Fecha</Text>
 					<Text>(hoy)</Text>
 				</View>
 
 				<HFPlantacionUbicacion />
+				*/ }
 
 				{/* https://huertify.atlassian.net/browse/HTFY-41 */ }
 				<View style={ Estilo.checkboxContainer }>
