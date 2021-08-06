@@ -25,6 +25,7 @@ export default class GerminacionForm extends React.Component
         , hfcantidad: 12
         , hfgerminacion: moment()
         , hfgerminacionfocus: false
+        , error: ''
     };
 
     onHfTipoChange = ( e ) =>
@@ -39,22 +40,42 @@ export default class GerminacionForm extends React.Component
 
         // https://www.regex101.com
         // RARO, al colocar texto, React deja el estado en blanco, el value no funciona como en el tutorial. Buscar alternativas
-        if ( hfcantidad.match( /^\d*(\.\d{0,2})?$/ ) )
+        if ( !hfcantidad || hfcantidad.match( /^\d{1,}(\.\d{0,2})?$/ ) )
         {
             this.setState( () => ( { hfcantidad } ) );
         }
     }
     onHfGerminacionChange = ( hfgerminacion ) =>
     {
-        // date => this.setState( { date } )
-        this.setState( () => ( { hfgerminacion } ) );
+        if ( hfgerminacion )
+        {
+            this.setState( () => ( { hfgerminacion } ) );
+        }
     }
     onHfGerminacionFocusChange = ( hfgerminacionfocus ) =>
     {
-        // ( { focused } ) => this.setState( { focused } )
         this.setState( () => ( { hfgerminacionfocus } ) );
     }
 
+    onSubmit = ( e ) =>
+    {
+        console.log( 'pasa por onSubmit', e );
+        e.preventDefault();
+        if ( !this.state.hftipo || !this.state.hfcantidad )
+        {
+            console.log( 'Ingrese Tipo y Cantidad' );
+            this.setState( () => ( { error: 'ATENCION: Ingrese Tipo y Cantidad' } ) );
+        } else
+        {
+            console.log( 'pasa por onSubmit todo ok' );
+            this.setState( () => ( { error: '' } ) );
+            this.props.onSubmit( {
+                hftipo: this.state.hftipo
+                , hfcantidad: parseInt( this.state.hfcantidad )
+                , hfgerminacion: this.state.hfgerminacion.valueOf()
+            } );
+        }
+    }
 
 
     render ()
@@ -62,7 +83,8 @@ export default class GerminacionForm extends React.Component
         return (
             <View>
                 <Text>Formulario de Germinacion</Text>
-                <form>
+                <form onSubmit={ this.onSubmit }>
+                    { this.state.error && <Text>{ this.state.error }</Text> }
 
                     <input
                         type="text"
@@ -91,10 +113,16 @@ export default class GerminacionForm extends React.Component
                         placeholder="hflogin">
                     </textarea>
 
-                    <button>Agregar plantación</button>
+                    <button type="submit">Agregar plantación</button>
 
 
                     {/**
+                     *
+                     * PENDIENTE este merge de los inputs
+                     * PENDIENTE este merge de los inputs
+                     * PENDIENTE este merge de los inputs
+                     * https://huertify.atlassian.net/browse/HTFY-60
+                     *
                     <HFLogin
                         hflogin={ planta.hflogin }
                         onChangeText={ ( v ) => guardaPlanta( 'hflogin', v ) }

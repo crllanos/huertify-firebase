@@ -22,11 +22,14 @@ import HfPlantacion, {
 import HfTipo from '../../model/hftipo'
 import { addPlantacionLocal, addPlantacionBackend } from '../../model/hfdb'
 import GerminacionForm from './germinacionForm'
+import { connect } from "react-redux";
 
 import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
 
-export default function GerminacionScreen ( { navigation } )
+//export default function GerminacionScreen ( { navigation } )
+//function GerminacionScreen ( { navigation } )
+function GerminacionScreen ( props )
 {
 
 	// PRUEBA SPREAD OBJECT - default values expansible
@@ -104,7 +107,13 @@ export default function GerminacionScreen ( { navigation } )
 
 			<ScrollView>
 
-				<GerminacionForm />
+				<GerminacionForm
+					onSubmit={ ( hfplantacion ) =>
+					{
+						console.log( 'GerminacionForm.onSubmit', hfplantacion );
+						props.dispatch();
+
+					} } />
 
 				{/*
 				<HFLogin
@@ -181,3 +190,7 @@ Código [QR] - Mandar al e-mail
 	);
 
 };
+
+
+//export default GerminacionScreen;
+export default connect()( GerminacionScreen );
