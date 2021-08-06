@@ -23,6 +23,7 @@ import HfTipo from '../../model/hftipo'
 import { addPlantacionLocal, addPlantacionBackend } from '../../model/hfdb'
 import GerminacionForm from './germinacionForm'
 import { connect } from "react-redux";
+import { addHfPlantacion } from '../../redux/actions/hfplantacion'
 
 import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
@@ -111,7 +112,8 @@ function GerminacionScreen ( props )
 					onSubmit={ ( hfplantacion ) =>
 					{
 						console.log( 'GerminacionForm.onSubmit', hfplantacion );
-						props.dispatch();
+						props.dispatch( addHfPlantacion( hfplantacion ) );
+						// props.history.push( '/' ); // TypeError: props.history is undefined
 
 					} } />
 
