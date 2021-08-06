@@ -6,12 +6,25 @@ import HfPlantacion, {
     , HFPlantacionUbicacion
 } from '../../model/hfplantacion'
 
+
+import moment from 'moment';
+import { SingleDatePicker } from 'react-dates';
+import 'react-dates/initialize'
+import 'react-dates/lib/css/_datepicker.css';
+
+const now = moment();
+console.log( 'now', now );
+console.log( 'now', now.format() );
+
+
 export default class GerminacionForm extends React.Component
 {
 
     state = {
         hftipo: 'Durazno'
         , hfcantidad: 12
+        , hfgerminacion: moment()
+        , hfgerminacionfocus: false
     };
 
     onHfTipoChange = ( e ) =>
@@ -30,6 +43,16 @@ export default class GerminacionForm extends React.Component
         {
             this.setState( () => ( { hfcantidad } ) );
         }
+    }
+    onHfGerminacionChange = ( hfgerminacion ) =>
+    {
+        // date => this.setState( { date } )
+        this.setState( () => ( { hfgerminacion } ) );
+    }
+    onHfGerminacionFocusChange = ( hfgerminacionfocus ) =>
+    {
+        // ( { focused } ) => this.setState( { focused } )
+        this.setState( () => ( { hfgerminacionfocus } ) );
     }
 
 
@@ -55,7 +78,15 @@ export default class GerminacionForm extends React.Component
                         value={ this.state.hfcantidad }
                         onChange={ this.onHfCantidadChange }
                     />
-
+                    <SingleDatePicker
+                        date={ this.state.hfgerminacion } // momentPropTypes.momentObj or null
+                        onDateChange={ this.onHfGerminacionChange } // PropTypes.func.isRequired
+                        focused={ this.state.hfgerminacionfocus } // PropTypes.bool
+                        onFocusChange={ this.onHfGerminacionFocusChange } // PropTypes.func.isRequired
+                        id="your_unique_id" // PropTypes.string.isRequired,
+                        numberOfMonths={ 1 }
+                        isOutsideRange={ () => false }
+                    />
                     <textarea
                         placeholder="hflogin">
                     </textarea>
