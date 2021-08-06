@@ -30,11 +30,16 @@ import FooterHf from '../_layout/footer';
 
 //export default function GerminacionScreen ( { navigation } )
 //function GerminacionScreen ( { navigation } )
-function GerminacionScreen ( props )
+//function GerminacionScreen ( props ) // POR ALGUN MOTIVO PROPS DEJA DE FUNCIONAR
+function GerminacionScreen ( { route, navigation } )
 {
 
 	{ /** https://reactnavigation.org/docs/hello-react-navigation/#passing-additional-props */ }
-	console.log( 'GerminacionScreen.props.pedrito?', props );
+	// console.log( 'GerminacionScreen.props.pedrito?', props );
+
+	//const { hfid, otro } = route.params;
+
+	console.log( 'route.params', route.params );
 
 
 	// PRUEBA SPREAD OBJECT - default values expansible
