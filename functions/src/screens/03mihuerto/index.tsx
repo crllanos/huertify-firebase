@@ -31,10 +31,12 @@ export default function MiHuertoScreen ( { navigation } )
 					onPress={ () =>
 					{
 						console.log( 'Tratando de navegar...' )
-						navigation.navigate( 'Root'/* , { // @todo-002 no funciona navegacion entre screens Root
+						navigation.navigate( 'Germinacion' );
+						/*
+						navigation.navigate( 'Root' , { // @todo-002 no funciona navegacion entre screens Root
 						screen: 'InicioScreen',
 						params: { user: 'jane' },
-					} */)
+					} )*/
 					} } />
 
 			</ScrollView>
