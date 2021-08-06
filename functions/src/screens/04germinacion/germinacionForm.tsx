@@ -11,6 +11,7 @@ export default class GerminacionForm extends React.Component
 
     state = {
         hftipo: 'Durazno'
+        , hfcantidad: 12
     };
 
     onHfTipoChange = ( e ) =>
@@ -18,6 +19,20 @@ export default class GerminacionForm extends React.Component
         const hftipo = e.target.value;
         this.setState( () => ( { hftipo } ) );
     }
+    onHfCantidadChange = ( e ) =>
+    {
+        const hfcantidad = e.target.value;
+        console.log( 'hfcantidad', hfcantidad );
+
+        // https://www.regex101.com
+        // RARO, al colocar texto, React deja el estado en blanco, el value no funciona como en el tutorial. Buscar alternativas
+        if ( hfcantidad.match( /^\d*(\.\d{0,2})?$/ ) )
+        {
+            this.setState( () => ( { hfcantidad } ) );
+        }
+    }
+
+
 
     render ()
     {
@@ -31,12 +46,15 @@ export default class GerminacionForm extends React.Component
                         placeholder="hftipo"
                         value={ this.state.hftipo }
                         onChange={ this.onHfTipoChange }
-                        autoFocus />
+                        autoFocus
+                    />
 
                     <input
                         type="number"
                         placeholder="hfcantidad"
-                        autoFocus />
+                        value={ this.state.hfcantidad }
+                        onChange={ this.onHfCantidadChange }
+                    />
 
                     <textarea
                         placeholder="hflogin">
