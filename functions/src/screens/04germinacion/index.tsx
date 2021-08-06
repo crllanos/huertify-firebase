@@ -30,16 +30,16 @@ import FooterHf from '../_layout/footer';
 
 //export default function GerminacionScreen ( { navigation } )
 //function GerminacionScreen ( { navigation } )
-//function GerminacionScreen ( props ) // POR ALGUN MOTIVO PROPS DEJA DE FUNCIONAR
-function GerminacionScreen ( { route, navigation } )
+function GerminacionScreen ( props ) // POR ALGUN MOTIVO PROPS DEJA DE FUNCIONAR
+//function GerminacionScreen ( { route, navigation } ) // funciona solamente { route, navigation } o props. Juntos no funcionan bien, danger!!
 {
 
 	{ /** https://reactnavigation.org/docs/hello-react-navigation/#passing-additional-props */ }
 	// console.log( 'GerminacionScreen.props.pedrito?', props );
 
 	//const { hfid, otro } = route.params;
+	//console.log( 'route.params', route.params );
 
-	console.log( 'route.params', route.params );
 
 
 	// PRUEBA SPREAD OBJECT - default values expansible
@@ -123,6 +123,8 @@ function GerminacionScreen ( { route, navigation } )
 						console.log( 'GerminacionForm.onSubmit', hfplantacion );
 						props.dispatch( addHfPlantacion( hfplantacion ) );
 						// props.history.push( '/' ); // TypeError: props.history is undefined
+
+						// PROBAR CON navigation.navigate("MiHuerto")
 
 					} } />
 

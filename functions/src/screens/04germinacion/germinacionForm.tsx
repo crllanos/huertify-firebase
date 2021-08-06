@@ -14,7 +14,7 @@ import 'react-dates/lib/css/_datepicker.css';
 
 const now = moment();
 console.log( 'now', now );
-console.log( 'now', now.format() );
+console.log( 'now', now.format( "MMM Do, YYYY" ) ); // https://momentjs.com/docs/#/displaying/format/
 
 
 export default class GerminacionForm extends React.Component
@@ -40,7 +40,7 @@ export default class GerminacionForm extends React.Component
 
         // https://www.regex101.com
         // RARO, al colocar texto, React deja el estado en blanco, el value no funciona como en el tutorial. Buscar alternativas
-        if ( !hfcantidad || hfcantidad.match( /^\d{1,}(\.\d{0,2})?$/ ) )
+        if ( hfcantidad && hfcantidad.match( /^\d{1,}(\.\d{0,2})?$/ ) )
         {
             this.setState( () => ( { hfcantidad } ) );
         }
