@@ -24,7 +24,7 @@ export default class GerminacionForm extends React.Component
         hftipo: 'Durazno'
         , hfcantidad: 12
         , hfgerminacion: moment()
-        , hfgerminacionfocus: false
+        , focused: false
         , error: ''
     };
 
@@ -52,9 +52,11 @@ export default class GerminacionForm extends React.Component
             this.setState( () => ( { hfgerminacion } ) );
         }
     }
-    onHfGerminacionFocusChange = ( hfgerminacionfocus ) =>
+    onHfGerminacionFocusChange = ( focused ) =>
     {
-        this.setState( () => ( { hfgerminacionfocus } ) );
+        console.log( 'hfgerminacionfoco', focused );
+
+        this.setState( () => ( focused ) );
     }
 
     onSubmit = ( e ) =>
@@ -103,7 +105,7 @@ export default class GerminacionForm extends React.Component
                     <SingleDatePicker
                         date={ this.state.hfgerminacion } // momentPropTypes.momentObj or null
                         onDateChange={ this.onHfGerminacionChange } // PropTypes.func.isRequired
-                        focused={ this.state.hfgerminacionfocus } // PropTypes.bool
+                        focused={ this.state.focused } //  PropTypes.bool
                         onFocusChange={ this.onHfGerminacionFocusChange } // PropTypes.func.isRequired
                         id="your_unique_id" // PropTypes.string.isRequired,
                         numberOfMonths={ 1 }

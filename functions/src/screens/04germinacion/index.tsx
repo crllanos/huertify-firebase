@@ -33,6 +33,10 @@ import FooterHf from '../_layout/footer';
 function GerminacionScreen ( props )
 {
 
+	{ /** https://reactnavigation.org/docs/hello-react-navigation/#passing-additional-props */ }
+	console.log( 'GerminacionScreen.props.pedrito?', props );
+
+
 	// PRUEBA SPREAD OBJECT - default values expansible
 	let spread = { name: 'toma', id: 9, prueba: 'testotro' };
 	console.log( {
@@ -117,7 +121,10 @@ function GerminacionScreen ( props )
 
 					} } />
 
-				{/*
+				{/**
+				 *
+                 * PENDIENTE este merge de los inputs
+				 * https://huertify.atlassian.net/browse/HTFY-60
 				<HFLogin
 					hflogin={ planta.hflogin }
 					onChangeText={ ( v ) => guardaPlanta( 'hflogin', v ) }

@@ -23,7 +23,7 @@ import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 
 
 
-
+/** https://reactnavigation.org/docs/hello-react-navigation */
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 export default function BottomTabNavigator ()
 {
@@ -34,6 +34,19 @@ export default function BottomTabNavigator ()
 			initialRouteName="TabOne"
 			tabBarOptions={ { activeTintColor: Colors.verde } }>
 
+
+			{/* componente 04GerminacionScreen */ }
+			<BottomTab.Screen
+				name="Germinacion"
+				component={ GerminacionScreen }
+				options={ {
+					tabBarIcon: ( { color } ) => <TabBarIcon name="ios-code" color={ color } />,
+				} }
+			>
+				{ /** REEMPLAZA component={ GerminacionScreen } https://reactnavigation.org/docs/hello-react-navigation/#passing-additional-props */ }
+				{ /** props => <GerminacionScreen { ...props } pedrito={ "clavo un clavito" } /> */ }
+				{ /** Using a render callback removes those optimizations. So if you use a render callback, you'll need to ensure that you use React.memo or React.PureComponent */ }
+			</BottomTab.Screen>
 
 
 			{/* componente 03MiHuertoScreen */ }
@@ -46,16 +59,6 @@ export default function BottomTabNavigator ()
 			/>
 
 
-
-			{/* componente 04GerminacionScreen */ }
-			<BottomTab.Screen
-				name="Germinacion"
-				component={ GerminacionScreen }
-				options={ {
-					tabBarIcon: ( { color } ) => <TabBarIcon name="ios-code" color={ color } />,
-				} }
-			/>
-
 			{/* componente 02LoginScreen */ }
 			<BottomTab.Screen
 				name="Login"
@@ -64,6 +67,7 @@ export default function BottomTabNavigator ()
 					tabBarIcon: ( { color } ) => <TabBarIcon name="ios-code" color={ color } />,
 				} }
 			/>
+
 
 			{/* componente 01InicioScreen */ }
 			<BottomTab.Screen
@@ -86,6 +90,7 @@ export default function BottomTabNavigator ()
 					tabBarIcon: ( { color } ) => <TabBarIcon name="ios-code" color={ color } />,
 				} }
 			/>
+
 
 			<BottomTab.Screen
 				name="Cuanta tierra.."
