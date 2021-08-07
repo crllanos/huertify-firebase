@@ -20,21 +20,21 @@ const hfstore = configStore();
 // 1) insert
 hfstore.dispatch( addHfPlantacion( {
 	hftipo: "Tomate"
-	, hfcantidad: 20
+	, hfcantidad: 8
 	, hfgerminacion: new Date()
 	, hflogin: {}
 	, hfgeo: {}
 } ) );
 hfstore.dispatch( addHfPlantacion( {
 	hftipo: "Zapallo"
-	, hfcantidad: 10
+	, hfcantidad: 4
 	, hfgerminacion: new Date()
 	, hflogin: {}
 	, hfgeo: {}
 } ) );
 hfstore.dispatch( addHfPlantacion( {
 	hftipo: "Albahaca"
-	, hfcantidad: 10
+	, hfcantidad: 7
 	, hfgerminacion: new Date()
 	, hflogin: {}
 	, hfgeo: {}

@@ -117,6 +117,7 @@ function GerminacionScreen ( props ) // POR ALGUN MOTIVO PROPS DEJA DE FUNCIONAR
 
 			<ScrollView>
 
+				{/** Será que este reemplaza al AddHfPlantacionPage?? */ }
 				<GerminacionForm
 					onSubmit={ ( hfplantacion ) =>
 					{
@@ -125,6 +126,8 @@ function GerminacionScreen ( props ) // POR ALGUN MOTIVO PROPS DEJA DE FUNCIONAR
 						// props.history.push( '/' ); // TypeError: props.history is undefined
 
 						// PROBAR CON navigation.navigate("MiHuerto")
+
+						//
 
 					} } />
 

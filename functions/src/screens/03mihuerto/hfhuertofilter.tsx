@@ -54,7 +54,7 @@ const HfHuertoFilter = ( props ) => (
                 } else if ( e.target.value === 'hfgerminacion' )
                 {
                     console.log( 'dispatch( hfgerminacion )' );
-                    alert( 'hfgerminacion @HTFY-58' ); // Se ve esta alerta
+                    alert( 'hfgerminacion @HTFY-58' ); // Se ve esta alerta moment()
 
                 }
             } }

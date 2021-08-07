@@ -54,7 +54,7 @@ const HocInfo = ( props ) => (
 
 const HocAdminWarn = ( WrappedComponent ) =>
 {
-	return ( props ) => (
+	return ( props ) => ( // Sintaxis base para HoC con props, que el return no sea return(jsx) sino return(props) => (jsx)
 		<View>
 			<Text>!--HoC Example</Text>
 			{ props.isAdmin && <Text>UD isAdmin!</Text> }
