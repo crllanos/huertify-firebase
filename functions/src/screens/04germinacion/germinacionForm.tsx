@@ -20,13 +20,20 @@ console.log( 'now', now.format( "MMM Do, YYYY" ) ); // https://momentjs.com/docs
 export default class GerminacionForm extends React.Component
 {
 
-    state = {
-        hftipo: 'Durazno'
-        , hfcantidad: 12
-        , hfgerminacion: moment()
-        , focused: false
-        , error: ''
-    };
+    constructor( props )
+    {
+        super( props );
+
+        this.state = {
+            hftipo: props.hfplantacion ? props.hfplantacion.hftipo : ''
+            , hfcantidad: props.hfplantacion ? ( props.hfplantacion.hfcantidad * 1 ).toString() : ''
+            , hfgerminacion: props.hfplantacion ? moment( props.hfplantacion.hfgerminacion ) : moment()
+            , focused: false
+            , error: ''
+        }
+
+    }
+
 
     onHfTipoChange = ( e ) =>
     {

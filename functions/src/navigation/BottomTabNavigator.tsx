@@ -34,6 +34,16 @@ export default function BottomTabNavigator ()
 			initialRouteName="TabOne"
 			tabBarOptions={ { activeTintColor: Colors.verde } }>
 
+			{/* componente 03MiHuertoScreen */ }
+			<BottomTab.Screen
+				name="Mi Huerto"
+				component={ MiHuertoScreen }
+				options={ {
+					tabBarIcon: ( { color } ) => <TabBarIcon name="ios-code" color={ color } />,
+				} }
+			/>
+
+
 
 			{/* componente 04GerminacionScreen */ }
 			<BottomTab.Screen
@@ -47,16 +57,6 @@ export default function BottomTabNavigator ()
 				{ /** props => <GerminacionScreen { ...props } pedrito={ "clavo un clavito" } /> */ }
 				{ /** Using a render callback removes those optimizations. So if you use a render callback, you'll need to ensure that you use React.memo or React.PureComponent */ }
 			</BottomTab.Screen>
-
-
-			{/* componente 03MiHuertoScreen */ }
-			<BottomTab.Screen
-				name="Mi Huerto"
-				component={ MiHuertoScreen }
-				options={ {
-					tabBarIcon: ( { color } ) => <TabBarIcon name="ios-code" color={ color } />,
-				} }
-			/>
 
 
 			{/* componente 02LoginScreen */ }

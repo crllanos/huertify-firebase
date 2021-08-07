@@ -5,7 +5,9 @@ import { ListItem, Avatar } from "react-native-elements";
 import { connect } from 'react-redux';
 import { removeHfPlantacion } from '../../redux/actions/hfplantacion'
 
-//  (102 Rendering individual)
+
+
+//  (102 Rendering individual) // COMO PASARLE EL navigation??
 const HfHuertoItem = ( { dispatch, hfid, hftipo, hfcantidad, hfgerminacion } ) => (
     <ListItem
         key={ hfid }
@@ -29,7 +31,14 @@ const HfHuertoItem = ( { dispatch, hfid, hftipo, hfcantidad, hfgerminacion } ) =
             <ListItem.Subtitle>
                 Germinacion: hfgerminacion
                 <Button
-                    title="BORRAR"
+                    title="Ver"
+                    onPress={ () =>
+                    {
+                        console.log( 'de alguna manera hacer un Link' );
+                        // navigation.navigate( 'Germinacion', { hfid: -999, otro: 'mas' } ); // Uncaught TypeError: navigation is undefined
+                    } } />
+                <Button
+                    title="Borrar"
                     onPress={ () =>
                     {
                         dispatch( removeHfPlantacion( { hfid } ) );
