@@ -26,9 +26,10 @@ export const addHfPlantacion = (
 
 
 // EDIT_HFPLANTACION
-export const editHfPlantacion = ( hfid, updates ) => ( {
+export const editHfPlantacion = ( hftipo, updates ) => ( {
 	type: HfActions.EDIT_HFPLANTACION
-	, hfid
+	//	, hfid // estoy definiendo on the fly estos ids
+	, hftipo
 	, updates
 } );
 

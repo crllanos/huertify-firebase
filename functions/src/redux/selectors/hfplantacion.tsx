@@ -3,6 +3,7 @@ import { HfSortby } from "../../constants/HfActions";
 //  (99 Organizing Redux)
 
 // PROHIBIDAS las funciones exportadas anonimas, no hay manera de encontrar la llamada!!
+// getHfPlantacion
 export default ( hfplantacion, filter = { hftipo: '', hfcantidad: 1, hfgerminacion: '', sortby: HfSortby.HFTIPO } ) =>
 {
 	// hfp = { hftipo: '', hfgerminacion: undefined }

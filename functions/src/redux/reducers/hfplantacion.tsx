@@ -3,6 +3,7 @@ import { HfActions } from '../../constants/HfActions'
 // hfplantacion reducer (99 Organizing Redux)
 const hfplantacionDefaultState = []; // @todo tipo hfplantacion
 
+// PROHIBIDAS las export default anonimas!!!
 export default ( state = hfplantacionDefaultState, action ) =>
 {
 	switch ( action.type )
@@ -17,7 +18,7 @@ export default ( state = hfplantacionDefaultState, action ) =>
 		case HfActions.EDIT_HFPLANTACION:
 			return state.map( ( hfplantacion ) =>
 			{
-				if ( hfplantacion.hfid === action.hfid )
+				if ( hfplantacion.hftipo === action.hftipo ) // hfplantacion.hfid === action.hfid hfid estan definidos onthefly, reevisar
 				{
 					return {
 						...hfplantacion

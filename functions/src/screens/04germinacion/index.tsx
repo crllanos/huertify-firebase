@@ -22,6 +22,7 @@ import HfPlantacion, {
 import HfTipo from '../../model/hftipo'
 import { addPlantacionLocal, addPlantacionBackend } from '../../model/hfdb'
 import GerminacionForm from './germinacionForm'
+import GerminacionFormEdit from './germinacionFormEdit'
 import { connect } from "react-redux";
 import { addHfPlantacion } from '../../redux/actions/hfplantacion'
 
@@ -127,7 +128,20 @@ function GerminacionScreen ( props ) // POR ALGUN MOTIVO PROPS DEJA DE FUNCIONAR
 
 			<ScrollView>
 
-				{/** Será que este reemplaza al AddHfPlantacionPage?? */ }
+
+				{/** https://huertify.atlassian.net/browse/HTFY-61 */ }
+
+				{/** Debiera quedar en su propio screen?? Definir */ }
+				<GerminacionFormEdit />
+
+
+				<Text>--- SEPARADOR ---</Text>
+
+
+				{/** Será que este reemplaza al AddHfPlantacionPage??
+				 *
+				 * COMENTADO POR CHOQUE CON <GerminacionFormEdit>
+				 *
 				<GerminacionForm
 					onSubmit={ ( hfplantacion ) =>
 					{
@@ -141,6 +155,10 @@ function GerminacionScreen ( props ) // POR ALGUN MOTIVO PROPS DEJA DE FUNCIONAR
 						//
 
 					} } />
+
+*/ }
+
+
 
 				{/**
 				 *
