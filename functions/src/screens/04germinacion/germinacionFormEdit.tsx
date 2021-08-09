@@ -2,7 +2,8 @@ import React from "react";
 import { View, Text } from "react-native";
 import { connect } from "react-redux";
 import GerminacionForm from './germinacionForm'
-import { editHfPlantacion } from '../../redux/actions/hfplantacion'
+import { editHfPlantacion, removeHfPlantacion } from '../../redux/actions/hfplantacion'
+import { Button } from 'react-native';
 
 // Y CÓMO LLEGA ACA???????
 // Y CÓMO LLEGA ACA???????
@@ -39,6 +40,17 @@ const GerminacionFormEdit = ( props ) =>
                     // props.history.push( '/' ); Uncaught TypeError: props.history is undefined
                 } }
             />
+
+            {/** boton borrar */ }
+            <Button
+                title="Borrar"
+                onPress={ () =>
+                {
+                    props.dispatch( removeHfPlantacion( { hfid: props.hfplantacion.hfid } ) );
+                    console.log( 'Luego de borrar, debería volver al Huerto' );
+
+                } } />
+
         </View>
     );
 

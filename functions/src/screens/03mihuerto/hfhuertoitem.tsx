@@ -1,14 +1,13 @@
 import React from 'react';
-//import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom'; // SE CAE =c
 import { Button } from 'react-native';
 import { ListItem, Avatar } from "react-native-elements";
-import { connect } from 'react-redux';
-import { removeHfPlantacion } from '../../redux/actions/hfplantacion'
 
 
 
 //  (102 Rendering individual) // COMO PASARLE EL navigation??
-const HfHuertoItem = ( { dispatch, hfid, hftipo, hfcantidad, hfgerminacion } ) => (
+// Al quitar el borrar, queda obsoleto connect y ya no está disponible dispatch
+const HfHuertoItem = ( { hfid, hftipo, hfcantidad, hfgerminacion } ) => (
     <ListItem
         key={ hfid }
         bottomDivider
@@ -37,16 +36,11 @@ const HfHuertoItem = ( { dispatch, hfid, hftipo, hfcantidad, hfgerminacion } ) =
                         console.log( 'de alguna manera hacer un Link' );
                         // navigation.navigate( 'Germinacion', { hfid: -999, otro: 'mas' } ); // Uncaught TypeError: navigation is undefined
                     } } />
-                <Button
-                    title="Borrar"
-                    onPress={ () =>
-                    {
-                        dispatch( removeHfPlantacion( { hfid } ) );
-                    } } />
             </ListItem.Subtitle>
         </ListItem.Content>
     </ListItem>
 
 );
 
-export default connect()( HfHuertoItem );
+export default HfHuertoItem;
+//export default connect()( HfHuertoItem ); // Sin el botón para borrar, connect queda obsoleto
