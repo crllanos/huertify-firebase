@@ -28,6 +28,16 @@ import { addHfPlantacion } from '../../redux/actions/hfplantacion'
 import Estilo from '../../constants/Estilo';
 import FooterHf from '../_layout/footer';
 
+
+/**
+ *
+ * NOTA: En el tutorial, AddPage está definido como
+
+const GerminacionScreen = (props) => ( ... <GerminacionForm onSubmit={ dispatch() }> ...)
+
+* y tal vcez por eso no funciona como corresponde. Necesita un refactor mayor.
+*/
+
 //export default function GerminacionScreen ( { navigation } )
 //function GerminacionScreen ( { navigation } )
 function GerminacionScreen ( props ) // POR ALGUN MOTIVO PROPS DEJA DE FUNCIONAR
@@ -124,6 +134,7 @@ function GerminacionScreen ( props ) // POR ALGUN MOTIVO PROPS DEJA DE FUNCIONAR
 						console.log( 'GerminacionForm.onSubmit', hfplantacion );
 						props.dispatch( addHfPlantacion( hfplantacion ) );
 						// props.history.push( '/' ); // TypeError: props.history is undefined
+						// Ver nota AddPage al principio
 
 						// PROBAR CON navigation.navigate("MiHuerto")
 
