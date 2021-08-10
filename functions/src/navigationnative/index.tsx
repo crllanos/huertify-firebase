@@ -1,17 +1,25 @@
-
-
 import React from "react";
 import { StyleSheet, Text, View, AppRegistry } from "react-native";
 import { NativeRouter, Route, Link } from "react-router-native";
 
-const Home = () => <Text style={ styles.header }>Home</Text>;
+import InicioScreen from '../screens/01inicio/index'
+import LoginScreen from '../screens/02login/index'
+import MiHuertoScreen from '../screens/03mihuerto/index'
+import GerminacionScreen from '../screens/04germinacion/index'
+import CuantatierraScreen from '../screens/05cuantatierra/index'
+import SandboxScreen from '../screens/sandbox/index'
 
-const About = () => <Text style={ styles.header }>About</Text>;
 
-const Topic = ( { match } ) => (
-    <Text style={ styles.topic }>{ match.params.topicId }</Text>
-);
 
+//const Home = () => <Text style={ styles.header }>Home</Text>;
+
+//const About = () => <Text style={ styles.header }>About</Text>;
+
+//const Topic = ( { match } ) => (
+//    <Text style={ styles.topic }>{ match.params.topicId }</Text>
+//);
+
+/**
 const Topics = ( { match } ) => (
     <View>
         <Text style={ styles.header }>Topics</Text>
@@ -49,33 +57,61 @@ const Topics = ( { match } ) => (
         />
     </View>
 );
+*/
 
-const App = () => (
+const NativeNavigation = () => (
     <NativeRouter>
         <View style={ styles.container }>
             <View style={ styles.nav }>
                 <Link to="/" underlayColor="#f0f4f7" style={ styles.navItem }>
-                    <Text>Home</Text>
+                    <Text>Inicio</Text>
                 </Link>
                 <Link
-                    to="/about"
+                    to="/login"
                     underlayColor="#f0f4f7"
                     style={ styles.navItem }
                 >
-                    <Text>About</Text>
+                    <Text>Login</Text>
                 </Link>
                 <Link
-                    to="/topics"
+                    to="/mihuerto"
                     underlayColor="#f0f4f7"
                     style={ styles.navItem }
                 >
-                    <Text>Topics</Text>
+                    <Text>Mi huerto</Text>
+                </Link>
+                <Link
+                    to="/germinacion"
+                    underlayColor="#f0f4f7"
+                    style={ styles.navItem }
+                >
+                    <Text>Germinación</Text>
+                </Link>
+                <Link
+                    to="/cuantatierra"
+                    underlayColor="#f0f4f7"
+                    style={ styles.navItem }
+                >
+                    <Text>Cuanta tierra..</Text>
+                </Link>
+                <Link
+                    to="/sandbox"
+                    underlayColor="#f0f4f7"
+                    style={ styles.navItem }
+                >
+                    <Text>Sandbox</Text>
                 </Link>
             </View>
+            {/**
+             */}
 
-            <Route exact path="/" component={ Home } /> {/** DEFINIR MIS COMPONENTES */ }
-            <Route path="/about" component={ About } />
-            <Route path="/topics" component={ Topics } />
+
+            <Route exact path="/" component={ InicioScreen } /> {/** DEFINIR MIS COMPONENTES */ }
+            <Route path="/login" component={ LoginScreen } />
+            <Route path="/mihuerto" component={ MiHuertoScreen } />
+            <Route path="/germinacion" component={ GerminacionScreen } />
+            <Route path="/cuantatierra" component={ CuantatierraScreen } />
+            <Route path="/sandbox" component={ SandboxScreen } />
         </View>
     </NativeRouter>
 );
@@ -105,6 +141,7 @@ const styles = StyleSheet.create( {
         fontSize: 15
     }
 } );
+/*
+*/
 
-
-export default App;
+export default NativeNavigation;
