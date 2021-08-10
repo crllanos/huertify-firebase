@@ -1,16 +1,20 @@
 import { HfSortby } from "../../constants/HfActions";
+import moment from "moment";
 
 //  (99 Organizing Redux)
 
 // PROHIBIDAS las funciones exportadas anonimas, no hay manera de encontrar la llamada!!
 // getHfPlantacion
-export default ( hfplantacion, filter = { hftipo: '', hfcantidad: 1, hfgerminacion: '', sortby: HfSortby.HFTIPO } ) =>
+
+export default ( hfplantacion, filter = { hftipo: '', hfcantidad: 1, hfgerminacion: 1, hfcosecha: 2, sortby: HfSortby.HFTIPO } ) =>
 {
 	// hfp = { hftipo: '', hfgerminacion: undefined }
 	return hfplantacion.filter( hfplanta =>
 	{
 		console.log( 'selector.hfplanta', hfplanta );
 		console.log( 'selector.filter', filter );
+
+		const hfgerminacionAtMoment = moment( hfplanta.hfgerminacion );
 
 
 		let hftipoMatch = true;
@@ -29,7 +33,10 @@ export default ( hfplantacion, filter = { hftipo: '', hfcantidad: 1, hfgerminaci
 			hfcantidadMatch = hfplanta.hfcantidad >= filter.hfcantidad;
 		}
 
-		let hfgerminacionMatch = true;
+		// 110 Filtering by dates
+		let hfgerminacionMatch = true;// hfplanta.hfgerminacion ? hfplanta.hfgerminacion.isSameOrBefore( hfgerminacionAtMoment, 'day' ) : true;
+		let hfcosechaMatch = true;// hfplanta.hfcosecha ? hfplanta.hfcosecha.isSameOrAfter( hfgerminacionAtMoment, 'day' ) : true;
+
 		/** // @TODO Revisar comparacion de fechas - https://huertify.atlassian.net/browse/HTFY-54
 		if ( fhfgerminacion )
 		{

@@ -28,7 +28,7 @@ export default class GerminacionForm extends React.Component
             hftipo: props.hfplantacion ? props.hfplantacion.hftipo : ''
             , hfcantidad: props.hfplantacion ? ( props.hfplantacion.hfcantidad * 1 ).toString() : ''
             , hfgerminacion: props.hfplantacion ? moment( props.hfplantacion.hfgerminacion ) : moment()
-            , focused: false
+            , calendarFocused: false
             , error: ''
         }
 
@@ -59,11 +59,11 @@ export default class GerminacionForm extends React.Component
             this.setState( () => ( { hfgerminacion } ) );
         }
     }
-    onHfGerminacionFocusChange = ( focused ) =>
+    onHfGerminacionFocusChange = ( calendarFocused ) =>
     {
-        console.log( 'hfgerminacionfoco', focused );
+        console.log( 'hfgerminacionfoco', calendarFocused );
 
-        this.setState( () => ( focused ) );
+        this.setState( () => ( { calendarFocused } ) );
     }
 
     onSubmit = ( e ) =>
@@ -112,7 +112,7 @@ export default class GerminacionForm extends React.Component
                     <SingleDatePicker
                         date={ this.state.hfgerminacion } // momentPropTypes.momentObj or null
                         onDateChange={ this.onHfGerminacionChange } // PropTypes.func.isRequired
-                        focused={ this.state.focused } //  PropTypes.bool
+                        focused={ this.state.calendarFocused } //  PropTypes.bool
                         onFocusChange={ this.onHfGerminacionFocusChange } // PropTypes.func.isRequired
                         id="your_unique_id" // PropTypes.string.isRequired,
                         numberOfMonths={ 1 }

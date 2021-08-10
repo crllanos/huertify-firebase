@@ -1,11 +1,13 @@
 import { HfFilters, HfSortby } from '../../constants/HfActions'
+import moment from 'moment';
 
 // filters reducer (99 Organizing Redux)
 // https://huertify.atlassian.net/browse/HTFY-54
 const filtersReducerDefaultState = {
 	hftipo: ""
 	, hfcantidad: 1
-	, hfgerminacion: "@HTFY-54"
+	, hfgerminacion: moment().startOf( 'year' )
+	, hfcosecha: moment().endOf( 'year' ) //Aun no estaba contemplado, pero es un buen dato!
 	, sortBy: HfSortby.HFTIPO
 };
 

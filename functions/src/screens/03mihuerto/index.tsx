@@ -24,7 +24,6 @@ export default function MiHuertoScreen ( { navigation } )
 
 			<ScrollView>
 
-				<HfHuertoFilter />
 				<HfHuerto />
 
 				<Button title="Nueva germinacion"
@@ -48,6 +47,9 @@ export default function MiHuertoScreen ( { navigation } )
 						params: { user: 'jane' },
 					} )*/
 					} } />
+
+				{/** Filtrto pasa abajo por problemas de visualización z-index */ }
+				<HfHuertoFilter />
 
 			</ScrollView>
 
