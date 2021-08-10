@@ -28,7 +28,14 @@
 			}
 		},
 		"web": {
-			"favicon": "./src/assets/images/Cucumber_leaf.png"
+			"favicon": "./src/assets/images/Cucumber_leaf.png",
+			"build": {
+				"babel": {
+					"include": [
+						"react-router-native"
+					]
+				}
+			}
 		}
 	}
 }

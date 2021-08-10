@@ -6,7 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 //import useCachedResources   from './hooks/useCachedResources';
 //import useColorScheme       from './hooks/useColorScheme';
 import Navigation from './src/navigation';
-
+import NativeNavigation from './src/navigationnative';
 
 
 // !--REDUX (99 Organizing Redux)
@@ -61,7 +61,10 @@ export default function App ()
 	return (
 		<SafeAreaProvider>
 			<Provider store={ hfstore }>
-				<Navigation /* colorScheme={colorScheme}  // @todo-001 generar scheme dark */ />
+				{/** <Navigation / * colorScheme={colorScheme}  // @todo-001 generar scheme dark * / /> */ }
+				<NativeNavigation>
+
+				</NativeNavigation>
 			</Provider>
 			<StatusBar />
 		</SafeAreaProvider>
