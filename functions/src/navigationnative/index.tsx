@@ -106,7 +106,7 @@ const NativeNavigation = () => (
              */}
 
 
-            <Route exact path="/" component={ InicioScreen } /> {/** DEFINIR MIS COMPONENTES */ }
+            <Route path="/" component={ InicioScreen } exact={ true } /> {/** DEFINIR MIS COMPONENTES */ }
             <Route path="/login" component={ LoginScreen } />
             <Route path="/mihuerto" component={ MiHuertoScreen } />
             <Route path="/germinacion" component={ GerminacionScreen } />
