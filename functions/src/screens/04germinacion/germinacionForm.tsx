@@ -13,7 +13,7 @@ import 'react-dates/initialize'
 import 'react-dates/lib/css/_datepicker.css';
 
 const now = moment();
-console.log( 'now', now );
+console.log( 'now', now ); // -b HTFY-25-62-Routing
 console.log( 'now', now.format( "MMM Do, YYYY" ) ); // https://momentjs.com/docs/#/displaying/format/
 
 
