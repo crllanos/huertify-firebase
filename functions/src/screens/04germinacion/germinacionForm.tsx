@@ -8,9 +8,9 @@ import HfPlantacion, {
 
 
 import moment from 'moment';
-import { SingleDatePicker } from 'react-dates';
-import 'react-dates/initialize'
-import 'react-dates/lib/css/_datepicker.css';
+//import { SingleDatePicker } from 'react-dates';
+//import 'react-dates/initialize'
+//import 'react-dates/lib/css/_datepicker.css';
 
 const now = moment();
 console.log( 'now', now );
@@ -109,6 +109,7 @@ export default class GerminacionForm extends React.Component
                         value={ this.state.hfcantidad }
                         onChange={ this.onHfCantidadChange }
                     />
+                    {/**
                     <SingleDatePicker
                         date={ this.state.hfgerminacion } // momentPropTypes.momentObj or null
                         onDateChange={ this.onHfGerminacionChange } // PropTypes.func.isRequired
@@ -121,6 +122,7 @@ export default class GerminacionForm extends React.Component
                     <textarea
                         placeholder="hflogin">
                     </textarea>
+                     */}
 
                     <button type="submit">Agregar plantación</button>
 

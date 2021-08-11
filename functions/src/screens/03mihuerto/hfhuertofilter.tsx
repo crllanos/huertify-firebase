@@ -4,7 +4,7 @@ import { View, Text, TextInput } from 'react-native';
 import Estilo from '../../constants/Estilo';
 import { setHFTipoFilter, sortByHFTipo, sortByHFCantidad } from '../../redux/actions/filters'
 //import { setHFGerminacion, setHFCosecha } from '../../redux/actions/filters'
-import { DateRangePicker } from 'react-dates'
+//import { DateRangePicker } from 'react-dates'
 
 class HfHuertoFilter extends React.Component
 {
@@ -51,11 +51,14 @@ class HfHuertoFilter extends React.Component
                 {/** @todo alternativas select https://huertify.atlassian.net/browse/HTFY-57 */ }
                 {/** Será HTFY-57 el motivo de la falla?? */ }
                 {/** @todo Sacar los value de ENUM https://huertify.atlassian.net/browse/HTFY-58 */ }
+
+
+                {/**
                 <select
                     value={ this.props.filters.sortBy } // estará bien escrito "sortBy"??
                     onChange={ ( e ) =>
                     {
-                        {/** @todo No funciona el sortBy https://huertify.atlassian.net/browse/HTFY-59 */ }
+                        { / * * @todo No funciona el sortBy https://huertify.atlassian.net/browse/HTFY-59 * / }
                         console.log( 'SORTING BY', e.target.value );
                         console.log( 'props.dispatch', this.props.dispatch ); // Imprime: "props.dispatch // function dispatch ( action ) // hfhuertofilter.tsx: 40" TIRURIRU!!
 
@@ -79,11 +82,12 @@ class HfHuertoFilter extends React.Component
                         }
                     } }
                 >
-                    <option value="">...</option>
-                    <option value="hftipo">hfTipo</option>
-                    <option value="hfcantidad">hfCantidad</option>
-                    <option value="hfgerminacion">hfGerminacion</option>
+                    <option value=""><Text>...</Text></option>
+                    <option value="hftipo"><Text>hfTipo</Text></option>
+                    <option value="hfcantidad"><Text>hfCantidad</Text></option>
+                    <option value="hfgerminacion"><Text>hfGerminacion</Text></option>
                 </select>
+
 
                 <DateRangePicker
                     startDateId="MyDatePickerStartDateId"
@@ -97,6 +101,7 @@ class HfHuertoFilter extends React.Component
                     isOutsideRange={ () => false }
                     showClearDates={ true }
                 />
+                 */}
 
             </View >
         );
