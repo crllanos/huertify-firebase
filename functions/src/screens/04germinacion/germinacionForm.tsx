@@ -124,7 +124,7 @@ export default class GerminacionForm extends React.Component
                     </textarea>
                      */}
 
-                    <button type="submit">Agregar plantación</button>
+                    <button type="submit">Agregar plantaciónnn</button>
 
 
                     {/**
